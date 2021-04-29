@@ -1,9 +1,12 @@
+# Copyright 1999-2021 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
 EAPI=7
 SLOT=0
 KEYWORDS="~amd64 ~x86"
 LICENSE="BSD-2"
 HOMEPAGE="https://www.motoslave.net/tweego/"
-DESCRIPTION="Tweego is a free (gratis and libre) command line compiler for Twine/Twee story formats, written in Go."
+DESCRIPTION="Aa free (gratis and libre) command line compiler for Twine/Twee story formats, written in Go."
 
 MY_PN="tweego"
 MY_P="${MY_PN}-${PV}"
@@ -27,7 +30,7 @@ src_install() {
 		go install -v -work -x ${EGO_BUILD_FLAGS} "${EGO_PN}"
 	echo "$@"
 	"$@" || die
-	dobin ${FILESDIR}/tweego
+	dobin "${FILESDIR}"/tweego
 	exeinto /usr/libexec/
-	doexe ${S}/bin/tweego
+	doexe "${S}"/bin/tweego
 }

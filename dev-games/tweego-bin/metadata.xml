@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM 'http://www.gentoo.org/dtd/metadata.dtd'>
+<pkgmetadata>
+	<maintainer type="person">
+		<email>eugene.shalygin@gmail.com</email>
+	</maintainer>
+	<use>
+		<flag name="story-formats">Install twine story formats and replace tweego binary with a wrapper to pick them up.</flag> 
+	</use>
+</pkgmetadata>

@@ -6,6 +6,7 @@ SLOT=0
 inherit git-r3 qmake-utils desktop xdg
 DESCRIPTION="Qt Quest Soft Player"
 HOMEPAGE="https://gitlab.com/Sonnix1/Qqsp"
+LICENSE="MIT"
 EGIT_REPO_URI="https://gitlab.com/Sonnix1/Qqsp.git"
 
 DOCS=( LICENSE )
@@ -16,9 +17,9 @@ src_configure() {
 
 src_install() {
 	dobin Qqsp
-	insinto ${EPREFIX}/usr/share/applications
+	insinto /usr/share/applications
 	doins Qqsp.desktop
-	insinto ${EPREFIX}/usr/share/mime/packages
+	insinto /usr/share/mime/packages
 	newins qsp.mime qsp.xml
 	newicon icons/qsp-logo-vector.svg qsp.svg
 	einstalldocs
