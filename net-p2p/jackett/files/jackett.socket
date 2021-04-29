@@ -1,0 +1,10 @@
+[Unit]
+Description=Jackett search service
+Conflicts=jackett.service
+
+[Socket]
+ListenStream=9117
+Accept=yes
+
+[Install]
+WantedBy=sockets.target

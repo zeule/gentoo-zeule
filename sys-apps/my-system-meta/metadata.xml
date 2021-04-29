@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM 'http://www.gentoo.org/dtd/metadata.dtd'>
+<pkgmetadata>
+	<maintainer type="person">
+		<email>eugene.shalygin@gmail.com</email>
+	</maintainer>
+	<use>
+		<flag name="btrfs">Install duplicates removed for BTRFS filesystem</flag>
+		<flag name="powerline">Install powerline support fonts</flag>
+		<flag name="vim">Install support for app-editors/vim</flag>
+	</use>
+</pkgmetadata>

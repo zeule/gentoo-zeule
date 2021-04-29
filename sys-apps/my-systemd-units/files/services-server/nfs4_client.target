@@ -1,0 +1,7 @@
+[Unit]
+Description=Dependencies for NFSv4 mounts
+Wants=rpcbind.service
+Wants=nfs-utils.service
+
+[Install]
+WantedBy=remote-fs.target

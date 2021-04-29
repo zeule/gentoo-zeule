@@ -1,0 +1,44 @@
+# Copyright 1999-2013 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: /var/cvsroot/gentoo-x86/net-misc/plowshare/plowshare-20130520.ebuild,v 1.2 2013/06/15 23:49:56 voyageur Exp $
+
+EAPI=5
+
+inherit git-r3 autotools-utils
+
+DESCRIPTION="mega.co.nz module for Plowshare"
+HOMEPAGE="https://github.com/mcrapet/plowshare-module-mega"
+EGIT_REPO_URI="https://github.com/mcrapet/${PN}.git"
+
+LICENSE="GPL-3"
+SLOT="0"
+KEYWORDS="~amd64 ~arm ~ppc ~x86"
+IUSE=""
+
+CDEPEND="dev-libs/openssl
+	>=net-misc/plowshare-9999"
+
+RDEPEND="${CDEPEND}"
+DEPEND="${CDEPEND}"
+
+#S=${WORKDIR}/${MY_P}
+
+AUTOTOOLS_AUTORECONF=true
+AUTOTOOLS_IN_SOURCE_BUILD=1
+
+#src_compile() {
+#	emake PREFIX="/usr"
+#}
+
+src_test() {
+	# Disable tests because all of them need a working Internet connection.
+	:
+}
+
+src_install() {
+	autotools-utils_src_install
+
+	mkdir -p "${D}"/usr/share/plowshare/modules.d/
+	mv "${D}/usr/share/plowshare/modules/" "${D}/usr/share/plowshare/modules.d/mega/" || die "move failed"
+#	mv "${D}/usr/share/plowshare/modules/mega.sh" "${D}/usr/share/plowshare/modules.d/mega" || die "move failed"
+}

@@ -1,0 +1,2 @@
+#!/bin/sh
+TWEEGO_PATH="/usr/share/tweego/storyformats/:${TWEEGO_PATH}" /usr/libexec/tweego "$@"

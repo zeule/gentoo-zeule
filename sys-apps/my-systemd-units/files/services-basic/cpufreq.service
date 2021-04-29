@@ -1,0 +1,10 @@
+[Unit]
+Description=CPU frequency scaling via cpufrequtils
+
+[Service]
+ExecStart=/usr/sbin/cpufreq-systemd start
+ExecReload=/usr/sbin/cpufreq-systemd start
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

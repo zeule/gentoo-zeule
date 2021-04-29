@@ -1,0 +1,41 @@
+Source: extracted from gargoyle-2011.1-sources.zip, updated and
+        tweaked to not hard-code the version number
+Upstream: Gentoo-specific hack
+Reason: use Gargoyle extension functions to set a nice window title
+
+--- glulxe/unixstrt.c~	2013-03-11 02:09:38.000000000 +0000
++++ glulxe/unixstrt.c	2013-07-08 21:47:46.000000000 +0100
+@@ -33,7 +33,7 @@
+   /* It turns out to be more convenient if we return TRUE from here, even 
+      when an error occurs, and display an error in glk_main(). */
+   int ix;
+-  char *filename = NULL;
++  char *filename = NULL, *cx;
+   unsigned char buf[12];
+   int res;
+ 
+@@ -65,6 +65,11 @@
+     filename = data->argv[ix];
+   }
+ 
++#ifdef GARGLK
++  garglk_set_program_name("Glulxe @PV@");
++  garglk_set_program_info("Glulxe @PV@ by Andrew Plotkin");
++#endif
++
+   if (!filename) {
+     init_err = "You must supply the name of a game file.";
+     return TRUE;
+@@ -77,6 +82,12 @@
+     return TRUE;
+   }
+ 
++#ifdef GARGLK
++  cx = strrchr(filename, '/');
++  if (!cx) cx = strrchr(filename, '\\');
++  garglk_set_story_name(cx ? cx + 1 : filename);
++#endif
++
+   /* Now we have to check to see if it's a Blorb file. */
+ 
+   glk_stream_set_position(gamefile, 0, seekmode_Start);

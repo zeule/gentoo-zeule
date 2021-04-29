@@ -1,0 +1,11 @@
+[Unit]
+Description=Unmounts all network subsystems before going to sleep
+Before=sleep.target
+Requires=network.target
+
+[Service]
+Type=oneshot
+ExecStart=-/bin/umount -a -f -v -t cifs,nfs -l
+
+[Install]
+WantedBy=sleep.target

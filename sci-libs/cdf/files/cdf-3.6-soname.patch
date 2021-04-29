@@ -1,0 +1,20 @@
+diff -ur work.orig/cdf36_2-dist/src/lib/Makefile work/cdf36_2-dist/src/lib/Makefile
+--- a/src/lib/Makefile	2016-09-29 18:08:20.061577165 +0200
++++ b/src/lib/Makefile	2016-09-29 18:53:02.080655300 +0200
+@@ -118,13 +118,13 @@
+ 
+ shared.yes: libcdf.$(SHAREDEXT)
+ 
+-libcdf.so \
++libcdf.$(SHAREDEXT) \
+ libcdf.dylib \
+ libcdf.dll \
+ libcdf.sl: $(OBJs)
+ 	@if [ -f $@ ] ; then rm $@ ; else $(NULL) ; fi
+-	@echo $(LD) $(LDFLAGS) -o $@ $(OBJs) $(SYSLIBS)
+-	      $(LD) $(LDFLAGS) -o $@ $(OBJs) $(SYSLIBS)
++	@echo $(LD) $(LDFLAGS) -Wl,-soname,libcdf.$(SHAREDEXT) -o $@ $(OBJs) $(SYSLIBS)
++	      $(LD) $(LDFLAGS) -Wl,-soname,libcdf.$(SHAREDEXT) -o $@ $(OBJs) $(SYSLIBS)
+ 	@if [ $(MACVERSION) -gt 0 ]; then \
+ 	  rm -f $(MACLIB)/$@; \
+ 	  cp $@ $(MACLIB)/libcdf.$(VERSION).dylib; \

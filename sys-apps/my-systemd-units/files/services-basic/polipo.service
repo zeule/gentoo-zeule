@@ -1,0 +1,10 @@
+[Unit]
+Description=A caching web proxy
+
+[Service]
+User=polipo
+Group=polipo
+ExecStart=/usr/bin/polipo -c /etc/polipo/config
+
+#[Install]
+#WantedBy=multi-user.target

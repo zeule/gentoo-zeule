@@ -1,0 +1,9 @@
+[Unit]
+Description=CPU microcode updater
+
+[Service]
+Type=oneshot
+ExecStart=/usr/sbin/microcode_ctl -qu -f /lib/firmware/microcode.dat
+
+[Install]
+WantedBy=multi-user.target

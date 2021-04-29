@@ -1,0 +1,30 @@
+Source: dleverton
+Upstream: is aware, but this is gmake-specific so unlikely to be
+          accepted, at least in this form
+Reason: respect the user's CFLAGS and LDFLAGS
+
+--- glulxe/Makefile~	2010-08-18 01:27:03.000000000 +0100
++++ glulxe/Makefile	2010-08-22 22:02:45.000000000 +0100
+@@ -23,11 +23,11 @@
+ #CC = cc
+ CC = gcc
+ 
+-OPTIONS = -g -Wall -Wmissing-prototypes -Wstrict-prototypes -Wno-unused -DOS_UNIX
++OPTIONS = -Wall -Wmissing-prototypes -Wstrict-prototypes -Wno-unused -DOS_UNIX
+ 
+ include $(GLKINCLUDEDIR)/$(GLKMAKEFILE)
+ 
+-CFLAGS = $(OPTIONS) -I$(GLKINCLUDEDIR)
++CFLAGS += $(OPTIONS) -I$(GLKINCLUDEDIR)
+ LIBS = -L$(GLKLIBDIR) $(GLKLIB) $(LINKLIBS) -lm
+ 
+ OBJS = main.o files.o vm.o exec.o funcs.o operand.o string.o glkop.o \
+@@ -36,7 +36,7 @@
+ all: glulxe
+ 
+ glulxe: $(OBJS) unixstrt.o
+-	$(CC) $(OPTIONS) -o glulxe $(OBJS) unixstrt.o $(LIBS)
++	$(CC) $(OPTIONS) $(LDFLAGS) -o glulxe $(OBJS) unixstrt.o $(LIBS)
+ 
+ glulxdump: glulxdump.o
+ 	$(CC) -o glulxdump glulxdump.o

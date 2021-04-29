@@ -1,0 +1,590 @@
+diff -ur -x '*.pro.user' fingerprint-gui-1.09/bin/fingerprint-gui/fingerprint-gui.pro fingerprint-gui-qt5/bin/fingerprint-gui/fingerprint-gui.pro
+--- fingerprint-gui-1.09/bin/fingerprint-gui/fingerprint-gui.pro	2015-06-05 16:19:00.000000000 +0200
++++ fingerprint-gui-qt5/bin/fingerprint-gui/fingerprint-gui.pro	2018-03-20 12:31:00.468351423 +0100
+@@ -1,7 +1,7 @@
+ TEMPLATE = app
+ CONFIG += qt thread crypto
+ TARGET = fingerprint-gui
+-QT += xml
++QT += xml widgets
+ DEPENDPATH += . ../../include ../../src
+ INCLUDEPATH += . ../../include ../../upek/include
+ 
+@@ -47,7 +47,7 @@
+ DEFINES +=LIBEXECDIR=\\\"$${LIBEXECDIR}\\\"
+ QMAKE_CXXFLAGS+=-fno-strict-aliasing
+ 
+-LIBS += -lusb-1.0 -lfprint -lpam -ldl -lqca
++LIBS += -lusb-1.0 -lfprint -lpam -ldl
+ 
+ # Input
+ HEADERS += ../../include/GlobalsImg.h \
+diff -ur -x '*.pro.user' fingerprint-gui-1.09/bin/fingerprint-helper/fingerprint-helper.pro fingerprint-gui-qt5/bin/fingerprint-helper/fingerprint-helper.pro
+--- fingerprint-gui-1.09/bin/fingerprint-helper/fingerprint-helper.pro	2015-06-01 14:23:00.000000000 +0200
++++ fingerprint-gui-qt5/bin/fingerprint-helper/fingerprint-helper.pro	2018-03-20 12:32:55.307537292 +0100
+@@ -1,7 +1,7 @@
+ TEMPLATE = app
+ CONFIG += qt thread crypto
+ TARGET = fingerprint-helper
+-QT += xml
++QT += widgets x11extras xml
+ DEPENDPATH += . ../../include ../../src
+ INCLUDEPATH += . ../../include ../../upek/include
+ 
+@@ -27,7 +27,7 @@
+ 
+ INSTALLS += target uinput-rules
+ 
+-LIBS += -lusb-1.0 -lfprint -lfakekey -lX11 -ldl -lqca
++LIBS += -lusb-1.0 -lfprint -lfakekey -lX11 -ldl
+ 
+ # Input
+ HEADERS += \
+diff -ur -x '*.pro.user' fingerprint-gui-1.09/bin/fingerprint-identifier/fingerprint-identifier.pro fingerprint-gui-qt5/bin/fingerprint-identifier/fingerprint-identifier.pro
+--- fingerprint-gui-1.09/bin/fingerprint-identifier/fingerprint-identifier.pro	2015-06-01 14:21:00.000000000 +0200
++++ fingerprint-gui-qt5/bin/fingerprint-identifier/fingerprint-identifier.pro	2017-04-03 22:07:03.349036774 +0200
+@@ -1,5 +1,6 @@
+ TEMPLATE = app
+ CONFIG += qt thread
++QT += widgets
+ TARGET = fingerprint-identifier
+ DEPENDPATH += . ../../include ../../src
+ INCLUDEPATH += . ../../include ../../upek/include
+diff -ur -x '*.pro.user' fingerprint-gui-1.09/bin/fingerprint-plugin/fingerprint-plugin.pro fingerprint-gui-qt5/bin/fingerprint-plugin/fingerprint-plugin.pro
+--- fingerprint-gui-1.09/bin/fingerprint-plugin/fingerprint-plugin.pro	2014-09-11 09:04:00.000000000 +0200
++++ fingerprint-gui-qt5/bin/fingerprint-plugin/fingerprint-plugin.pro	2017-04-03 22:11:34.993299880 +0200
+@@ -1,6 +1,7 @@
+ TEMPLATE = app
+ CONFIG += qt thread
+ TARGET = fingerprint-plugin
++QT += widgets
+ DEPENDPATH += . ../../include ../../src
+ INCLUDEPATH += . ../../include ../../upek/include
+ 
+diff -ur -x '*.pro.user' fingerprint-gui-1.09/bin/fingerprint-polkit-agent/fingerprint-polkit-agent.pro fingerprint-gui-qt5/bin/fingerprint-polkit-agent/fingerprint-polkit-agent.pro
+--- fingerprint-gui-1.09/bin/fingerprint-polkit-agent/fingerprint-polkit-agent.pro	2015-06-22 12:22:00.000000000 +0200
++++ fingerprint-gui-qt5/bin/fingerprint-polkit-agent/fingerprint-polkit-agent.pro	2018-03-20 12:35:11.554776479 +0100
+@@ -1,5 +1,6 @@
+ TEMPLATE = app
+ CONFIG += qt thread
++QT += widgets
+ TARGET = fingerprint-polkit-agent
+ DEPENDPATH += . ../../include ../../src
+ INCLUDEPATH += . ../../include ../../upek/include
+@@ -27,7 +28,7 @@
+ DEFINES +=LIBEXECDIR=\\\"$${LIBEXECDIR}\\\"
+ QMAKE_CXXFLAGS+=-fno-strict-aliasing
+ 
+-LIBS += -lusb-1.0 -lfprint -lX11 -lpolkit-qt-agent-1 -lpolkit-qt-core-1
++LIBS += -lusb-1.0 -lfprint -lX11 -lpolkit-qt5-agent-1 -lpolkit-qt5-core-1
+ 
+ # Input
+ HEADERS += \
+Only in fingerprint-gui-1.09/: build-fingerprint-Qt_5_8_0_GCC-Debug
+diff -ur -x '*.pro.user' fingerprint-gui-1.09/include/AboutImpl.h fingerprint-gui-qt5/include/AboutImpl.h
+--- fingerprint-gui-1.09/include/AboutImpl.h	2016-06-02 14:12:03.000000000 +0200
++++ fingerprint-gui-qt5/include/AboutImpl.h	2017-04-03 21:50:35.502916952 +0200
+@@ -42,7 +42,7 @@
+ Q_OBJECT
+ 
+ public:
+-    AboutImpl(QWidget *parent=0,Qt::WFlags f=0);
++    AboutImpl(QWidget *parent=0,Qt::WindowFlags f=0);
+ 
+ private slots:
+     void bitcoin();
+diff -ur -x '*.pro.user' fingerprint-gui-1.09/include/ExistDialogImpl.h fingerprint-gui-qt5/include/ExistDialogImpl.h
+--- fingerprint-gui-1.09/include/ExistDialogImpl.h	2016-06-02 14:12:03.000000000 +0200
++++ fingerprint-gui-qt5/include/ExistDialogImpl.h	2017-04-03 21:55:15.893930505 +0200
+@@ -47,7 +47,7 @@
+ Q_OBJECT
+ 
+ public:
+-    ExistDialogImpl(string finger,QWidget * parent=0,Qt::WFlags f=0);
++    ExistDialogImpl(string finger, QWidget * parent=0, Qt::WindowFlags f=0);
+ 
+ signals:
+     void choice(existDialogChoice);
+diff -ur -x '*.pro.user' fingerprint-gui-1.09/include/Fingerprint.h fingerprint-gui-qt5/include/Fingerprint.h
+--- fingerprint-gui-1.09/include/Fingerprint.h	2016-06-02 14:12:03.000000000 +0200
++++ fingerprint-gui-qt5/include/Fingerprint.h	2017-04-03 21:56:04.835630389 +0200
+@@ -36,6 +36,8 @@
+ extern bool debugTest;
+ static volatile bool busy=false;
+ 
++class QLabel;
++
+ class Fingerprint : public QObject {
+     Q_OBJECT
+ 
+diff -ur -x '*.pro.user' fingerprint-gui-1.09/include/IdentifierGUI.h fingerprint-gui-qt5/include/IdentifierGUI.h
+--- fingerprint-gui-1.09/include/IdentifierGUI.h	2016-06-02 14:12:03.000000000 +0200
++++ fingerprint-gui-qt5/include/IdentifierGUI.h	2017-04-03 22:08:44.106492834 +0200
+@@ -48,7 +48,7 @@
+     QPixmap fpPix;
+ 
+ public:
+-    IdentifierGUI(bool decorated,FingerprintDevice *device,FingerprintData *identifyData,QWidget *parent=0,Qt::WFlags f=0);
++    IdentifierGUI(bool decorated, FingerprintDevice *device, FingerprintData *identifyData, QWidget *parent=0, Qt::WindowFlags f=0);
+ 
+ public slots:
+     void matchResult(int match,struct fp_pic_data *pic);
+diff -ur -x '*.pro.user' fingerprint-gui-1.09/include/MainWindowImpl.h fingerprint-gui-qt5/include/MainWindowImpl.h
+--- fingerprint-gui-1.09/include/MainWindowImpl.h	2016-06-02 14:12:03.000000000 +0200
++++ fingerprint-gui-qt5/include/MainWindowImpl.h	2017-04-03 22:01:22.669172325 +0200
+@@ -77,7 +77,7 @@
+     QPixmap fpPix;
+ 
+ public:
+-    MainWindowImpl(QWidget * parent = 0, Qt::WFlags f = 0 );
++    MainWindowImpl(QWidget * parent = 0, Qt::WindowFlags f = 0 );
+ 
+ private:
+     void tabChanged(int newTab);
+diff -ur -x '*.pro.user' fingerprint-gui-1.09/include/MessageDialogImpl.h fingerprint-gui-qt5/include/MessageDialogImpl.h
+--- fingerprint-gui-1.09/include/MessageDialogImpl.h	2016-06-02 14:12:03.000000000 +0200
++++ fingerprint-gui-qt5/include/MessageDialogImpl.h	2017-04-03 22:01:09.137979051 +0200
+@@ -41,7 +41,7 @@
+ Q_OBJECT
+ 
+ public:
+-    MessageDialogImpl(QWidget* parent=0,Qt::WFlags f=0);
++    MessageDialogImpl(QWidget* parent=0,Qt::WindowFlags f=0);
+ 
+ private slots:
+     void ok();
+diff -ur -x '*.pro.user' fingerprint-gui-1.09/include/PamTester.h fingerprint-gui-qt5/include/PamTester.h
+--- fingerprint-gui-1.09/include/PamTester.h	2016-06-02 14:12:03.000000000 +0200
++++ fingerprint-gui-qt5/include/PamTester.h	2017-04-03 22:05:03.120320392 +0200
+@@ -32,6 +32,8 @@
+ #include <string>
+ #include <iostream>
+ #include <QtGui>
++#include <QLabel>
++#include <QLineEdit>
+ #include <security/pam_appl.h>
+ #include <security/pam_misc.h>
+ #include "Globals.h"
+diff -ur -x '*.pro.user' fingerprint-gui-1.09/include/PolkitDialogImpl.h fingerprint-gui-qt5/include/PolkitDialogImpl.h
+--- fingerprint-gui-1.09/include/PolkitDialogImpl.h	2016-06-02 14:12:03.000000000 +0200
++++ fingerprint-gui-qt5/include/PolkitDialogImpl.h	2018-03-20 12:33:51.193065213 +0100
+@@ -27,8 +27,9 @@
+ #define	POLKITDIALOGIMPL_H
+ 
+ #include <QtGui>
+-#include <polkit-qt-1/PolkitQt1/Authority>
+-#include <polkit-qt-1/PolkitQt1/Details>
++#include <QDialog>
++#include <polkit-qt5-1/PolkitQt1/Authority>
++#include <polkit-qt5-1/PolkitQt1/Details>
+ #include "ui_PolkitDialog.h"
+ #include "ui_PolkitDetails.h"
+ #include "ui_FingerprintPlugin.h"
+@@ -66,7 +67,7 @@
+             const QString &iconName,
+             const PolkitQt1::Details &details,
+             const PolkitQt1::Identity::List &identities,
+-            QWidget * parent = 0, Qt::WFlags f = 0);
++            QWidget * parent = 0, Qt::WindowFlags f = 0);
+     virtual ~PolkitDialogImpl();
+     QString password() const;
+     void authenticationFailure();
+diff -ur -x '*.pro.user' fingerprint-gui-1.09/include/PolkitListener.h fingerprint-gui-qt5/include/PolkitListener.h
+--- fingerprint-gui-1.09/include/PolkitListener.h	2016-06-02 14:12:03.000000000 +0200
++++ fingerprint-gui-qt5/include/PolkitListener.h	2018-03-20 12:33:43.847997476 +0100
+@@ -26,7 +26,7 @@
+ #ifndef POLKITLISTENER_H
+ #define	POLKITLISTENER_H
+ 
+-#include <polkit-qt-1/PolkitQt1/Agent/Listener>
++#include <polkit-qt5-1/PolkitQt1/Agent/Listener>
+ #include "PolkitDialogImpl.h"
+ 
+ using namespace PolkitQt1::Agent;
+@@ -60,7 +60,7 @@
+     bool gainedAuthorization;
+     bool wasCancelled;
+     int numTries;
+-    QWeakPointer<Session> session;
++    QSharedPointer<Session> session;
+     PolkitQt1::Identity::List identities;
+     PolkitQt1::Identity selectedUser;
+     PolkitQt1::Agent::AsyncResult* result;
+diff -ur -x '*.pro.user' fingerprint-gui-1.09/include/SavedDialogImpl.h fingerprint-gui-qt5/include/SavedDialogImpl.h
+--- fingerprint-gui-1.09/include/SavedDialogImpl.h	2016-06-02 14:12:03.000000000 +0200
++++ fingerprint-gui-qt5/include/SavedDialogImpl.h	2017-04-03 22:00:47.555670763 +0200
+@@ -56,7 +56,7 @@
+     QPixmap fpPix;
+ 
+ public:
+-    SavedDialogImpl(int mode, QWidget * parent = 0, struct fp_pic_data *pic = NULL, Qt::WFlags f = 0 );
++    SavedDialogImpl(int mode, QWidget * parent = 0, struct fp_pic_data *pic = NULL, Qt::WindowFlags f = 0 );
+ 
+ signals:
+     void choice(savedDialogChoice);
+diff -ur -x '*.pro.user' fingerprint-gui-1.09/include/UserSettings.h fingerprint-gui-qt5/include/UserSettings.h
+--- fingerprint-gui-1.09/include/UserSettings.h	2016-06-02 14:12:03.000000000 +0200
++++ fingerprint-gui-qt5/include/UserSettings.h	2018-03-20 12:29:35.613371945 +0100
+@@ -27,7 +27,7 @@
+ #define	_USERSETTINGS_H
+ 
+ #include <QString>
+-#include <QtCrypto/QtCrypto>
++#include <QtCrypto>
+ 
+ class UserSettings {
+ public:
+diff -ur -x '*.pro.user' fingerprint-gui-1.09/src/AboutImpl.cpp fingerprint-gui-qt5/src/AboutImpl.cpp
+--- fingerprint-gui-1.09/src/AboutImpl.cpp	2016-06-02 14:11:50.000000000 +0200
++++ fingerprint-gui-qt5/src/AboutImpl.cpp	2017-04-03 21:54:53.167605452 +0200
+@@ -25,17 +25,18 @@
+ 
+ 
+ #include "../include/AboutImpl.h"
++#include <QCoreApplication>
+ 
+-AboutImpl::AboutImpl(QWidget *parent,Qt::WFlags f)
++AboutImpl::AboutImpl(QWidget *parent, Qt::WindowFlags f)
+     : QDialog(parent,f){
+     setupUi(this);
+ 
+     string s="Version: ";
+     s.append(VERSION);
+-    versionLabel->setText(QApplication::translate("AboutDialog", s.data(),0,QApplication::UnicodeUTF8));
+-    copyrightLabel->setText(QApplication::translate("AboutDialog", COPYRIGHT,0,QApplication::UnicodeUTF8));
+-    homeButton->setText(QApplication::translate("AboutDialog",HOMEPAGE,0,QApplication::UnicodeUTF8));
+-    bitcoinButton->setText(QApplication::translate("AboutDialog",BITCOINADDRESS,0,QApplication::UnicodeUTF8));
++    versionLabel->setText(QApplication::translate("AboutDialog", s.data(),0));
++    copyrightLabel->setText(QApplication::translate("AboutDialog", COPYRIGHT,0));
++    homeButton->setText(QApplication::translate("AboutDialog",HOMEPAGE,0));
++    bitcoinButton->setText(QApplication::translate("AboutDialog",BITCOINADDRESS,0));
+     connect(donateButton,SIGNAL(clicked()),this,SLOT(donate()));
+     connect(licenseButton,SIGNAL(clicked()),this,SLOT(license()));
+     connect(homeButton,SIGNAL(clicked()),this,SLOT(homepage()));
+diff -ur -x '*.pro.user' fingerprint-gui-1.09/src/DeviceHandler.cpp fingerprint-gui-qt5/src/DeviceHandler.cpp
+--- fingerprint-gui-1.09/src/DeviceHandler.cpp	2016-06-18 21:26:52.000000000 +0200
++++ fingerprint-gui-qt5/src/DeviceHandler.cpp	2017-04-03 21:49:03.037591494 +0200
+@@ -46,8 +46,8 @@
+ #include <iostream>
+ #include <fstream>
+ #include <dlfcn.h>
+-#include <qstring.h>
+-#include <qcombobox.h>
++#include <QString>
++#include <QComboBox>
+ #include "../include/UsbDevice.h"
+ #include "../include/FingerprintDevice.h"
+ #include "drivers/GenericDevice.h"
+diff -ur -x '*.pro.user' fingerprint-gui-1.09/src/ExistDialogImpl.cpp fingerprint-gui-qt5/src/ExistDialogImpl.cpp
+--- fingerprint-gui-1.09/src/ExistDialogImpl.cpp	2016-06-02 14:11:50.000000000 +0200
++++ fingerprint-gui-qt5/src/ExistDialogImpl.cpp	2017-04-03 21:55:15.809929303 +0200
+@@ -25,7 +25,7 @@
+ 
+ #include "ExistDialogImpl.h"
+ 
+-ExistDialogImpl::ExistDialogImpl(string finger, QWidget * parent, Qt::WFlags f)
++ExistDialogImpl::ExistDialogImpl(string finger, QWidget * parent, Qt::WindowFlags f)
+     : QDialog(parent, f){
+     setupUi(this);
+ 
+diff -ur -x '*.pro.user' fingerprint-gui-1.09/src/Fingerprint.cpp fingerprint-gui-qt5/src/Fingerprint.cpp
+--- fingerprint-gui-1.09/src/Fingerprint.cpp	2016-06-02 14:11:50.000000000 +0200
++++ fingerprint-gui-qt5/src/Fingerprint.cpp	2017-04-03 21:58:06.998376715 +0200
+@@ -36,6 +36,9 @@
+ #include <unistd.h>
+ #include <pwd.h>
+ #include <errno.h>
++
++#include <QLabel>
++
+ #include "Fingerprint.h"
+ #include "FingerprintDevice.h"
+ #include "DeviceHandler.h"
+@@ -271,10 +274,10 @@
+     textLabels[3]->setText("");
+     textLabels[4]->setText("");
+     iconLabels[0]->setPixmap(QPixmap(QString::fromUtf8(":/new/prefix1/res/fp-wait.png")));
+-    iconLabels[1]->setPixmap(NULL);
+-    iconLabels[2]->setPixmap(NULL);
+-    iconLabels[3]->setPixmap(NULL);
+-    iconLabels[4]->setPixmap(NULL);
++    iconLabels[1]->setPixmap(QPixmap());
++    iconLabels[2]->setPixmap(QPixmap());
++    iconLabels[3]->setPixmap(QPixmap());
++    iconLabels[4]->setPixmap(QPixmap());
+ }
+ 
+ void Fingerprint::setAcquireStage(int result){
+diff -ur -x '*.pro.user' fingerprint-gui-1.09/src/FingerprintHelper.cpp fingerprint-gui-qt5/src/FingerprintHelper.cpp
+--- fingerprint-gui-1.09/src/FingerprintHelper.cpp	2016-06-20 19:25:55.000000000 +0200
++++ fingerprint-gui-qt5/src/FingerprintHelper.cpp	2018-03-20 12:32:24.476233023 +0100
+@@ -24,9 +24,10 @@
+  */
+ 
+ #include <QtGui>
++#include <QStyleOption>
+ #include <QObject>
+ #include <QEventLoop>
+-#include <QtCrypto/QtCrypto>
++#include <QtCrypto>
+ 
+ #include <sys/wait.h>
+ #include <linux/uinput.h>
+diff -ur -x '*.pro.user' fingerprint-gui-1.09/src/FingerprintPolkit.cpp fingerprint-gui-qt5/src/FingerprintPolkit.cpp
+--- fingerprint-gui-1.09/src/FingerprintPolkit.cpp	2016-06-02 14:11:50.000000000 +0200
++++ fingerprint-gui-qt5/src/FingerprintPolkit.cpp	2018-03-20 12:34:10.419240268 +0100
+@@ -30,7 +30,7 @@
+ #include <QtGui>
+ #include <QApplication>
+ #include <qstring.h>
+-#include <polkit-qt-1/PolkitQt1/Subject>
++#include <polkit-qt5-1/PolkitQt1/Subject>
+ 
+ #include "../include/PolkitListener.h"
+ #include "../include/Globals.h"
+diff -ur -x '*.pro.user' fingerprint-gui-1.09/src/IdentifierGUI.cpp fingerprint-gui-qt5/src/IdentifierGUI.cpp
+--- fingerprint-gui-1.09/src/IdentifierGUI.cpp	2016-06-02 14:11:50.000000000 +0200
++++ fingerprint-gui-qt5/src/IdentifierGUI.cpp	2017-04-03 22:10:17.804044521 +0200
+@@ -29,12 +29,14 @@
+ #include "IdentifierGUI.h"
+ #include "GlobalsImg.h"
+ 
++#include <QDesktopWidget>
++
+ #define KEEP_ON_TOP \
+     raise(); \
+     activateWindow();
+ 
+ 
+-IdentifierGUI::IdentifierGUI(bool decorated,FingerprintDevice *dev,FingerprintData *iData,QWidget *parent,Qt::WFlags f)
++IdentifierGUI::IdentifierGUI(bool decorated,FingerprintDevice *dev,FingerprintData *iData,QWidget *parent,Qt::WindowFlags f)
+     : QMainWindow(parent, f){
+     setupUi(this);
+ 
+@@ -45,7 +47,7 @@
+         setWindowFlags(Qt::Dialog);
+         string title=string("Fingerprint Identifier ");
+         title.append(VERSION);
+-        setWindowTitle(QApplication::translate("MainWindow",title.data(), 0, QApplication::UnicodeUTF8));
++        setWindowTitle(QApplication::translate("MainWindow",title.data(), 0));
+ 	SET_TEXT_COLOR
+     }
+         
+diff -ur -x '*.pro.user' fingerprint-gui-1.09/src/MainWindowImpl.cpp fingerprint-gui-qt5/src/MainWindowImpl.cpp
+--- fingerprint-gui-1.09/src/MainWindowImpl.cpp	2016-06-02 14:11:50.000000000 +0200
++++ fingerprint-gui-qt5/src/MainWindowImpl.cpp	2017-04-03 22:03:16.944804364 +0200
+@@ -32,8 +32,10 @@
+ #include <unistd.h>
+ #include <pwd.h>
+ #include <QtGui>
+-#include <qstring.h>
+-#include <qwidget.h>
++#include <QFileDialog>
++#include <QMessageBox>
++#include <QString>
++#include <QWidget>
+ #include "ui_FingerprintGUI.h"
+ #include "../include/DeviceHandler.h"
+ #include "../include/MainWindowImpl.h"
+@@ -47,13 +49,13 @@
+ 
+ FINGERS
+         
+-MainWindowImpl::MainWindowImpl(QWidget * parent, Qt::WFlags f)
++MainWindowImpl::MainWindowImpl(QWidget * parent, Qt::WindowFlags f)
+     : QMainWindow(parent, f){
+     setupUi(this);
+ 
+     string title=string("Fingerprint GUI ");
+     title.append(VERSION);
+-    setWindowTitle(QApplication::translate("MainWindow",title.data(), 0, QApplication::UnicodeUTF8));
++    setWindowTitle(QApplication::translate("MainWindow",title.data(), 0));
+     deviceHandler=new DeviceHandler(DISPLAY_VENDOR_NAME);
+     connect(deviceHandler, SIGNAL(deviceAdded(string)), this, SLOT(newDevice(string)));
+     connect(rescanButton, SIGNAL(clicked()),deviceHandler, SLOT(rescan()));
+@@ -499,25 +501,25 @@
+ void MainWindowImpl::setScanTabNeededStages(int stages){
+     switch(stages){
+         case 1:
+-            fingerprintLabel2->setPixmap(NULL);
+-            fingerprintLabel3->setPixmap(NULL);
+-            fingerprintLabel4->setPixmap(NULL);
+-            fingerprintLabel5->setPixmap(NULL);
++            fingerprintLabel2->setPixmap(QPixmap());
++            fingerprintLabel3->setPixmap(QPixmap());
++            fingerprintLabel4->setPixmap(QPixmap());
++            fingerprintLabel5->setPixmap(QPixmap());
+             break;
+         case 2:
+-            fingerprintLabel3->setPixmap(NULL);
+-            fingerprintLabel4->setPixmap(NULL);
+-            fingerprintLabel5->setPixmap(NULL);
++            fingerprintLabel3->setPixmap(QPixmap());
++            fingerprintLabel4->setPixmap(QPixmap());
++            fingerprintLabel5->setPixmap(QPixmap());
+             fingerprintLabel2->setPixmap(fpPixMap);
+             break;
+         case 3:
+-            fingerprintLabel4->setPixmap(NULL);
+-            fingerprintLabel5->setPixmap(NULL);
++            fingerprintLabel4->setPixmap(QPixmap());
++            fingerprintLabel5->setPixmap(QPixmap());
+             fingerprintLabel2->setPixmap(fpPixMap);
+             fingerprintLabel3->setPixmap(fpPixMap);
+             break;
+         case 4:
+-            fingerprintLabel5->setPixmap(NULL);
++            fingerprintLabel5->setPixmap(QPixmap());
+             fingerprintLabel2->setPixmap(fpPixMap);
+             fingerprintLabel3->setPixmap(fpPixMap);
+             fingerprintLabel4->setPixmap(fpPixMap);
+diff -ur -x '*.pro.user' fingerprint-gui-1.09/src/MessageDialogImpl.cpp fingerprint-gui-qt5/src/MessageDialogImpl.cpp
+--- fingerprint-gui-1.09/src/MessageDialogImpl.cpp	2016-06-02 14:11:50.000000000 +0200
++++ fingerprint-gui-qt5/src/MessageDialogImpl.cpp	2017-04-03 22:01:09.213980136 +0200
+@@ -27,7 +27,7 @@
+ 
+ #include "MessageDialogImpl.h"
+ 
+-MessageDialogImpl::MessageDialogImpl(QWidget * parent, Qt::WFlags f)
++MessageDialogImpl::MessageDialogImpl(QWidget * parent, Qt::WindowFlags f)
+     : QDialog(parent, f){
+     setupUi(this);
+     okButton->setDefault(true);
+diff -ur -x '*.pro.user' fingerprint-gui-1.09/src/PamGUI.cpp fingerprint-gui-qt5/src/PamGUI.cpp
+--- fingerprint-gui-1.09/src/PamGUI.cpp	2016-06-02 14:11:50.000000000 +0200
++++ fingerprint-gui-qt5/src/PamGUI.cpp	2017-04-03 22:15:16.380810904 +0200
+@@ -32,6 +32,7 @@
+ #include <X11/Xresource.h>
+ #include <X11/keysym.h>
+ #include <QX11Info>
++#include <QDesktopWidget>
+ #include "GlobalsImg.h"
+ 
+ PamGUI::PamGUI(FingerprintDevice *dev,const char *user,const char *finger)
+diff -ur -x '*.pro.user' fingerprint-gui-1.09/src/PamTester.cpp fingerprint-gui-qt5/src/PamTester.cpp
+--- fingerprint-gui-1.09/src/PamTester.cpp	2016-06-02 14:11:50.000000000 +0200
++++ fingerprint-gui-qt5/src/PamTester.cpp	2017-04-03 22:04:38.188964436 +0200
+@@ -28,6 +28,8 @@
+ #include <pwd.h>
+ #include "PamTester.h"
+ 
++#include <QApplication>
++
+ volatile bool stopTester=false;
+ static volatile bool returnPressed=false;
+ static pam_response* pamResponse=NULL; 
+diff -ur -x '*.pro.user' fingerprint-gui-1.09/src/PluginDialog.cpp fingerprint-gui-qt5/src/PluginDialog.cpp
+--- fingerprint-gui-1.09/src/PluginDialog.cpp	2016-06-02 14:11:50.000000000 +0200
++++ fingerprint-gui-qt5/src/PluginDialog.cpp	2017-04-03 22:12:34.716258952 +0200
+@@ -30,6 +30,8 @@
+ 
+ #include "../include/PluginDialog.h"
+ 
++#include <QDialog>
++
+ using namespace std;
+ 
+ static string syslogIdent=string(PLUGIN_NAME);
+diff -ur -x '*.pro.user' fingerprint-gui-1.09/src/PolkitDialogImpl.cpp fingerprint-gui-qt5/src/PolkitDialogImpl.cpp
+--- fingerprint-gui-1.09/src/PolkitDialogImpl.cpp	2016-06-02 14:11:50.000000000 +0200
++++ fingerprint-gui-qt5/src/PolkitDialogImpl.cpp	2018-03-20 12:34:02.072164663 +0100
+@@ -27,8 +27,8 @@
+  * This code is based on the analysis of the "polkit-kde-1-0.95.1" project
+  */
+ 
+-#include <polkit-qt-1/PolkitQt1/Authority>
+-#include <polkit-qt-1/PolkitQt1/Details>
++#include <polkit-qt5-1/PolkitQt1/Authority>
++#include <polkit-qt5-1/PolkitQt1/Details>
+ #include <pwd.h>
+ #include <sys/wait.h>
+ 
+@@ -37,13 +37,12 @@
+ 
+ Q_DECLARE_METATYPE(PolkitQt1::Identity *);
+ 
+-PolkitDialogImpl::PolkitDialogImpl(
+-        const QString &actionId,
++PolkitDialogImpl::PolkitDialogImpl(const QString &actionId,
+         const QString &message,
+         const QString &/*iconName*/,
+         const PolkitQt1::Details &details,
+         const PolkitQt1::Identity::List &identities,
+-        QWidget * parent,Qt::WFlags f)
++        QWidget * parent, Qt::WindowFlags f)
+     : QDialog(parent,f){
+ 
+     qRegisterMetaType<PolkitQt1::Identity*>("PolkitQt1::Identity *");
+diff -ur -x '*.pro.user' fingerprint-gui-1.09/src/PolkitListener.cpp fingerprint-gui-qt5/src/PolkitListener.cpp
+--- fingerprint-gui-1.09/src/PolkitListener.cpp	2016-06-02 14:11:50.000000000 +0200
++++ fingerprint-gui-qt5/src/PolkitListener.cpp	2018-03-20 12:33:36.496929198 +0100
+@@ -27,11 +27,11 @@
+  * This code is based on the analysis of the "polkit-kde-1-0.95.1" project
+  */
+ 
+-#include <polkit-qt-1/PolkitQt1/Agent/Listener>
+-#include <polkit-qt-1/PolkitQt1/Agent/Session>
+-#include <polkit-qt-1/PolkitQt1/Subject>
+-#include <polkit-qt-1/PolkitQt1/Identity>
+-#include <polkit-qt-1/PolkitQt1/Details>
++#include <polkit-qt5-1/PolkitQt1/Agent/Listener>
++#include <polkit-qt5-1/PolkitQt1/Agent/Session>
++#include <polkit-qt5-1/PolkitQt1/Subject>
++#include <polkit-qt5-1/PolkitQt1/Identity>
++#include <polkit-qt5-1/PolkitQt1/Details>
+ //#include <qt4/QtGui/qdialogbuttonbox.h>
+ #include <qdialogbuttonbox.h>
+ 
+@@ -127,7 +127,7 @@
+     syslog(LOG_DEBUG,"Trying again.");
+     // We will create a new session only when some user is selected
+     if(selectedUser.isValid()){
+-        session=new Session(selectedUser,cookie,result);
++        session.reset(new Session(selectedUser,cookie,result));
+         connect(session.data(),SIGNAL(request(QString,bool)),this,SLOT(request(QString,bool)));
+         connect(session.data(),SIGNAL(completed(bool)),this,SLOT(completed(bool)));
+         connect(session.data(),SIGNAL(showError(QString)),this,SLOT(showError(QString)));
+diff -ur -x '*.pro.user' fingerprint-gui-1.09/src/SavedDialogImpl.cpp fingerprint-gui-qt5/src/SavedDialogImpl.cpp
+--- fingerprint-gui-1.09/src/SavedDialogImpl.cpp	2016-06-02 14:11:50.000000000 +0200
++++ fingerprint-gui-qt5/src/SavedDialogImpl.cpp	2017-04-03 22:03:47.597242065 +0200
+@@ -26,7 +26,7 @@
+ #include "SavedDialogImpl.h"
+ #include "GlobalsImg.h"
+ 
+-SavedDialogImpl::SavedDialogImpl(int mode, QWidget * parent, struct fp_pic_data *pic, Qt::WFlags f)
++SavedDialogImpl::SavedDialogImpl(int mode, QWidget * parent, struct fp_pic_data *pic, Qt::WindowFlags f)
+     : QDialog(parent, f){
+     setupUi(this);
+ 
+diff -ur -x '*.pro.user' fingerprint-gui-1.09/src/UserSettings.cpp fingerprint-gui-qt5/src/UserSettings.cpp
+--- fingerprint-gui-1.09/src/UserSettings.cpp	2016-06-02 14:11:50.000000000 +0200
++++ fingerprint-gui-qt5/src/UserSettings.cpp	2018-03-20 12:29:59.530657953 +0100
+@@ -39,7 +39,7 @@
+ 
+ #include <QFile>
+ #include <QDir>
+-#include <QtCrypto/QtCrypto>
++#include <QtCrypto>
+ #include <QtXml>
+ 
+ using namespace std;
+diff -ur -x '*.pro.user' fingerprint-gui-1.09/src/drivers/GenericDevice.cpp fingerprint-gui-qt5/src/drivers/GenericDevice.cpp
+--- fingerprint-gui-1.09/src/drivers/GenericDevice.cpp	2016-06-02 14:11:22.000000000 +0200
++++ fingerprint-gui-qt5/src/drivers/GenericDevice.cpp	2017-04-03 22:00:47.473669591 +0200
+@@ -159,14 +159,14 @@
+ static void sync_close_cb(struct fp_dev *dev,void *user_data){
+     Q_UNUSED(dev);
+     bool *closed=(bool *)user_data;
+-    *closed=TRUE;
++    *closed=true;
+ }
+ 
+ void GenericDevice::stop(){
+     bool stopped;
+ 
+     if(dev==NULL)
+-	return;
++        return;
+ 	syslog(LOG_DEBUG,"FP_DEV_STOP.");
+ 
+     wait(1000);

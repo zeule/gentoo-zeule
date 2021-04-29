@@ -1,0 +1,10 @@
+[Unit]
+Description=VMWare USB Arbitrator
+
+[Service]
+#Type=forking
+ExecStart=/opt/vmware/bin/vmware-usbarbitrator -f
+#PIDFile=/var/run/chronyd.pid
+
+#[Install]
+#WantedBy=multi-user.target

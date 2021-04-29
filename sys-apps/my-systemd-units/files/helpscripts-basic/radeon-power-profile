@@ -1,0 +1,36 @@
+#!/bin/sh
+
+EXEC_NAME=`basename $0`;
+
+TARGET="/sys/class/drm/card0/device/power_profile"
+CURRENT_PROFILE=`cat ${TARGET}`
+
+append_profile() {
+        local PROFILE=$1
+        echo -n "  ${PROFILE}"
+        if [ "x${CURRENT_PROFILE}x" == "x${PROFILE}x" ]; then
+                echo -n " (current)"
+        fi
+        echo
+}
+
+if [ $# != 1 ]; then
+        echo "usage: ${EXEC_NAME} <profile>"
+        echo
+        echo "Valid profiles:"
+        for AVAILABLE_PROFILE in low high default auto; do
+                append_profile ${AVAILABLE_PROFILE}
+        done
+        exit 0
+fi
+
+PROFILE="$1"
+
+if [ "x${PROFILE}x" == "xlowx" ] || [ "x${PROFILE}x" == "xhighx" ] || [ "x${PROFILE}x" == "xautox" ] || [ "x${PROFILE}x" == "xdefaultx" ]; then
+        echo "${PROFILE}" > ${TARGET}
+else
+        logger "[${EXEC_NAME}] WARN: Invalid power_profile '${PROFILE}'"
+        exit 1
+fi
+
+exit 0

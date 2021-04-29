@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# AMD Graphics
+echo 'auto' > '/sys/bus/i2c/devices/i2c-15/device/power/control'
+echo 'auto' > '/sys/bus/i2c/devices/i2c-16/device/power/control'
+echo 'auto' > '/sys/bus/i2c/devices/i2c-12/device/power/control'
+echo 'auto' > '/sys/bus/i2c/devices/i2c-13/device/power/control'
+echo 'auto' > '/sys/bus/i2c/devices/i2c-9/device/power/control'
+echo 'auto' > '/sys/bus/i2c/devices/i2c-10/device/power/control'
+echo 'auto' > '/sys/bus/i2c/devices/i2c-11/device/power/control'
+echo 'auto' > '/sys/bus/i2c/devices/i2c-14/device/power/control'
+echo 'auto' > '/sys/bus/pci/devices/0000:01:00.0/power/control'
+
+# Enable Audio codec power management
+echo '1' > '/sys/module/snd_hda_intel/parameters/power_save'
+
+# RTL8411 PCI Express Card Reader
+echo 'auto' > '/sys/bus/pci/devices/0000:05:00.0/power/control'

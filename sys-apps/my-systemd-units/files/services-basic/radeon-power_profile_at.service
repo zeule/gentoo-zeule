@@ -1,0 +1,9 @@
+[Unit]
+Description=Set Radeon Power Profile to %I
+
+[Service]
+Type=oneshot
+ExecStart=/usr/sbin/radeon-power-profile %I
+
+[Install]
+WantedBy=multi-user.target

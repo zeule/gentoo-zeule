@@ -1,0 +1,11 @@
+[Unit]
+Description=VMWare kernel modules
+
+[Service]
+Type=oneshot
+ExecStart=/sbin/modprobe -a vmmon vmci vsock vmblock vmnet
+ExecStop=/sbin/modprobe -r vsock vmci vmmon vmblock vmnet
+RemainAfterExit=yes
+
+#[Install]
+#WantedBy=multi-user.target

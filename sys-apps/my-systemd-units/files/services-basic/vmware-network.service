@@ -1,0 +1,12 @@
+[Unit]
+Description=VMWare networks
+Requires=vmware-modules.service
+
+[Service]
+Type=oneshot
+ExecStart=/opt/vmware/bin/vmware-networks --start
+ExecStop=/opt/vmware/bin/vmware-networks --stop
+RemainAfterExit=yes
+
+#[Install]
+#WantedBy=multi-user.target

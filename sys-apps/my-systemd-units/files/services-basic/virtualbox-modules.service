@@ -1,0 +1,11 @@
+[Unit]
+Description=VirtualBox kernel modules
+
+[Service]
+Type=oneshot
+ExecStart=/sbin/modprobe -a vboxnetflt vboxnetadp vboxdrv
+ExecStop=/sbin/modprobe -r vboxnetflt vboxnetadp vboxdrv
+RemainAfterExit=yes
+
+#[Install]
+#WantedBy=multi-user.target

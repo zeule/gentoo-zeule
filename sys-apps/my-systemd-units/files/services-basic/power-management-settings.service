@@ -1,0 +1,11 @@
+[Unit]
+Description=Set my power management settings
+Wants=local-fs.target
+After=laptop-mode.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/sbin/apply-power-savings
+
+[Install]
+WantedBy=multi-user.target

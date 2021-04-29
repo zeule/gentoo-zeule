@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# source application-specific settings
+[ -f /etc/conf.d/cpufrequtils ] && . /etc/conf.d/cpufrequtils
+
+case $1 in
+	start*)
+		cpupower frequency-set -r ${START_OPTS} ${SYSFS_EXTRA}
+		;;
+	stop*)
+		cpupower frequency-set -r ${STOP_OPTS}
+		;;
+	*)
+		echo "command must be start ot stop"
+		;;
+esac

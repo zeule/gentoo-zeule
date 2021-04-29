@@ -1,0 +1,15 @@
+Source: dleverton
+Upstream: no
+Reason: respect LDFLAGS, since some people care about that
+
+--- git-1.2.2/Makefile~	2009-01-21 18:12:38.000000000 +0000
++++ git-1.2.2/Makefile	2009-01-24 18:23:48.000000000 +0000
+@@ -67,7 +67,7 @@
+ all: git
+ 
+ git: $(OBJS)
+-	$(CC) $(OPTIONS) -o git $(OBJS) $(LIBS)
++	$(CC) $(OPTIONS) $(LDFLAGS) -o git $(OBJS) $(LIBS)
+ 
+ install: git
+ 	cp git $(INSTALLDIR)/git
