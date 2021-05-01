@@ -14,9 +14,9 @@ RDEPEND=">=media-libs/opencv-3.0
 	dev-qt/qtxml:5
 	dev-qt/qtnetwork:5
 	dev-qt/qtwidgets:5
-	evdev? ( dev-libs/libevdev dev-util/pkgconfig )
+	evdev? ( dev-libs/libevdev virtual/pkgconfig )
 	hatire? ( dev-qt/qtserialport:5 )
-	wine? ( app-emulation/wine )
+	wine? ( virtual/wine )
 "
 DEPEND="${RDEPEND}"
 

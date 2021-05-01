@@ -10,7 +10,7 @@ DISTUTILS_OPTIONAL=true
 DISTUTILS_SINGLE_IMPL=true
 #DISTUTILS_IN_SOURCE_BUILD=true
 
-inherit cmake-utils distutils-r1 git-r3 flag-o-matic
+inherit cmake distutils-r1 git-r3 flag-o-matic
 
 MY_PV=$(ver_rs 1- _)
 
@@ -45,7 +45,7 @@ RDEPEND="
 
 src_prepare() {
 	use debug && append-cxxflags "-DTORRENT_DEBUG -DTORRENT_USE_ASSERTS"
-	cmake-utils_src_prepare
+	cmake_src_prepare
 
 #	use python && distutils-r1_src_prepare
 }
@@ -67,15 +67,15 @@ src_configure() {
 		-DPYTHON_EXECUTABLE="${PYTHON}"
 		-Dboost-python-module-name="${EPYTHON/./}"
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 
 src_compile() {
-	cmake-utils_src_compile
+	cmake_src_compile
 }
 
 src_install() {
 	use doc && HTML_DOCS+=( "${S}"/docs )
 
-	cmake-utils_src_install
+	cmake_src_install
 }

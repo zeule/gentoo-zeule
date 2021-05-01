@@ -8,7 +8,7 @@ PYTHON_COMPAT=(python3_{7,8,9})
 inherit python-single-r1 autotools eutils git-r3 l10n
 
 DESCRIPTION="An implementation of the MPRIS 2 interface as a client for MPD"
-HOMEPAGE="http://github.com/eonpatapon/mpDris2"
+HOMEPAGE="https://github.com/eonpatapon/mpDris2"
 EGIT_REPO_URI="https://github.com/eonpatapon/${PN}.git"
 
 LICENSE="GPL-3"

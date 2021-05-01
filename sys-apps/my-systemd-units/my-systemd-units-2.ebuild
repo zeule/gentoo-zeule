@@ -6,7 +6,7 @@ EAPI=3
 inherit eutils systemd
 
 DESCRIPTION="Service files for sys-apps/systemd"
-HOMEPAGE="http://www.freedesktop.org/wiki/Software/systemd http://en.gentoo-wiki.com/wiki/Systemd"
+HOMEPAGE="https://www.freedesktop.org/wiki/Software/systemd https://en.gentoo-wiki.com/wiki/Systemd"
 SRC_URI=""
 
 LICENSE="GPL-2"

@@ -1,3 +1,6 @@
+# Copyright 1999-2021 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
 EAPI="7"
 SLOT="0"
 
@@ -18,7 +21,7 @@ RDEPEND+="dev-util/cmake[qt5=]
 dev-util/ninja
 "
 
-#part of kdesdk
+# part of kdesdk
 RDEPEND+="plasma? ( kde-apps/kompare )
 kde-apps/kapptemplate
 kde-apps/kcachegrind
@@ -34,8 +37,6 @@ RDEPEND+="git? (
 	dev-vcs/git-lfs )
 "
 
-#dev-util/subversion
-
 RDEPEND="${RDEPEND}
 cxx? ( dev-util/cppcheck )
 dev-util/kdevelop:5
@@ -45,9 +46,6 @@ dev-util/kdevelop-upload:5
 dev-util/valgrind
 dev-libs/dmalloc
 dev-cpp/catch
-kate? (
-	dev-util/kate-c++-plugin
-)
 clang? ( dev-util/lldb
 	dev-util/clazy
 )
@@ -83,9 +81,12 @@ qt5? (	dev-qt/assistant:5
 	dbus? ( dev-qt/qdbusviewer:5 )
 )
 sys-apps/the_silver_searcher
-"
-RDEPEND+="android? ( dev-util/android-studio )
-	python? ( dev-python/pycodestyle dev-python/autopep8 )
+android? ( dev-util/android-studio )
+	python? (
+		dev-python/pycodestyle
+		dev-python/autopep8
+		dev-python/python-language-server
+	)
 	javascript? ( app-editors/visual-studio-code-bin
 		net-libs/nodejs
 		zsh-completion? ( media-fonts/meslo-nerd )
@@ -98,5 +99,5 @@ RDEPEND+="java? ( virtual/jdk
 "
 
 # Emacs
-RDEPEND+="emacs? ( dev-util/my-emacs )
+RDEPEND+="emacs? ( dev-util/my-emacs-meta )
 "

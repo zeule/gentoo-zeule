@@ -3,7 +3,7 @@
 
 EAPI=6
 KEYWORDS="~amd64"
-inherit cmake-utils gnome2-utils xdg-utils
+inherit cmake gnome2-utils xdg-utils
 
 DESCRIPTION="BitTorrent client in C++ and Qt"
 HOMEPAGE="https://www.qbittorrent.org/"
@@ -53,7 +53,7 @@ src_configure() {
 		-DPLASMA_INTEGRATION=$(usex plasma)
 		-DWEBUI=$(usex webui)
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 
 pkg_postinst() {
