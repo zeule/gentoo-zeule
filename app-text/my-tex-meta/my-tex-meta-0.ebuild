@@ -23,6 +23,7 @@ html? (
 	dev-tex/hevea
 )
 media-gfx/asymptote
+dev-tex/texlab
 "
 
 #pdf? ( app-text/pdftk )
