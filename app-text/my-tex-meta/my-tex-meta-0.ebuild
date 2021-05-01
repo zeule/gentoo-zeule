@@ -1,8 +1,10 @@
 EAPI="7"
 KEYWORDS="~amd64 ~x86"
 SLOT="0"
+
 DESCRIPTION="My set of LaTeX related packages"
-SRC_URI=""
+LICENSE="metapackage"
+
 IUSE="emacs html kde pdf"
 
 RDEPEND="app-text/texlive[context,dvipdfm(+),extra,graphics,humanities,luatex,pdfannotextractor,pstricks,publishers,science,xetex]

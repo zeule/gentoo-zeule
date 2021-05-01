@@ -4,6 +4,7 @@ SLOT="0"
 inherit mykde
 
 DESCRIPTION="My set of KDE packages"
+LICENSE="metapackage"
 
 KEYWORDS="~x86 ~amd64"
 IUSE="+android bluetooth gtk gtk3 semantic-desktop mldonkey +networkmanager pim +pulseaudio +scanner +telepathy +torrent +qt5"

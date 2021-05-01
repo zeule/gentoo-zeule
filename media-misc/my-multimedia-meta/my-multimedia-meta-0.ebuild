@@ -2,6 +2,7 @@ EAPI="5"
 SLOT="0"
 
 DESCRIPTION="My set of multimeia packages"
+LICENSE="metapackage"
 
 KEYWORDS="~x86 ~amd64"
 IUSE="bash-completion encode kde mpd plasma pulseaudio python subtitles v4l video x264"

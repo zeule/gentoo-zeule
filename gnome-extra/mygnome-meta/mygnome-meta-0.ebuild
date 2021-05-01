@@ -3,6 +3,7 @@ SLOT=3.0
 
 KEYWORDS="~x86 ~amd64"
 DESCRIPTION="My set of Gnome packages"
+LICENSE="metapackage"
 
 RDEPEND="gnome-base/gnome[-extras]
 	app-admin/gnome-system-log

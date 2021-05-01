@@ -2,6 +2,7 @@ EAPI="5"
 SLOT="0"
 
 DESCRIPTION="My set of scientific packages for CLUSTER"
+LICENSE="metapackage"
 
 KEYWORDS="~x86 ~amd64"
 IUSE=""

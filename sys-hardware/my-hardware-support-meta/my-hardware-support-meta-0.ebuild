@@ -2,6 +2,7 @@ EAPI=7
 SLOT=0
 
 DESCRIPTION="My set of packages for supporting my hardware"
+LICENSE="metapackage"
 
 KEYWORDS="~x86 ~amd64"
 IUSE="android cups efi fingerprint kindle pulseaudio scanner v4l video_cards_intel video_cards_radeon"

@@ -2,6 +2,7 @@ EAPI="7"
 SLOT="0"
 
 DESCRIPTION="My set of games packages"
+LICENSE="metapackage"
 
 KEYWORDS="~x86 ~amd64"
 IUSE="flash kde qsp steam qt4"

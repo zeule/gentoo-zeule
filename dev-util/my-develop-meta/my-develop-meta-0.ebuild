@@ -5,6 +5,7 @@ EAPI="7"
 SLOT="0"
 
 DESCRIPTION="My set of development packages"
+LICENSE="metapackage"
 
 KEYWORDS="~x86 ~amd64"
 IUSE="android clang cxx dbus emacs git java javascript kate mono plasma php python qt5 uml zsh-completion"

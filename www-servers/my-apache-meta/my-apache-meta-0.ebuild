@@ -3,7 +3,8 @@ SLOT="0"
 KEYWORDS="amd64"
 
 DESCRIPTION="My Apache installation with dependencies"
-SRC_URI=""
+LICENSE="metapackage"
+
 
 IUSE="mysql php"
 

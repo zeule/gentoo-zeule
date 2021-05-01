@@ -3,6 +3,8 @@ KEYWORDS="amd64"
 SLOT=0
 
 DESCRIPTION="My meta package for astronomy-related software"
+LICENSE="metapackage"
+
 IUSE="comets magnetosphere"
 
 RDEPEND="media-libs/cimg

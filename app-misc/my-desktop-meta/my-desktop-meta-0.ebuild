@@ -2,6 +2,7 @@ EAPI="5"
 SLOT="0"
 
 DESCRIPTION="My set of desktop packages"
+LICENSE="metapackage"
 
 KEYWORDS="~x86 ~amd64"
 IUSE="emacs kde gtk kvm latex mailfetch pdf kindle scanner virtualbox X"
