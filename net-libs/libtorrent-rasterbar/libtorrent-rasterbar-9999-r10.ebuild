@@ -2,7 +2,6 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
-CMAKE_MIN_VERSION=3.11
 
 PYTHON_COMPAT=( python3_{7,8,9} )
 PYTHON_REQ_USE="threads(+)"
@@ -68,10 +67,6 @@ src_configure() {
 		-Dboost-python-module-name="${EPYTHON/./}"
 	)
 	cmake_src_configure
-}
-
-src_compile() {
-	cmake_src_compile
 }
 
 src_install() {
