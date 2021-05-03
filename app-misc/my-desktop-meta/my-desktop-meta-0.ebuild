@@ -51,7 +51,6 @@ app-arch/unrar
 RDEPEND+="|| ( www-client/firefox-kde-opensuse www-client/firefox www-client/firefox-bin )
 	www-plugins/chrome-binary-plugins
 	|| ( www-client/google-chrome-unstable www-client/google-chrome-beta www-client/google-chrome )
-	www-plugins/google-talkplugin
 	|| ( www-client/vivaldi-snapshot www-client/vivaldi )
 	www-plugins/chrome-binary-plugins
 	net-misc/grive
