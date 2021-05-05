@@ -1,8 +1,7 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2021 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-EAPI=6
+EAPI=7
 
 inherit linux-mod git-r3
 
@@ -18,7 +17,6 @@ IUSE=""
 DEPEND="virtual/linux-sources
 	sys-kernel/linux-headers"
 RDEPEND=""
-
 
 MODULE_NAMES="clevo-xsm-wmi(wmi:${S}/module)"
 #S="${S}/module"

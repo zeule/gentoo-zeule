@@ -10,7 +10,7 @@ IUSE=""
 DEPEND=""
 
 RDEPEND="sys-apps/paludis
-	|| ( sys-apps/portage-mgorny sys-apps/portage )
+	sys-apps/portage
 	app-portage/eix
 	app-portage/euses
 	app-portage/g-cpan
@@ -25,4 +25,6 @@ RDEPEND="sys-apps/paludis
 	app-portage/portage-lostfiles
 	app-portage/portconf
 	app-portage/showbuild
+	app-portage/repoman
+	app-portage/metagen
 "

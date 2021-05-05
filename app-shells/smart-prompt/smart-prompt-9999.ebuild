@@ -1,10 +1,10 @@
-# Copyright 2013 Alex Turbov <i.zaufi@gmail.com>
-# Distributed under the terms of the GNU General Public License v3
+# Copyright 1999-2021 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
 
-EAPI="5"
+EAPI="7"
 
 EGIT_REPO_URI="https://github.com/zaufi/smart-prompt.git"
-inherit git-2 cmake-utils
+inherit git-r3 cmake
 
 DESCRIPTION="Smart bash prompt: show various context info in a command prompt"
 HOMEPAGE="https://github.com/zaufi/smart-prompt"
@@ -22,14 +22,10 @@ RDEPEND="${COMMON_DEPEND}
     subversion? ( dev-vcs/subversion )
     "
 
-src_unpack() {
-    git-2_src_unpack
-}
-
 src_configure() {
     local mycmakeargs=(
         $(cmake-utils_use_disable git)
         $(cmake-utils_use_disable subversion SVN)
     )
-    cmake-utils_src_configure
+    cmake_src_configure
 }
