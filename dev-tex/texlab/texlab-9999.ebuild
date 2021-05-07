@@ -16,7 +16,7 @@ LICENSE="Apache-2.0 BSD BSL-1.1 CC0-1.0 GPL-3+ ISC MIT MPL-2.0 ZLIB"
 KEYWORDS="~amd64"
 IUSE=""
 
-DEPEND=">=dev-lang/rust-1.39.0"
+DEPEND=">=virtual/rust-1.39.0"
 RDEPEND=""
 
 pkg_setup() {
