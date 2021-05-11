@@ -1,8 +1,9 @@
 # Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
-inherit eutils gnome2-utils games
+EAPI=7
+
+inherit desktop gnome2-utils
 
 DESCRIPTION="Chromium B.S.U. - an arcade game"
 HOMEPAGE="http://chromium-bsu.sourceforge.net/"
@@ -10,10 +11,11 @@ SRC_URI="mirror://sourceforge/chromium-bsu/${P}.tar.gz"
 
 LICENSE="Clarified-Artistic"
 SLOT="0"
-KEYWORDS="amd64 ppc x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="mixer nls +sdl"
 
-RDEPEND="media-fonts/dejavu
+RDEPEND="
+	media-fonts/dejavu
 	media-libs/quesoglc
 	media-libs/glpng
 	virtual/opengl
@@ -26,15 +28,17 @@ RDEPEND="media-fonts/dejavu
 	)
 	nls? ( virtual/libintl )
 	sdl? (
-		media-libs/libsdl2[X]
-		media-libs/sdl2-image[png]
+		media-libs/libsdl[X]
+		media-libs/sdl-image[png]
 	)
 	!sdl? ( media-libs/freeglut )"
 DEPEND="${RDEPEND}
 	nls? ( sys-devel/gettext )"
 
+PATCHES=( "${FILESDIR}"/${P}-gcc6.patch )
+
 src_configure() {
-	egamesconf \
+	econf \
 		--disable-ftgl \
 		--enable-glc \
 		$(use_enable mixer sdlmixer) \
@@ -46,29 +50,18 @@ src_configure() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install
-
-	# remove installed /usr/games/share stuff
-	rm -rf "${D}"/"${GAMES_PREFIX}"/share/
+	default
+	dodoc data/doc/*.htm
 
 	newicon -s 64 misc/${PN}.png ${PN}.png
 	domenu misc/chromium-bsu.desktop
-
-	# install documentation
-	dodoc AUTHORS README NEWS
-	dohtml "${S}"/data/doc/*.html
-	dohtml -r "${S}"/data/doc/images
-
-	prepgamesdirs
 }
 
 pkg_preinst() {
-	games_pkg_preinst
 	gnome2_icon_savelist
 }
 
 pkg_postinst() {
-	games_pkg_postinst
 	gnome2_icon_cache_update
 }
 
