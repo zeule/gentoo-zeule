@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM 'http://www.gentoo.org/dtd/metadata.dtd'>
+<pkgmetadata>
+	<maintainer type="person">
+		<email>eugene.shalygin@gmail.com</email>
+	</maintainer>
+	<use>
+		<flag name="btrfs">Add support for the BTRFS filesystem</flag>
+		<flag name="exfat">Add support for the exFAT filesystem</flag>
+		<flag name="f2fs">Add support for the F2FS filesystem</flag>
+		<flag name="xfs">Add support for the XFS filesystem</flag>
+		<flag name="zfs">Add support for the ZFS filesystem</flag>
+	</use>
+</pkgmetadata>
