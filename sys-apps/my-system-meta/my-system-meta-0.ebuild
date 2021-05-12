@@ -33,6 +33,7 @@ RDEPEND="app-admin/needrestart
 	systemd? ( sys-apps/systemd[sysv-utils]
 		sys-apps/my-systemd-units
 		)
+	app-misc/filesystems-tools-meta
 	sys-block/gparted
 	sys-fs/extundelete
 	sys-fs/inotify-tools
