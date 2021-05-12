@@ -22,7 +22,7 @@ EGIT_REPO_URI="https://github.com/arvidn/libtorrent.git"
 LICENSE="BSD"
 SLOT="0/10"
 KEYWORDS="amd64 ~arm ppc ppc64 ~sparc x86 ~x86-fbsd"
-IUSE="debug +deprecated +dht doc examples iconv libressl python +ssl static-libs test"
+IUSE="debug +deprecated +dht doc examples iconv python +ssl static-libs test"
 
 REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} )"
 
@@ -36,10 +36,7 @@ RDEPEND="
 			dev-libs/boost:=[python,${PYTHON_MULTI_USEDEP}]
 		')
 	)
-	ssl? (
-		!libressl? ( dev-libs/openssl:0= )
-		libressl? ( dev-libs/libressl:= )
-	)
+	ssl? ( dev-libs/openssl:0= )
 "
 
 src_prepare() {
