@@ -35,8 +35,6 @@ RDEPEND="
 DEPEND="${RDEPEND}
 	nls? ( sys-devel/gettext )"
 
-PATCHES=( "${FILESDIR}"/${P}-gcc6.patch )
-
 src_configure() {
 	econf \
 		--disable-ftgl \
