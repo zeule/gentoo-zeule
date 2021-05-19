@@ -49,7 +49,7 @@ src_configure() {
 
 src_install() {
 	default
-	dodoc data/doc/*.htm
+	dodoc data/doc/*.html
 
 	newicon -s 64 misc/${PN}.png ${PN}.png
 	domenu misc/chromium-bsu.desktop
