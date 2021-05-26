@@ -13,9 +13,9 @@ REQUIRED_USE="kate? ( clang ) plasma? ( !kate !php )"
 
 DEPEND=""
 
-RDEPEND+="plasma? ( kde-apps/kdebase-meta
+RDEPEND+="plasma? ( kde-plasma/plasma-meta kde-apps/kdecore-meta
 		git? ( kde-apps/dolphin-plugins-git )
-		)
+	)
 "
 
 RDEPEND+="dev-util/cmake[qt5=]
