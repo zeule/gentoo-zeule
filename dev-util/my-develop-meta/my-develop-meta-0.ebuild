@@ -23,7 +23,7 @@ dev-util/ninja
 "
 
 # part of kdesdk
-RDEPEND+="plasma? ( kde-apps/kompare )
+RDEPEND+="plasma? ( kde-apps/kompare kde-plasma/plasma-sdk )
 kde-apps/kapptemplate
 kde-apps/kcachegrind
 kde-apps/kdesdk-kioslaves
