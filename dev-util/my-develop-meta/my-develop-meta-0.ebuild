@@ -86,9 +86,9 @@ android? ( dev-util/android-studio )
 	python? (
 		dev-python/pycodestyle
 		dev-python/autopep8
-		dev-python/python-language-server
+		dev-python/python-lsp-server
 	)
-	javascript? ( app-editors/vscode 
+	javascript? ( app-editors/vscode
 		net-libs/nodejs
 		zsh-completion? ( media-fonts/meslo-nerd )
 	)
