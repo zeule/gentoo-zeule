@@ -12,7 +12,7 @@ DEPEND=""
 RDEPEND="sys-apps/my-system-meta
 	app-misc/my-desktop-meta
 	app-misc/my-science-meta
-	app-misc/my-project-depends
+	app-misc/my-project-depends-meta
 	sys-hardware/my-hardware-support-meta
 	app-portage/my-portage-meta
 	sci-astronomy/my-astronomy-meta
