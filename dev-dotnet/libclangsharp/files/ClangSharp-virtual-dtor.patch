@@ -1,0 +1,34 @@
+commit 093205ebd1799e16a53af44d0e52dec1ed15437b
+Author: Eugene Shalygin <eugene.shalygin@gmail.com>
+Date:   Fri Jun 25 15:02:18 2021 +0200
+
+    Handle virtual destructors in C++ classes
+    
+    This resolves crashing on virtual destructors if Clang is build with
+    assertions and corrects vtbl indices for tables with destructors.
+    
+    Fixes #240.
+
+diff --git a/sources/libClangSharp/ClangSharp.cpp b/sources/libClangSharp/ClangSharp.cpp
+index 3a134e7..46f963f 100644
+--- a/sources/libClangSharp/ClangSharp.cpp
++++ b/sources/libClangSharp/ClangSharp.cpp
+@@ -4701,13 +4701,16 @@ int64_t clangsharp_Cursor_getVtblIdx(CXCursor C) {
+             if (VTableContextBase::hasVtableSlot(CMD)) {
+                 VTableContextBase* VTC = getASTUnit(getCursorTU(C))->getASTContext().getVTableContext();
+ 
++                const CXXDestructorDecl* dCMD = dyn_cast<CXXDestructorDecl>(CMD);
++                const GlobalDecl globalDecl = dCMD ? GlobalDecl(dCMD, Dtor_Deleting) : GlobalDecl(CMD);
++
+                 if (MicrosoftVTableContext* MSVTC = dyn_cast<MicrosoftVTableContext>(VTC)) {
+-                    MethodVFTableLocation ML = MSVTC->getMethodVFTableLocation(CMD);
++                    MethodVFTableLocation ML = MSVTC->getMethodVFTableLocation(globalDecl);
+                     return ML.Index;
+                 }
+ 
+                 if (ItaniumVTableContext* IVTC = dyn_cast<ItaniumVTableContext>(VTC)) {
+-                    return IVTC->getMethodVTableIndex(CMD);
++                    return IVTC->getMethodVTableIndex(globalDecl);
+                 }
+             }
+         }

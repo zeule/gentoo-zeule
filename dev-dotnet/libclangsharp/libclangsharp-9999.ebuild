@@ -8,17 +8,20 @@ inherit cmake git-r3
 
 DESCRIPTION="Native library for ClangSharp"
 HOMEPAGE="https://github.com/microsoft/ClangSharp"
-
-EGIT_REPO_URI="https://github.com/zeule/ClangSharp.git"
-EGIT_BRANCH="feature/install-native-lib"
-
 LICENSE="NCSA"
+
+EGIT_REPO_URI="https://github.com/microsoft/ClangSharp"
 
 KEYWORDS="~x86 ~amd64"
 IUSE=""
 
 DEPEND="sys-devel/clang:12"
 RDEPEND="$DEPEND"
+
+PATCHES=(
+	"$FILESDIR"/ClangSharp-cmake-build.patch
+	"$FILESDIR"/ClangSharp-virtual-dtor.patch
+)
 
 src_configure() {
 	mycmakeargs=(
