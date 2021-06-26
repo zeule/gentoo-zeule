@@ -1,0 +1,23 @@
+commit 104a5aa94e8f1d334fcd7f721fe37142294d7464
+Author: Eugene Shalygin <eugene.shalygin@gmail.com>
+Date:   Fri Jun 25 23:46:36 2021 +0200
+
+    Use mangled names for DllImport.EntryPoint
+
+diff --git a/sources/ClangSharp.PInvokeGenerator/PInvokeGenerator.VisitDecl.cs b/sources/ClangSharp.PInvokeGenerator/PInvokeGenerator.VisitDecl.cs
+index 097e5df..bfea950 100644
+--- a/sources/ClangSharp.PInvokeGenerator/PInvokeGenerator.VisitDecl.cs
++++ b/sources/ClangSharp.PInvokeGenerator/PInvokeGenerator.VisitDecl.cs
+@@ -464,10 +464,8 @@ namespace ClangSharp
+             }
+ 
+             var callingConventionName = GetCallingConvention(functionDecl, callConv, name);
+-            var entryPoint = !isVirtual && body is null
+-                ? (cxxMethodDecl is null) ? GetCursorName(functionDecl) : cxxMethodDecl.Handle.Mangling.CString
+-                : null;
+-            var isDllImport = body is null && !isVirtual;
++            var isDllImport = !isVirtual && body is null;
++            var entryPoint = isDllImport ? functionDecl.Handle.Mangling.CString : null;
+ 
+             var desc = new FunctionOrDelegateDesc<(string Name, PInvokeGenerator This)>
+             {

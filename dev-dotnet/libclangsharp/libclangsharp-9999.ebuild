@@ -21,6 +21,7 @@ RDEPEND="$DEPEND"
 PATCHES=(
 	"$FILESDIR"/ClangSharp-cmake-build.patch
 	"$FILESDIR"/ClangSharp-virtual-dtor.patch
+	"$FILESDIR"/ClangSharp-str-workaround.patch
 )
 
 src_configure() {

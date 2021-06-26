@@ -10,8 +10,7 @@ DESCRIPTION="Clang bindings for .NET and Mono written in C#"
 HOMEPAGE="https://github.com/microsoft/ClangSharp"
 SRC_URI="" # mono-env resets it
 
-EGIT_REPO_URI="https://github.com/zeule/ClangSharp.git"
-EGIT_BRANCH="feature/install-native-lib"
+EGIT_REPO_URI="https://github.com/microsoft/ClangSharp.git"
 
 LICENSE="NCSA"
 
@@ -25,6 +24,10 @@ RDEPEND="$DEPEND
 
 RESTRICT="network-sandbox"
 
+PATCHES=(
+	"$FILESDIR"/ClangSharp-fix-name-mangling.patch
+)
+
 BUILD_DIR=${WORKDIR}/${P}_build
 NET_RUNTIME="net5.0"
 
@@ -34,8 +37,8 @@ export XDG_CONFIG_HOME="${T}"
 #export HOME="${T}"
 
 src_prepare() {
-	dotnet restore
 	default
+	dotnet restore
 }
 
 src_compile() {
@@ -56,7 +59,7 @@ src_install() {
 	mkdir -p "${D}/usr/bin"
 	cat <<- EOF > "${D}/usr/bin/ClangSharpPInvokeGenerator"
 	#!/bin/sh
-	/opt/${PN}/ClangSharpPInvokeGenerator $@
+	/opt/${PN}/ClangSharpPInvokeGenerator "\$@"
 	EOF
 	chmod +x "${D}/usr/bin/ClangSharpPInvokeGenerator"
 }
