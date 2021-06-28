@@ -1,4 +1,4 @@
-EAPI=6
+EAPI=7
 KEYWORDS="amd64"
 SLOT=0
 

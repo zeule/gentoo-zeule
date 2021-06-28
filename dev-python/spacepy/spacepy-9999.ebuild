@@ -1,5 +1,5 @@
-EAPI=6
-PYTHON_COMPAT=( python2_7 python3_5 python3_6 python3_7 )
+EAPI=7
+PYTHON_COMPAT=( python2_7 python3_7 python3_8 python3_9 )
 SLOT=0
 KEYWORDS="~x86 ~amd64"
 
@@ -10,4 +10,5 @@ DEPEND="sci-libs/cdf
 "
 
 HOMEPAGE="https://github.com/spacepy/spacepy"
+DESCRIPTION="Space Science library for Python"
 EGIT_REPO_URI="https://github.com/spacepy/spacepy.git"

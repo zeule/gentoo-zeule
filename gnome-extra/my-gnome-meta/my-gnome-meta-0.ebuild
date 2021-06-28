@@ -1,5 +1,5 @@
-EAPI=6
-SLOT=3.0
+EAPI=7
+SLOT=0
 
 KEYWORDS="~x86 ~amd64"
 DESCRIPTION="My set of Gnome packages"

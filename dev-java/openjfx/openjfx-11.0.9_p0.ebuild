@@ -1,7 +1,7 @@
 # Copyright 2019-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 MY_PV="${PV/_p/+}"
 SLOT="${MY_PV%%[.+]*}"

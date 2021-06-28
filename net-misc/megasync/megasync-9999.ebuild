@@ -1,10 +1,9 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-EAPI=6
+EAPI=7
 
-inherit eutils multilib qmake-utils autotools versionator
+inherit eutils multilib qmake-utils autotools
 
 DESCRIPTION="A Qt-based program for syncing your MEGA account in your PC. This is the official app."
 HOMEPAGE="http://mega.co.nz"

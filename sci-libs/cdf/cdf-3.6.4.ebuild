@@ -1,10 +1,9 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=5
+EAPI=7
 
-inherit eutils java-pkg-opt-2 multilib toolchain-funcs versionator
+inherit eutils java-pkg-opt-2 multilib toolchain-funcs
 
 MY_DP="${PN}$(get_version_component_range 1)$(get_version_component_range 2)"
 MY_P="${MY_DP}_$(get_version_component_range 3)"

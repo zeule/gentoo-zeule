@@ -1,8 +1,7 @@
-# Copyright 1999-2013 Sabayon
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-EAPI=6
+EAPI=7
 inherit eutils rpm
 BUILD="0-${PV}.8.g5b90b8abb4"
 MY_PN=${PN/-/.}
@@ -20,9 +19,7 @@ RDEPEND=""
 S="${WORKDIR}"
 RESTRICT="strip"
 
-
 src_install() {
-
 	# Removing links of file we don't need, we just want the OVF image
 	rm -rfv "${S}"/usr/share/edk2.git/ovmf-x64/*.bin
 	rm -rfv "${S}"/usr/share/edk2.git/ovmf-x64/*.rom
