@@ -13,7 +13,7 @@ IUSE="systemd"
 MY_PN="Jackett"
 SRC_URI="https://github.com/${MY_PN}/${MY_PN}/releases/download/v${PV}/${MY_PN}.Binaries.LinuxAMDx64.tar.gz -> ${MY_PN}.Binaries.LinuxAMDx64-${PV}.tar.gz"
 
-DEPEND=">=dev-dotnet/dotnetcore-sdk-bin-3.1
+DEPEND="virtual/dotnet-sdk
 acct-user/jackett
 "
 

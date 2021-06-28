@@ -17,7 +17,7 @@ LICENSE="NCSA"
 KEYWORDS="~x86 ~amd64"
 IUSE=""
 
-DEPEND="dev-dotnet/dotnetcore-sdk-bin:5"
+DEPEND="virtual/dotnet-sdk"
 RDEPEND="$DEPEND
 	dev-dotnet/libclangsharp
 "
