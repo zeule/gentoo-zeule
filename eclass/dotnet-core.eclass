@@ -502,11 +502,6 @@ dotnet_compile() {
 	dotnet build --no-restore -c $(dotnet_get_build_configuration) -f $DOTNET_FRAMEWORK || die
 }
 
-_remove_locale() {
-	einfo "Removing locale $1"
-	rm -r "${D}/$DOTNET_SITEDIR/$PN/$1"
-}
-
 dotnet_install() {
 	debug-print-function ${FUNCNAME} "${@}"
 
@@ -521,13 +516,22 @@ dotnet_install() {
 
 	dotnet publish --no-restore --no-build -c $(dotnet_get_build_configuration) -f $DOTNET_FRAMEWORK -o "$D/$_targetDir" || die
 
+	local _enabledLocales, _disabledLocales, l
+	_enabledLocales=$(l10n_get_locales)
+	_disabledLocales=$(l10n_get_locales disabled)
+
 	pushd "$D/${_targetDir}" > /dev/null
 	for item in "${DOTNET_CLEANUP[@]}"; do
 		rm -r $item || die
+		for l in $_enabledLocales; do
+			rm -fr $l/$item
+		done
+	done
+
+	for l in $_disabledLocales; do
+		rm -r $l
 	done
 	popd > /dev/null
-
-	l10n_for_each_disabled_locale_do _remove_locale
 
 	local _appBinName
 	for app in "${DOTNET_INSTALL_EXECUTABLES[@]}"; do
