@@ -19,8 +19,6 @@ DEPEND="sys-devel/clang:12"
 RDEPEND="$DEPEND"
 
 PATCHES=(
-	"$FILESDIR"/ClangSharp-cmake-build.patch
-	"$FILESDIR"/ClangSharp-virtual-dtor.patch
 	"$FILESDIR"/ClangSharp-str-workaround.patch
 )
 
