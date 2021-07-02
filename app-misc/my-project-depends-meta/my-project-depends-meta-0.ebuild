@@ -5,7 +5,7 @@ DESCRIPTION="My set of packages to pin depemdemcies for the projects I'm working
 LICENSE="metapackage"
 
 KEYWORDS="~x86 ~amd64"
-IUSE="glk renpy +twee"
+IUSE="glk renpy +twee dotnet"
 
 DEPEND=""
 RDEPEND=""
@@ -16,4 +16,5 @@ RDEPEND+="glk? ( games-engines/git )
 		dev-games/tweexx
 	)
 	dev-libs/cef-bin
+	dotnet? ( dev-dotnet/clangsharp )
 "
