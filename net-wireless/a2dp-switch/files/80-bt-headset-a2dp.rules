@@ -1,0 +1,1 @@
+ACTION=="add", SUBSYSTEM=="bluetooth", RUN+="/usr/bin/a2dp-fix-wrapper"
