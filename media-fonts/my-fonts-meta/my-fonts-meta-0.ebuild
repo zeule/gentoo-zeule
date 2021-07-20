@@ -13,7 +13,7 @@ REQUIRED_USE="plasma? ( truetype )"
 
 DEPEND=""
 
-RDEPEND="media-libs/freetype[cleartype_hinting]
+RDEPEND="media-libs/freetype[cleartype-hinting]
 	media-fonts/baekmuk-fonts
 	media-fonts/cm-unicode
 	media-fonts/droid
