@@ -18,12 +18,12 @@ PDEPEND="external-sugarcube? (
 	dev-games/twine-format-sugarcube:2
 )"
 
-#S="${WORKDIR}/story-formats"
+S="${S}/public/story-formats"
 
 src_prepare() {
 	default
-	use external-sugarcube && rm -r story-formats/sugarcube-2*
-	use external-sugarcube && rm -r story-formats/sugarcube-1*
+	use external-sugarcube && rm -r sugarcube-2*
+	use external-sugarcube && rm -r sugarcube-1*
 }
 
 src_compile() {
@@ -31,7 +31,6 @@ src_compile() {
 }
 
 src_install() {
-	cd story-formats
 	for sf in *; do
 		sdf=$(echo $sf | sed -E 's/([a-z]+-[0-9]).*/\1/')
 		cd $sf
