@@ -25,6 +25,7 @@ RDEPEND="
 	dev-libs/nss
 	media-libs/mesa
 	x11-libs/gtk+:2
+	x11-misc/vdpauinfo
 "
 
 S="${WORKDIR}"
