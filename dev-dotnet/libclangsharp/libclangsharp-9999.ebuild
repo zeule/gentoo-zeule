@@ -4,7 +4,7 @@
 EAPI=7
 SLOT=0
 
-inherit cmake git-r3
+inherit cmake git-r3 llvm
 
 DESCRIPTION="Native library for ClangSharp"
 HOMEPAGE="https://github.com/microsoft/ClangSharp"
@@ -15,16 +15,15 @@ EGIT_REPO_URI="https://github.com/microsoft/ClangSharp"
 KEYWORDS="~x86 ~amd64"
 IUSE=""
 
-DEPEND="sys-devel/clang:12"
-RDEPEND="$DEPEND"
+RDEPEND="
+	>=sys-devel/clang-12:=
+"
+DEPEND=${RDEPEND}
 
-PATCHES=(
-	"$FILESDIR"/ClangSharp-str-workaround.patch
-)
 
 src_configure() {
 	mycmakeargs=(
-		-DPATH_TO_LLVM=/usr/lib/llvm/12
+		-DPATH_TO_LLVM=$(get_llvm_prefix)
 	)
 	cmake_src_configure
 }
