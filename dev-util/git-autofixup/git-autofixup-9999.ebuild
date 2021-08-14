@@ -1,5 +1,6 @@
 EAPI=7
 SLOT=0
+KEYWORDS="~amd64"
 
 inherit git-r3 perl-module
 
