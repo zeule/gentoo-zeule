@@ -14,7 +14,7 @@ case ${EAPI:-0} in
 	*) die "${ECLASS}: EAPI ${EAPI:-0} not supported" ;;
 esac
 
-inherit l10n multibuild
+inherit plocale multibuild
 
 EXPORT_FUNCTIONS pkg_setup src_unpack src_compile src_install
 
@@ -502,6 +502,9 @@ dotnet_compile() {
 	dotnet build --no-restore -c $(dotnet_get_build_configuration) -f $DOTNET_FRAMEWORK || die
 }
 
+dotnet_generate_symlink_to_bin_target() {
+}
+
 dotnet_install() {
 	debug-print-function ${FUNCNAME} "${@}"
 
@@ -517,8 +520,8 @@ dotnet_install() {
 	dotnet publish --no-restore --no-build -c $(dotnet_get_build_configuration) -f $DOTNET_FRAMEWORK -o "$D/$_targetDir" || die
 
 	local _enabledLocales, _disabledLocales, l
-	_enabledLocales=$(l10n_get_locales)
-	_disabledLocales=$(l10n_get_locales disabled)
+	_enabledLocales=$(plocale_get_locales)
+	_disabledLocales=$(plocale_get_locales disabled)
 
 	pushd "$D/${_targetDir}" > /dev/null
 	for item in "${DOTNET_CLEANUP[@]}"; do

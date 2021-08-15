@@ -5,7 +5,7 @@ EAPI=7
 
 PYTHON_COMPAT=(python3_{7,8,9})
 
-inherit python-single-r1 autotools eutils git-r3 l10n
+inherit python-single-r1 autotools eutils git-r3 plocale
 
 DESCRIPTION="An implementation of the MPRIS 2 interface as a client for MPD"
 HOMEPAGE="https://github.com/eonpatapon/mpDris2"
@@ -17,8 +17,6 @@ KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE=""
 REQUIRED_USE="${PYTHON_REQUIRED_USE}
 "
-
-
 
 DEPEND="$(python_gen_cond_dep '
 	>=dev-python/dbus-python-0.80[${PYTHON_USEDEP}]
