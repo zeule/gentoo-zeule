@@ -1,49 +1,37 @@
-# Copyright 1999-2017 Gentoo Foundation
-# Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
-PYTHON_COMPAT=( python3_{7,8,9} )
-PYTHON_REQ_USE="threads(+)"
-DISTUTILS_OPTIONAL=true
-DISTUTILS_SINGLE_IMPL=true
-#DISTUTILS_IN_SOURCE_BUILD=true
+PYTHON_COMPAT=( python{3_8,3_9} )
 
-inherit cmake distutils-r1 git-r3 flag-o-matic
-
-MY_PV=$(ver_rs 1- _)
+inherit cmake git-r3 python-any-r1
 
 DESCRIPTION="C++ BitTorrent implementation focusing on efficiency and scalability"
-HOMEPAGE="http://libtorrent.org"
+HOMEPAGE="https://libtorrent.org/ https://github.com/arvidn/libtorrent"
 EGIT_REPO_URI="https://github.com/arvidn/libtorrent.git"
-#EGIT_REPO_URI="https://github.com/evsh/libtorrent.git"
-#EGIT_BRANCH="cmake"
 
 LICENSE="BSD"
-SLOT="0/10"
-KEYWORDS="amd64 ~arm ppc ppc64 ~sparc x86 ~x86-fbsd"
-IUSE="debug +deprecated +dht doc examples iconv python +ssl static-libs test"
+SLOT="0/2.0"
+KEYWORDS="~amd64 ~arm ~ppc ~ppc64 ~sparc ~x86"
+IUSE="debug deprecated +dht examples gnutls python ssl static-libs test"
 
-REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} )"
-
-RDEPEND="
-	dev-libs/boost:=[threads]
-	virtual/libiconv
-	examples? ( !net-p2p/mldonkey )
-	python? (
-		${PYTHON_DEPS}
-		$(python_gen_cond_dep '
-			dev-libs/boost:=[python,${PYTHON_MULTI_USEDEP}]
-		')
-	)
-	ssl? ( dev-libs/openssl:0= )
+RESTRICT="!test? ( test ) test" # not yet fixed
+RDEPEND="dev-libs/boost:=[threads(+)]"
+DEPEND="
+        python? (
+                ${PYTHON_DEPS}
+                $(python_gen_any_dep '
+                        dev-libs/boost[python,${PYTHON_USEDEP}]')
+        )
+        ssl? (
+                gnutls? ( net-libs/gnutls:= )
+                !gnutls? ( dev-libs/openssl:= )
+        )
+        ${DEPEND}
 "
 
 src_prepare() {
 	use debug && append-cxxflags "-DTORRENT_DEBUG -DTORRENT_USE_ASSERTS"
 	cmake_src_prepare
-
-#	use python && distutils-r1_src_prepare
 }
 
 src_configure() {
@@ -59,10 +47,8 @@ src_configure() {
 		-Dbuild_examples=$(usex examples)
 		-Dpython-bindings=$(usex python)
 		-Dskip-python-runtime-test=true
-		-DPython_ADDITIONAL_VERSIONS="${PYTHON: -3}"
-		-DPYTHON_EXECUTABLE="${PYTHON}"
-		-Dboost-python-module-name="${EPYTHON/./}"
 	)
+	use python && mycmakeargs+=( -Dboost-python-module-name="${EPYTHON/./}" )
 	cmake_src_configure
 }
 
@@ -71,3 +57,8 @@ src_install() {
 
 	cmake_src_install
 }
+
+pkg_setup() {
+	use python && python-any-r1_pkg_setup
+}
+
