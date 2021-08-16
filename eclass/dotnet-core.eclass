@@ -502,9 +502,6 @@ dotnet_compile() {
 	dotnet build --no-restore -c $(dotnet_get_build_configuration) -f $DOTNET_FRAMEWORK || die
 }
 
-dotnet_generate_symlink_to_bin_target() {
-}
-
 dotnet_install() {
 	debug-print-function ${FUNCNAME} "${@}"
 
