@@ -12,7 +12,7 @@ EGIT_REPO_URI="https://github.com/arvidn/libtorrent.git"
 LICENSE="BSD"
 SLOT="0/2.0"
 KEYWORDS="~amd64 ~arm ~ppc ~ppc64 ~sparc ~x86"
-IUSE="debug deprecated +dht examples gnutls python ssl static-libs test"
+IUSE="debug deprecated +dht doc examples gnutls python ssl static-libs test"
 
 RESTRICT="!test? ( test ) test" # not yet fixed
 RDEPEND="dev-libs/boost:=[threads(+)]"
