@@ -23,10 +23,6 @@ RDEPEND="$DEPEND
 	dev-dotnet/libclangsharp
 "
 
-PATCHES=(
-	"$FILESDIR"/ClangSharp-fix-name-mangling.patch
-)
-
 DOTNET_INSTALL_EXECUTABLES=(
 	ClangSharpPInvokeGenerator
 )
