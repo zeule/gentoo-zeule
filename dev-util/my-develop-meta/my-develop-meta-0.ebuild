@@ -36,7 +36,8 @@ kde-misc/kregexpeditor
 RDEPEND+="git? (
 	dev-vcs/git-extras
 	dev-vcs/git-lfs
-	dev-util/diffstat )
+	dev-util/diffstat
+	dev-util/git-autofixup )
 "
 
 RDEPEND="${RDEPEND}
