@@ -1,0 +1,30 @@
+From 3c62c60c5e02f11556e2ac90413a3d5ba0d4354e Mon Sep 17 00:00:00 2001
+From: Pranjal Jain <pranjal.3029@opjms.edu.in>
+Date: Tue, 27 Aug 2019 13:09:45 +0530
+Subject: [PATCH] Update crypto.c
+
+---
+ src/crypto.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/src/crypto.c b/src/crypto.c
+index f148149..2d2a276 100644
+--- a/src/crypto.c
++++ b/src/crypto.c
+@@ -26,6 +26,7 @@
+ #include <sys/stat.h>
+ 
+ #include <openssl/aes.h>
++#include <openssl/modes.h>
+ #include <openssl/bn.h>
+ #include <openssl/err.h>
+ 
+@@ -179,7 +180,7 @@ static int aes_128_ctr (const unsigned char key[AES_KEYSIZE_128],
+   }
+ 
+   AES_set_encrypt_key(&key[0], 128, &akey);
+-  AES_ctr128_encrypt(in, out, length, &akey, iv, tmp, &num);
++  CRYPTO_ctr128_encrypt(in, out, length, &akey, iv, tmp, &num, (block128_f)AES_encrypt);
+ 
+   return 0;
+ }
