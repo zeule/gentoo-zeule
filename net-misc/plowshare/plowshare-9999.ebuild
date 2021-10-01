@@ -1,8 +1,7 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/plowshare/plowshare-20130520.ebuild,v 1.2 2013/06/15 23:49:56 voyageur Exp $
 
-EAPI=5
+EAPI=7
 
 inherit bash-completion-r1 git-r3
 
@@ -14,7 +13,7 @@ EGIT_REPO_URI="https://github.com/mcrapet/${PN}.git"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~ppc ~x86"
-IUSE="bash-completion +javascript scripts view-captcha"
+IUSE="bash-completion +javascript view-captcha"
 
 RDEPEND="
 	>=app-shells/bash-4
@@ -25,6 +24,8 @@ RDEPEND="
 	javascript? ( || ( dev-lang/spidermonkey dev-java/rhino ) )
 	view-captcha? ( || ( media-gfx/aview media-libs/libcaca ) )"
 DEPEND=""
+
+DOCS=(AUTHORS README.md)
 
 #S=${WORKDIR}/${MY_P}
 
@@ -41,7 +42,6 @@ src_prepare() {
 			rm src/modules/${module}.sh || die "${module} rm failed"
 		done
 	fi
-
 
 	# Don't let 'make install' install docs.
 	sed -i -e "/INSTALL.*DOCDIR/d" Makefile || die "sed failed"
@@ -69,14 +69,7 @@ src_test() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" PREFIX="/usr" install
-
-	dodoc AUTHORS README.md
-
-#	if use scripts; then
-#		exeinto /usr/bin/
-#		doexe contrib/plowdown_{add_remote_loop,loop,parallel}.sh
-#	fi
+	default
 
 	if use bash-completion; then
 		newbashcomp scripts/${PN}.completion ${PN}

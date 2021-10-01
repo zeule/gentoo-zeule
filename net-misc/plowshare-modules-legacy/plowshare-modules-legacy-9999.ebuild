@@ -1,12 +1,11 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/plowshare/plowshare-20130520.ebuild,v 1.2 2013/06/15 23:49:56 voyageur Exp $
 
-EAPI=5
+EAPI=7
 
 inherit git-r3
 
-DESCRIPTION="Plowshare legacy & unmaintained modules "
+DESCRIPTION="Plowshare legacy & unmaintained modules"
 HOMEPAGE="https://github.com/mcrapet/plowshare-modules-legacy"
 EGIT_REPO_URI="https://github.com/mcrapet/${PN}.git"
 

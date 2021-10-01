@@ -1,6 +1,5 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/plowshare/plowshare-20130520.ebuild,v 1.2 2013/06/15 23:49:56 voyageur Exp $
 
 EAPI=7
 
@@ -22,10 +21,10 @@ RDEPEND="${CDEPEND}"
 DEPEND="${CDEPEND}"
 
 PATCHES=(
-	$FILESDIR/openssl-1.1.patch
+	"$FILESDIR"/openssl-1.1.patch
 )
-#S=${WORKDIR}/${MY_P}
 
+#S=${WORKDIR}/${MY_P}
 
 src_prepare() {
 	default
