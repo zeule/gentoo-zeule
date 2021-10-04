@@ -36,6 +36,7 @@ DOCS=(AUTHORS README.md)
 JS_MODULES="letitbit nowdownload_co oboom rapidgator zalaa zalil_ru zippyshare"
 
 src_prepare() {
+	default
 	if ! use javascript; then
 		for module in ${JS_MODULES}; do
 			sed -i -e "s:^${module}.*::" src/modules/config || die "${module} sed failed"
