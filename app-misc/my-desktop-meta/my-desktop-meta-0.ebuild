@@ -116,6 +116,7 @@ RDEPEND+="virtualbox? ( app-emulation/virtualbox
 		app-emulation/virt-manager
 		sys-firmware/edk2-ovmf
 		app-emulation/virtio-win
+		app-crypt/swtpm
 	)
 "
 # kvm ? app-emulation/libguestfs
