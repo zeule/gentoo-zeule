@@ -79,7 +79,7 @@ net-misc/plowshare-modules-legacy
 
 # net-p2p/retroshare
 RDEPEND+="net-misc/youtube-dl
-dev-python/beautifulsoup:4
+dev-python/beautifulsoup4
 net-misc/megacmd
 "
 
