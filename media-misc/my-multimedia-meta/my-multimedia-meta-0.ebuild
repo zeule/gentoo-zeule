@@ -16,6 +16,7 @@ RDEPEND="kde? (	video? ( media-video/smplayer
 	media-video/mediainfo
 	media-video/mkvtoolnix
 	media-video/mpv
+	media-video/mpv-mpris
 	media-sound/easytag
 	pulseaudio? ( media-sound/pavucontrol )
 	python? ( media-sound/rgain )
