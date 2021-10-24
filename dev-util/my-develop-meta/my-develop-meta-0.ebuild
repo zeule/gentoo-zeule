@@ -62,7 +62,6 @@ dev-qt/qt-creator
 #dev-util/kdevelop-plugins
 
 RDEPEND="${RDEPEND}
-sci-astronomy/cspice
 dev-util/gprof2dot
 "
 
