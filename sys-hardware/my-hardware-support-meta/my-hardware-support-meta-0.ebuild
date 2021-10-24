@@ -5,7 +5,7 @@ DESCRIPTION="My set of packages for supporting my hardware"
 LICENSE="metapackage"
 
 KEYWORDS="~x86 ~amd64"
-IUSE="android cups efi fingerprint kindle pulseaudio scanner v4l video_cards_intel video_cards_radeon"
+IUSE="android cups efi fingerprint kindle laptop_clevo_p17sm pulseaudio scanner v4l video_cards_intel video_cards_radeon"
 
 DEPEND=""
 RDEPEND=""
@@ -18,11 +18,7 @@ RDEPEND+="efi? ( sys-boot/refind
 "
 
 # Firmware
-RDEPEND+="|| ( >=sys-kernel/linux-firmware-9999[-savedconfig]
-		( sys-kernel/linux-firmware[savedconfig]
-		video_cards_radeon? ( x11-drivers/radeon-ucode )
-		sys-firmware/iwl7260-ucode ) )
-	sys-firmware/intel-microcode
+RDEPEND+="sys-kernel/linux-firmware
 "
 
 RDEPEND+="cups? ( net-print/foomatic-db-ppds )
@@ -31,7 +27,8 @@ RDEPEND+="cups? ( net-print/foomatic-db-ppds )
 "
 #Keyboard backlit for Clevo
 #app-laptop/tuxedo-keyboard
-RDEPEND+="app-laptop/clevo-xsm-wmi-module
+RDEPEND+="laptop_clevo_p17sm? ( app-laptop/clevo-xsm-wmi-module
+	)
 "
 
 # printer Epson MF 3520
