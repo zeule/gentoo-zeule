@@ -5,12 +5,11 @@ DESCRIPTION="My set of portage-related packages"
 LICENSE="metapackage"
 
 KEYWORDS="~x86 ~amd64"
-IUSE=""
+IUSE="paludis"
 
 DEPEND=""
 
-RDEPEND="sys-apps/paludis
-	sys-apps/portage
+RDEPEND="sys-apps/portage
 	app-portage/eix
 	app-portage/euses
 	app-portage/g-cpan
@@ -27,4 +26,5 @@ RDEPEND="sys-apps/paludis
 	app-portage/showbuild
 	app-portage/repoman
 	app-portage/metagen
+	paludis? ( sys-apps/paludis )
 "
