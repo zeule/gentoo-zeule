@@ -5,7 +5,7 @@ DESCRIPTION="My set of portage-related packages"
 LICENSE="metapackage"
 
 KEYWORDS="~x86 ~amd64"
-IUSE="paludis"
+IUSE="lto paludis"
 
 DEPEND=""
 
@@ -19,8 +19,9 @@ RDEPEND="sys-apps/portage
 	app-portage/mirrorselect
 	app-portage/portpeek
 	app-portage/smart-live-rebuild
+	sys-portage/my-update-tools
 	app-portage/find_cruft
-	sys-config/ltoize
+	lto? ( sys-config/ltoize )
 	app-portage/portage-lostfiles
 	app-portage/portconf
 	app-portage/showbuild

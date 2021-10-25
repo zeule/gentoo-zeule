@@ -1,0 +1,5 @@
+#! /bin/sh
+#emerge --ask --update --newuse --deep --verbose --keep-going $@  @world
+emerge --ask --update --newuse --deep --with-bdeps=y --verbose --keep-going --autounmask-keep-masks $@ @world
+
+sync

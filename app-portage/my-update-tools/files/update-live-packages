@@ -1,0 +1,3 @@
+#!/bin/sh
+
+smart-live-rebuild -P usual $@ -- -1avq --keep-going

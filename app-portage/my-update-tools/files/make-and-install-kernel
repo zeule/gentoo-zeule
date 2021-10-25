@@ -1,0 +1,26 @@
+#!/bin/sh
+
+source "/lib/gentoo/functions.sh"
+
+pushd /usr/src/linux > /dev/null
+K_VER="$(pwd -P | cut -f 2- -d '-')"
+einfo "Kernel version is $K_VER"
+
+einfo "Compiling kernel..."
+nice make -j4 > /dev/null
+
+einfo "Installing kernel..."
+make install
+make modules_install
+
+einfo "Rebuilding out-of-tree kernel modules..."
+emerge -1v @module-rebuild
+
+einfo "Creating initramfs..."
+dracut -Hf --kver $K_VER
+
+einfo "Removing old kernels..."
+rm /boot/*.old
+
+einfo "Done"
+popd
