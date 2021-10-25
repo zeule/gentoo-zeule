@@ -6,6 +6,7 @@ EAPI=7
 DESCRIPTION="A set of scripts for routine system update tasks"
 HOMEPAGE="https://github.com/zeule/gentoo-zeule"
 LICENSE="BSD"
+KEYWORDS="~amd64"
 
 SLOT="0"
 
