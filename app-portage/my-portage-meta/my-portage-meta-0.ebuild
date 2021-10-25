@@ -19,7 +19,7 @@ RDEPEND="sys-apps/portage
 	app-portage/mirrorselect
 	app-portage/portpeek
 	app-portage/smart-live-rebuild
-	sys-portage/my-update-tools
+	app-portage/my-update-tools
 	app-portage/find_cruft
 	lto? ( sys-config/ltoize )
 	app-portage/portage-lostfiles
