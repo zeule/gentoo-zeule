@@ -71,7 +71,7 @@ RDEPEND+="v4l? ( media-tv/v4l-utils )
 
 #Headphones
 
-RDEPEND+="pulseaudio? ( media-sound/pulseaudio-modules-bt media-sound/pulseaudio[-bluetooth] )
+RDEPEND+="pulseaudio? ( media-video/pipewire )
 "
 
 # Workarounds
