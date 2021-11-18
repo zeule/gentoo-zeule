@@ -1,11 +1,11 @@
-# Copyright 2019-2020 Gentoo Authors
+# Copyright 2019-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=6
 
 MY_PV="${PV/_p/+}"
 SLOT="${MY_PV%%[.+]*}"
-EGRADLE_VER="4.8"
+EGRADLE_VER="4.10.3"
 
 inherit flag-o-matic java-pkg-2 multiprocessing
 
@@ -25,7 +25,7 @@ SRC_URI="https://hg.openjdk.java.net/${PN}/${SLOT}-dev/rt/archive/${MY_PV}.tar.b
 "
 
 LICENSE="GPL-2-with-classpath-exception"
-KEYWORDS="-* ~amd64"
+KEYWORDS="-* ~amd64 ~ppc64"
 
 IUSE="cpu_flags_x86_sse2 debug doc source +media webkit"
 
@@ -48,14 +48,17 @@ RDEPEND="
 	x11-libs/pango
 	virtual/jpeg
 	virtual/opengl
+	doc? ( dev-java/openjdk:${SLOT}[doc] )
+	!doc? (
+		|| (
+			dev-java/openjdk-bin:${SLOT}
+			dev-java/openjdk:${SLOT}
+		)
+	)
 	webkit? ( >=dev-util/cmake-3.13.0
 		sys-devel/bison
 		sys-devel/flex
 		dev-util/gperf
-	)
-	|| (
-		dev-java/openjdk-bin:${SLOT}[doc?]
-		dev-java/openjdk:${SLOT}[doc?]
 	)
 "
 
@@ -71,15 +74,17 @@ DEPEND="${RDEPEND}
 	virtual/pkgconfig
 "
 
-REQUIRED_USE="cpu_flags_x86_sse2"
+REQUIRED_USE="amd64? ( cpu_flags_x86_sse2 )"
 
 PATCHES=(
 	"${FILESDIR}"/11/disable-buildSrc-tests.patch
 	"${FILESDIR}"/11/glibc-compatibility.patch
-	"${FILESDIR}"/11/respect-user-cflags.patch
+	"${FILESDIR}"/11/respect-user-cflags-11.0.11.patch
 	"${FILESDIR}"/11/use-system-swt-jar.patch
-	"${FILESDIR}"/11/wno-error.patch
-	"${FILESDIR}/11/${PV}-version.patch"
+	"${FILESDIR}"/11/wno-error-11.0.11.patch
+	"${FILESDIR}"/11/don-t-force-msse-11.0.11.patch
+	"${FILESDIR}"/11/disable-architecture-verification.patch
+	"${FILESDIR}"/11/gstreamer-CVE-2021-3522.patch
 )
 
 S="${WORKDIR}/rt-${MY_PV}"
@@ -184,9 +189,7 @@ src_configure() {
 	if use doc; then
 		local jdk_doc
 		if has_version --host-root dev-java/openjdk:${SLOT}[doc]; then
-			jdk_doc="${EROOT%/}/usr/share/doc/openjdk-${SLOT}/html/api"
-		elif has_version --host-root dev-java/java-sdk-docs:${SLOT}; then
-			jdk_doc="${EROOT%/}/usr/share/doc/java-sdk-docs-${SLOT}/html/api"
+			jdk_doc="${EPREFIX}/usr/share/doc/openjdk-${SLOT}/html/api"
 		fi
 		[[ -r ${jdk_doc}/element-list ]] || die "JDK Docs not found, terminating build early"
 	fi
