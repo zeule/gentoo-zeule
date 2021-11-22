@@ -4,7 +4,7 @@
 EAPI=7
 SLOT=0
 
-DOTNET_COMPAT=( dotnetcore5_0 )
+DOTNET_COMPAT=( dotnetcore6_0 )
 
 inherit git-r3 dotnet-core
 
@@ -18,9 +18,8 @@ LICENSE="NCSA"
 
 KEYWORDS="~amd64"
 
-DEPEND="virtual/dotnet-sdk"
-RDEPEND="$DEPEND
-	dev-dotnet/libclangsharp
+DEPEND="${DOTNET_DEPS}"
+RDEPEND="dev-dotnet/libclangsharp
 "
 
 DOTNET_INSTALL_EXECUTABLES=(
