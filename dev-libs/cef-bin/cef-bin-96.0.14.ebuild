@@ -8,11 +8,12 @@ KEYWORDS="~amd64"
 HOMEPAGE="https://bitbucket.org/chromiumembedded/cef/src/master/"
 DESCRIPTION="Chromium Embedded Framework"
 LICENSE="BSD"
+RESTRICT="mirror"
 
 inherit cmake
 
-CHROMIUM_PV="93.0.4577.82"
-GIT_PV="gf38ce34"
+CHROMIUM_PV="96.0.4664.55"
+GIT_PV="g28ba5c8"
 MY_PV="${PV}+${GIT_PV}+chromium-${CHROMIUM_PV}"
 MY_BASE_FN="cef_binary_${PV}%2B${GIT_PV}%2Bchromium-${CHROMIUM_PV}"
 
