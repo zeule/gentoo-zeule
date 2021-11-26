@@ -12,35 +12,18 @@ SRC_URI=""
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="+basic +desktop +server ingnome3"
+IUSE="+basic"
 
-RDEPEND="sys-power/cpupower"
-DEPEND=""
+S="$WORKDIR"
 
 src_install() {
 	if use basic; then
 		systemd_dounit "${FILESDIR}"/services-basic/*
 		dosbin "${FILESDIR}"/helpscripts-basic/* || die
 #		systemd_dotmpfilesd "${FILESDIR}"/tmpfiles-basic/*
-#		dodir /etc/conf.d/ || die
-#		insinto /etc/conf.d/ || die
-#		doins conffiles-basic/* || die
-	fi
-
-	if use server; then
-		systemd_dounit "${FILESDIR}"/services-server/*
-#		systemd_dotmpfilesd "${FILESDIR}"/tmpfiles-server/*
-	fi
-
-	if use desktop; then
-		systemd_dounit "${FILESDIR}"/services-desktop/*
-
-		if ! use ingnome3; then
-			rm -f "${D}/$(systemd_get_unitdir)"/gdm@.service
-		fi
 	fi
 
 	# Files in portage cannot contain a literal '@' character. Therfore,
 	# convert the code string "_at" into an '@' before installing.
-	rename '_at' '@' "${D}/$(systemd_get_unitdir)"/*
+	rename '_at' '@' "${D}/$(systemd_get_systemunitdir)"/*
 }
