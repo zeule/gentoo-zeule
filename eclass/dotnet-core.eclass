@@ -118,6 +118,13 @@ readonly _DOTNET_HISTORICAL_IMPLS
 # Array of executables that will be symlinked to bin
 : ${DOTNET_INSTALL_EXECUTABLES:=( )}
 
+
+# @ECLASS-VARIABLE: DOTNET_PROJECTS
+# @DEFAULT_UNSET
+# @DESCRIPTION:
+# Array of project files to build and publish
+: ${DOTNET_PROJECTS:=( )}
+
 PLOCALE_BACKUP="en"
 
 # @FUNCTION: _dotnet_set_impls
@@ -219,6 +226,8 @@ _dotnet_set_impls() {
 # variable documentation.
 _dotnet_export() {
 	debug-print-function ${FUNCNAME} "${@}"
+
+	export DOTNET_CLI_TELEMETRY_OPTOUT=1
 
 	local impl var
 
@@ -496,10 +505,21 @@ dotnet_get_rid() {
 	echo "linux-x64"
 }
 
+dotnet_for_each_project() {
+	local _proj
+	if (( ${#DOTNET_PROJECTS[@]} )); then
+		for _proj in "${DOTNET_PROJECTS[@]}"; do
+			"${@}" "$_proj"
+		done
+	else
+		"${@}"
+	fi
+}
+
 dotnet_compile() {
 	debug-print-function ${FUNCNAME} "${@}"
 
-	dotnet build --no-restore -c $(dotnet_get_build_configuration) -f $DOTNET_FRAMEWORK || die
+	dotnet_for_each_project dotnet build --no-restore -c $(dotnet_get_build_configuration) -f $DOTNET_FRAMEWORK /bl:test.binlog -v diag || die
 }
 
 dotnet_install() {
@@ -514,7 +534,7 @@ dotnet_install() {
 		use "dotnet_targets_${i}" && _implsCount=$((_implsCount+1))
 	done
 
-	dotnet publish --no-restore --no-build -c $(dotnet_get_build_configuration) -f $DOTNET_FRAMEWORK -o "$D/$_targetDir" || die
+	dotnet_for_each_project dotnet publish --no-restore --no-build -c $(dotnet_get_build_configuration) -f $DOTNET_FRAMEWORK -o "$D/$_targetDir" || die
 
 	local _enabledLocales, _disabledLocales, l
 	_enabledLocales=$(plocale_get_locales)
@@ -549,7 +569,7 @@ dotnet_install() {
 dotnet-core_src_unpack() {
 	default
 	pushd "${S}" > /dev/null
-	dotnet restore -r $(dotnet_get_rid) || die
+	dotnet_for_each_project dotnet restore -r $(dotnet_get_rid) || die
 	popd > /dev/null
 }
 

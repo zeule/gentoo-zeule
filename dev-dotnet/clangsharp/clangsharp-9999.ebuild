@@ -26,6 +26,10 @@ DOTNET_INSTALL_EXECUTABLES=(
 	ClangSharpPInvokeGenerator
 )
 
+DOTNET_PROJECTS=(
+	sources/ClangSharp/ClangSharp.csproj
+)
+
 DOTNET_CLEANUP=(
 	'Microsoft.CodeCoverage.*'
 	'Microsoft.TestPlatform.*'
