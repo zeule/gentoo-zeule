@@ -27,22 +27,10 @@ DOTNET_INSTALL_EXECUTABLES=(
 )
 
 DOTNET_PROJECTS=(
-	sources/ClangSharp/ClangSharp.csproj
+	sources/ClangSharpPInvokeGenerator/ClangSharpPInvokeGenerator.csproj
 )
 
 DOTNET_CLEANUP=(
-	'Microsoft.CodeCoverage.*'
-	'Microsoft.TestPlatform.*'
-	'Microsoft.VisualStudio.Coverage.*'
-	'Microsoft.VisualStudio.CodeCoverage.*'
-	'Microsoft.VisualStudio.TestPlatform.*'
-	'Microsoft.VisualStudio.TraceDataCollector.dll'
-	'xunit.*'
-	'testhost.dll'
-	'*.UnitTests.dll'
-	'*.UnitTests.*.json'
-	"CodeCoverage"
-	"InstrumentationEngine"
 )
 
 src_unpack() {

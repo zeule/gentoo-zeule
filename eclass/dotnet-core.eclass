@@ -519,7 +519,7 @@ dotnet_for_each_project() {
 dotnet_compile() {
 	debug-print-function ${FUNCNAME} "${@}"
 
-	dotnet_for_each_project dotnet build --no-restore -c $(dotnet_get_build_configuration) -f $DOTNET_FRAMEWORK /bl:test.binlog -v diag || die
+	dotnet_for_each_project dotnet build --no-restore -c $(dotnet_get_build_configuration) -f $DOTNET_FRAMEWORK || die
 }
 
 dotnet_install() {
@@ -536,7 +536,7 @@ dotnet_install() {
 
 	dotnet_for_each_project dotnet publish --no-restore --no-build -c $(dotnet_get_build_configuration) -f $DOTNET_FRAMEWORK -o "$D/$_targetDir" || die
 
-	local _enabledLocales, _disabledLocales, l
+	local _enabledLocales _disabledLocales l
 	_enabledLocales=$(plocale_get_locales)
 	_disabledLocales=$(plocale_get_locales disabled)
 
