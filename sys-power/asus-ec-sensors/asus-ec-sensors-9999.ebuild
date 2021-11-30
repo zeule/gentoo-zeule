@@ -16,4 +16,4 @@ IUSE=""
 
 MODULE_NAMES="asus-ec-sensors(hwmon:${S}:${S})"
 BUILD_TARGETS="modules"
-TARGET="${KV_FULL}"
+KVER="${KV_FULL}"
