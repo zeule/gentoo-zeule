@@ -9,12 +9,12 @@ DOTNET_COMPAT=( dotnetcore6_0 )
 inherit git-r3 dotnet-core
 
 DESCRIPTION="Clang bindings for .NET and Mono written in C#"
-HOMEPAGE="https://github.com/microsoft/ClangSharp"
+HOMEPAGE="https://github.com/dotnet/ClangSharp"
 
-EGIT_REPO_URI="https://github.com/microsoft/ClangSharp.git"
+EGIT_REPO_URI="https://github.com/dotnet/ClangSharp.git"
 PLOCALES="cs de es fr it ja ko pl pt-BR ru tr zh-Hans zh-Hant"
 
-LICENSE="NCSA"
+LICENSE="MIT"
 
 KEYWORDS="~amd64"
 

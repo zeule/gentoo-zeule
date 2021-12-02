@@ -6,11 +6,11 @@ SLOT=0
 
 inherit cmake git-r3 llvm
 
-DESCRIPTION="Native library for ClangSharp"
-HOMEPAGE="https://github.com/microsoft/ClangSharp"
-LICENSE="NCSA"
+DESCRIPTION="Native library for dev-dotnet/clangsharp"
+HOMEPAGE="https://github.com/dotnet/ClangSharp"
+LICENSE="MIT"
 
-EGIT_REPO_URI="https://github.com/microsoft/ClangSharp"
+EGIT_REPO_URI="https://github.com/dotnet/ClangSharp.git"
 
 KEYWORDS="~x86 ~amd64"
 IUSE=""
