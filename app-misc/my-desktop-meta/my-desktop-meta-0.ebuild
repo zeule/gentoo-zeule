@@ -90,8 +90,7 @@ RDEPEND+="mailfetch? (	net-mail/dovecot
 "
 
 # Various
-RDEPEND+="app-text/goldendict
-app-text/pastebinit
+RDEPEND+="app-text/pastebinit
 app-text/wgetpaste
 app-text/dos2unix
 app-text/tree
