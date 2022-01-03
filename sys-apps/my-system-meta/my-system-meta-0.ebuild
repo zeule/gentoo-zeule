@@ -39,6 +39,7 @@ RDEPEND="app-admin/needrestart
 	sys-fs/extundelete
 	sys-fs/inotify-tools
 	sys-fs/libeatmydata
+	sys-devel/mold
 	sys-kernel/dracut
 	sys-kernel/gentoo-sources
 	sys-libs/gpm
