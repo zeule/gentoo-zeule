@@ -7,7 +7,7 @@ LICENSE="metapackage"
 
 IUSE="emacs html kde pdf"
 
-RDEPEND="app-text/texlive[context,dvipdfm(+),extra,graphics,humanities,luatex,pdfannotextractor,pstricks,publishers,science,xetex]
+RDEPEND="app-text/texlive[context,dvipdfm(+),extra,graphics,humanities,luatex,pstricks,publishers,science,xetex]
 kde? (
 	media-gfx/ktikz
 	kde-misc/klatexformula
