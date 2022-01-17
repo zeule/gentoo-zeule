@@ -42,7 +42,7 @@ DEPEND="${RDEPEND}
 	dev-qt/linguist-tools:5
 	virtual/pkgconfig"
 
-DOCS=( AUTHORS Changelog CONTRIBUTING.md README.md TODO )
+DOCS=( AUTHORS Changelog CONTRIBUTING.md README.md )
 # PATCHES=( "${FILESDIR}/${PN}-4.0.4-werror.patch" )
 
 src_configure() {
