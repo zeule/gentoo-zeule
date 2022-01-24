@@ -58,6 +58,7 @@ RDEPEND+="|| ( www-client/firefox-kde-opensuse www-client/firefox www-client/fir
 
 # Internet
 RDEPEND+="net-im/skypeforlinux
+net-im/whatsapp-for-linux
 net-im/choqok
 net-irc/konversation
 net-im/signal-desktop-bin
