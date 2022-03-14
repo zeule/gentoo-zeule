@@ -34,8 +34,8 @@ src_prepare () {
 
 src_configure() {
 	local emesonargs=(
-		-Denable-documentation=$(usex doc true false)
-		-Denable-tests=$(usex test true false)
+		-Ddocumentation=$(usex doc true false)
+		-Dtests=$(usex test true false)
 		-Dudev-dir=$(get_udevdir)
 	)
 	meson_src_configure
