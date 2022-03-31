@@ -72,15 +72,14 @@ mono? ( dev-lang/mono
 
 RDEPEND="${RDEPEND}
 app-doc/doxygen
-qt5? (	dev-qt/assistant:5
-	dev-qt/designer:5
-	dev-qt/linguist:5
-	dev-qt/linguist-tools:5
-	dev-qt/qtquickcontrols:5
-	dev-qt/qt-docs:5
-	dev-qt/qtcharts:5
-	dev-qt/qtdatavis3d:5
-	dbus? ( dev-qt/qdbusviewer:5 )
+qt5? (	dev-qt/assistant
+	dev-qt/designer
+	dev-qt/linguist
+	dev-qt/linguist-tools
+	dev-qt/qt-docs
+	dev-qt/qtcharts
+	dev-qt/qtdatavis3d
+	dbus? ( dev-qt/qdbusviewer )
 )
 sys-apps/the_silver_searcher
 android? ( dev-util/android-studio )
