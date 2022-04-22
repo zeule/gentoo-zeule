@@ -36,7 +36,6 @@ kde-apps/kdenetwork-filesharing
 #part of kdepim
 RDEPEND+="kde-apps/kidentitymanagement:5
 pim? ( kde-apps/akonadi-calendar:5
-	kde-apps/kalarmcal:5
 	kde-apps/kdepim-meta:5
 	virtual/mysql
 	)
