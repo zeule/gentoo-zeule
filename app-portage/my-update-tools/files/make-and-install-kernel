@@ -1,17 +1,17 @@
 #!/bin/sh
 
 source "/lib/gentoo/functions.sh"
+source "/etc/portage/make.conf"
 
 pushd /usr/src/linux > /dev/null
 K_VER="$(pwd -P | cut -f 2- -d '-')"
 einfo "Kernel version is $K_VER"
 
 einfo "Compiling kernel..."
-nice make -j4 > /dev/null
+make $MAKEOPTS > /dev/null
 
 einfo "Installing kernel..."
-make install
-make modules_install
+make install modules_install
 
 einfo "Rebuilding out-of-tree kernel modules..."
 emerge -1v @module-rebuild
