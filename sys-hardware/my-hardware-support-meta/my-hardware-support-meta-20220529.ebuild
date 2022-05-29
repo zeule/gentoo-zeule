@@ -54,6 +54,7 @@ RDEPEND+="android? ( dev-util/android-sdk-update-manager
 
 RDEPEND+="sys-apps/lm-sensors
 app-benchmarks/i7z
+sys-apps/gptfdisk
 sys-apps/lshw
 sys-apps/sdparm
 sys-apps/smartmontools
