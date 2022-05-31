@@ -1,9 +1,11 @@
+# Copyright 2021-2022 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
-PYTHON_COMPAT=( python{3_8,3_9} )
+PYTHON_COMPAT=( python3_{8,9,10} )
 
-inherit cmake git-r3 python-any-r1
+inherit cmake git-r3 python-single-r1
 
 DESCRIPTION="C++ BitTorrent implementation focusing on efficiency and scalability"
 HOMEPAGE="https://libtorrent.org/ https://github.com/arvidn/libtorrent"
@@ -11,54 +13,62 @@ EGIT_REPO_URI="https://github.com/arvidn/libtorrent.git"
 
 LICENSE="BSD"
 SLOT="0/2.0"
-KEYWORDS="~amd64 ~arm ~ppc ~ppc64 ~sparc ~x86"
-IUSE="debug deprecated +dht doc examples gnutls python ssl static-libs test"
+KEYWORDS="~amd64 ~arm ~arm64 ~ppc ~ppc64 ~sparc ~x86"
+IUSE="+dht debug gnutls python ssl test"
+REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} )"
+RESTRICT="!test? ( test )"
 
-RESTRICT="!test? ( test ) test" # not yet fixed
-RDEPEND="dev-libs/boost:=[threads(+)]"
 DEPEND="
-        python? (
-                ${PYTHON_DEPS}
-                $(python_gen_any_dep '
-                        dev-libs/boost[python,${PYTHON_USEDEP}]')
-        )
-        ssl? (
-                gnutls? ( net-libs/gnutls:= )
-                !gnutls? ( dev-libs/openssl:= )
-        )
-        ${DEPEND}
+	dev-libs/boost:=[threads(+)]
+	python? (
+		${PYTHON_DEPS}
+		$(python_gen_cond_dep '
+			dev-libs/boost[python,${PYTHON_USEDEP}]
+		')
+	)
+	ssl? (
+		gnutls? ( net-libs/gnutls:= )
+		!gnutls? ( dev-libs/openssl:= )
+	)
 "
+RDEPEND="${DEPEND}"
+BDEPEND="python? (
+		$(python_gen_cond_dep '
+			dev-python/setuptools[${PYTHON_USEDEP}]
+		')
+	)"
 
-src_prepare() {
-	use debug && append-cxxflags "-DTORRENT_DEBUG -DTORRENT_USE_ASSERTS"
-	cmake_src_prepare
+pkg_setup() {
+	use python && python-single-r1_pkg_setup
 }
 
 src_configure() {
 	local mycmakeargs=(
-		-Ddeprecated-functions=$(usex deprecated)
-		-DBUILD_SHARED_LIBS=$(usex static-libs no yes)
-		-Dstatic_runtime=no
-		-Dencryption=yes
-		$(cmake-utils_use_find_package iconv Iconv)
-		$(cmake-utils_use_find_package ssl OpenSSL)
-		-Dexceptions=yes
-		-Dlogging=$(usex debug)
-		-Dbuild_examples=$(usex examples)
-		-Dpython-bindings=$(usex python)
-		-Dskip-python-runtime-test=true
+		-DCMAKE_CXX_STANDARD=17
+		-DBUILD_SHARED_LIBS=ON
+		-Dbuild_examples=OFF
+		-Ddht=$(usex dht ON OFF)
+		-Dencryption=$(usex ssl ON OFF)
+		-Dgnutls=$(usex gnutls ON OFF)
+		-Dlogging=$(usex debug ON OFF)
+		-Dpython-bindings=$(usex python ON OFF)
+		-Dbuild_tests=$(usex test ON OFF)
 	)
+
+	# We need to drop the . from the Python version to satisfy Boost's
+	# FindBoost.cmake module, bug #793038.
 	use python && mycmakeargs+=( -Dboost-python-module-name="${EPYTHON/./}" )
+
 	cmake_src_configure
 }
 
-src_install() {
-	use doc && HTML_DOCS+=( "${S}"/docs )
+src_test() {
+	local myctestargs=(
+		# Needs running UPnP server
+		-E "test_upnp"
+	)
 
-	cmake_src_install
+	# Checked out Fedora's test workarounds for inspiration
+	# https://src.fedoraproject.org/rpms/rb_libtorrent/blob/rawhide/f/rb_libtorrent.spec#_120
+	LD_LIBRARY_PATH="${BUILD_DIR}:${LD_LIBRARY_PATH}" cmake_src_test
 }
-
-pkg_setup() {
-	use python && python-any-r1_pkg_setup
-}
-
