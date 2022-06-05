@@ -10,7 +10,6 @@ IUSE="flash kde qsp steam qt4"
 DEPEND=""
 
 RDEPEND="steam? ( games-util/steam-client-meta
-		games-util/steam-games-meta
 		games-util/steam-meta )
 "
 
