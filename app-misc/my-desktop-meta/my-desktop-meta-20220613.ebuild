@@ -5,11 +5,12 @@ DESCRIPTION="My set of desktop packages"
 LICENSE="metapackage"
 
 KEYWORDS="~x86 ~amd64"
-IUSE="emacs kde gtk kvm latex mailfetch pdf kindle scanner virtualbox X"
+IUSE="emacs gnome kde gtk kvm latex mailfetch pdf kindle scanner virtualbox X"
 
 DEPEND=""
 
 RDEPEND="emacs? ( dev-util/my-emacs-meta )
+	gnome? ( gnome-extra/my-gnome-meta )
 	kde? ( kde-misc/my-kde-meta )
 	gtk? ( dev-libs/libdbusmenu )
 	dev-util/my-develop-meta
