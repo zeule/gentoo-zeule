@@ -42,9 +42,11 @@ RDEPEND+="truetype? ( media-fonts/libertine
 		media-fonts/tex-gyre
 		media-fonts/source-pro
 		media-fonts/croscorefonts
+		media-fonts/crosextrafonts-carlito
 		media-fonts/alegreya-sans
 		media-fonts/alegreya-serif
 		media-fonts/quivira
+		media-fonts/robotoslab
 		media-fonts/noto-emoji
 	)
 	media-fonts/signika

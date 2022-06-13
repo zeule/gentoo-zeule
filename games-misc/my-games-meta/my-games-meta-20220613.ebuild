@@ -18,6 +18,13 @@ games-simulation/openttd
 games-engines/openxcom
 qt4? ( games-engines/instead-launcher )
 kde-apps/knights
+kde-apps/kmines
+kde-apps/bovo
+kde-apps/kigo
+kde-apps/klines
+kde-apps/kreversi
+kde-apps/palapeli
+games-strategy/fheroes2
 "
 
 RDEPEND+="virtual/wine[staging]

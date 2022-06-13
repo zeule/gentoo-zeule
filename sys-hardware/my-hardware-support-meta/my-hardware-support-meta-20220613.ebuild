@@ -5,7 +5,7 @@ DESCRIPTION="My set of packages for supporting my hardware"
 LICENSE="metapackage"
 
 KEYWORDS="~x86 ~amd64"
-IUSE="android cups efi fingerprint kindle laptop_clevo_p17sm pulseaudio scanner v4l video_cards_intel video_cards_radeon"
+IUSE="android cups efi fingerprint kindle machine_clevo_p17sm machine_minisforum_hx90 pulseaudio scanner v4l video_cards_intel video_cards_radeon"
 
 DEPEND=""
 RDEPEND=""
@@ -27,7 +27,9 @@ RDEPEND+="cups? ( net-print/foomatic-db-ppds )
 "
 #Keyboard backlit for Clevo
 #app-laptop/tuxedo-keyboard
-RDEPEND+="laptop_clevo_p17sm? ( app-laptop/clevo-xsm-wmi-module
+RDEPEND+="machine_clevo_p17sm? ( app-laptop/clevo-xsm-wmi-module
+	)
+	machine_minisforum_hx90? ( sys-apps/nvme-cli
 	)
 "
 

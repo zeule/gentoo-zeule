@@ -63,6 +63,8 @@ net-im/choqok
 net-irc/konversation
 net-im/signal-desktop-bin
 x11-plugins/purple-hangouts
+x11-plugins/purple-signal
+net-im/telegram-desktop-bin
 "
 
 # net-im/empathy requires python 3.6
