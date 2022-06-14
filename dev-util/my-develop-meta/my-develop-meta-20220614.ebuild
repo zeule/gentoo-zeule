@@ -37,7 +37,9 @@ RDEPEND+="git? (
 	dev-vcs/git-extras
 	dev-vcs/git-lfs
 	dev-util/diffstat
-	dev-util/git-autofixup )
+	dev-util/git-autofixup
+	dev-util/git-bug
+	)
 "
 
 RDEPEND="${RDEPEND}
