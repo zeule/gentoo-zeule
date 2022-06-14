@@ -6,13 +6,11 @@ DESCRIPTION="My set of Gnome packages"
 LICENSE="metapackage"
 
 RDEPEND="gnome-base/gnome[-extras]
-	app-admin/gnome-system-log
 	app-arch/file-roller
 	app-dicts/gnome-dictionary
 	gnome-base/dconf-editor
 	gnome-extra/gnome-calculator
 	gnome-extra/gnome-power-manager
-	gnome-extra/gnome-search-tool
 	gnome-extra/gnome-system-monitor
 	gnome-extra/gnome-tweaks
 	gnome-extra/gnome-weather
