@@ -27,6 +27,7 @@ kde-apps/klines
 kde-apps/kreversi
 kde-apps/palapeli
 games-strategy/fheroes2
+games-strategy/homm2-gold-data
 "
 
 RDEPEND+="virtual/wine[staging]
