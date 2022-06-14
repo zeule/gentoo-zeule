@@ -32,6 +32,7 @@ RDEPEND="media-libs/freetype[cleartype-hinting]
 RDEPEND+="truetype? ( media-fonts/libertine
 		media-fonts/ttf-bitstream-vera
 		media-fonts/corefonts
+		media-fonts/lato
 		media-fonts/texcm-ttf
 		media-fonts/paratype
 		media-fonts/oldstandard
