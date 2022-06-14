@@ -62,6 +62,7 @@ net-im/whatsapp-for-linux
 net-im/choqok
 net-irc/konversation
 net-im/signal-desktop-bin
+net-im/zoom
 x11-plugins/purple-hangouts
 x11-plugins/purple-signal
 net-im/telegram-desktop-bin
@@ -134,6 +135,7 @@ RDEPEND+="X? ( x11-misc/xsel )
 
 # misc
 RDEPEND+="media-sound/audacity
-	net-im/zoom
-	www-plugins/lightspark
+	net-misc/anydesk
+	media-video/libva-utils
+	x11-misc/vdpauinfo
 "

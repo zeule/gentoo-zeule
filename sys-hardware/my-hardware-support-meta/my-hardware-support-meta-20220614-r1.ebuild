@@ -8,8 +8,7 @@ KEYWORDS="~x86 ~amd64"
 IUSE="android cups efi fingerprint kindle machine_clevo_p17sm machine_minisforum_hx90 pulseaudio scanner v4l video_cards_intel video_cards_radeon"
 
 DEPEND=""
-RDEPEND="sys-power/cpupower
-"
+RDEPEND=""
 
 #boot
 RDEPEND+="efi? ( sys-boot/refind

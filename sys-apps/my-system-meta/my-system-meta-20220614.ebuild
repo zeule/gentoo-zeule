@@ -27,6 +27,7 @@ RDEPEND="app-admin/needrestart
 	dev-libs/libcgroup
 	sys-apps/cpuid
 	sys-apps/dmidecode
+	sys-apps/dstat
 	sys-apps/hdparm
 	sys-apps/i2c-tools
 	sys-apps/mlocate
@@ -43,6 +44,7 @@ RDEPEND="app-admin/needrestart
 	sys-kernel/dracut
 	sys-kernel/gentoo-sources
 	sys-libs/gpm
+	sys-power/cpupower
 	sys-power/powertop
 	sys-process/htop
 	sys-process/iotop-c
