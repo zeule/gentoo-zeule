@@ -53,6 +53,8 @@ dev-libs/dmalloc
 dev-cpp/catch
 clang? ( dev-util/lldb
 	dev-util/clazy
+	dev-util/include-what-you-use
+
 )
 dev-qt/qt-creator
 "
