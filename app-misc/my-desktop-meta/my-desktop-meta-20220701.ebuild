@@ -94,13 +94,10 @@ RDEPEND+="mailfetch? (	net-mail/dovecot
 "
 
 # Various
-RDEPEND+="app-text/pastebinit
-app-text/wgetpaste
-app-text/dos2unix
+RDEPEND+="app-text/dos2unix
 app-text/tree
 net-misc/minidlna
 media-video/simplescreenrecorder
-media-gfx/krita
 media-gfx/gimp
 media-gfx/rawtherapee
 "
