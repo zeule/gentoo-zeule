@@ -40,7 +40,6 @@ RDEPEND+="cups? ( net-print/epson-inkjet-printer-escpr )
 
 # Scaner Epson MF 3520
 RDEPEND+="scanner? ( media-gfx/iscan
-		media-gfx/iscan-plugin-esdip
 		media-gfx/iscan-plugin-network-nt )
 "
 
