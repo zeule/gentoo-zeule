@@ -8,7 +8,7 @@ DESCRIPTION="My set of development packages"
 LICENSE="metapackage"
 
 KEYWORDS="~x86 ~amd64"
-IUSE="android clang cxx dbus emacs git java javascript kate mono plasma php python qt5 uml zsh-completion"
+IUSE="android clang cxx dbus emacs git java javascript kate mono plasma php python qml qt5 uml zsh-completion"
 REQUIRED_USE="kate? ( clang ) plasma? ( !kate !php )"
 
 DEPEND=""
@@ -56,7 +56,7 @@ clang? ( dev-util/lldb
 	dev-util/include-what-you-use
 
 )
-dev-qt/qt-creator
+cxx? ( qml? ( dev-qt/qt-creator ) )
 "
 
 #"
