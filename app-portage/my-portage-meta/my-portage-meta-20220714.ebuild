@@ -9,7 +9,7 @@ IUSE="lto paludis"
 
 DEPEND=""
 
-RDEPEND="sys-apps/portage
+RDEPEND="sys-apps/portage[gentoo-dev]
 	app-portage/eix
 	app-portage/euses
 	app-portage/g-cpan
@@ -25,7 +25,8 @@ RDEPEND="sys-apps/portage
 	app-portage/portage-lostfiles
 	app-portage/portconf
 	app-portage/showbuild
-	app-portage/repoman
 	app-portage/metagen
+	app-portage/mgorny-dev-scripts
+	dev-util/pkgdev
 	paludis? ( sys-apps/paludis )
 "
