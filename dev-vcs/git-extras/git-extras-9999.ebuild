@@ -28,7 +28,9 @@ src_compile() {
 src_install() {
 	emake DESTDIR="${D}" PREFIX="/usr" SYSCONFDIR="/etc" install
 	nonfatal dodoc Readme.md
-	use bash-completion && newbashcomp "${D}/etc/bash_completion.d/${PN}" ${PN}
+	use bash-completion && newbashcomp "${D}/etc/bash-completion/completions/git-extras" ${PN}
+	rm -r ${D}/etc/bash-completion
+	rmdir ${D}/etc/ || die
 	if use zsh-completion ; then
 		insinto /usr/share/zsh/site-functions
 		doins "${S}/etc/git-extras-completion.zsh"
