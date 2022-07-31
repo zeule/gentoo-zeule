@@ -26,7 +26,6 @@ dev-util/ninja
 RDEPEND+="plasma? ( kde-apps/kompare kde-plasma/plasma-sdk )
 kde-apps/kapptemplate
 kde-apps/kcachegrind
-kde-apps/kdesdk-kioslaves
 uml? ( kde-apps/umbrello )
 kde-apps/lokalize
 kde-misc/kdiff3
