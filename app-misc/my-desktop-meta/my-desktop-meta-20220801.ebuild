@@ -5,8 +5,7 @@ DESCRIPTION="My set of desktop packages"
 LICENSE="metapackage"
 
 KEYWORDS="~x86 ~amd64"
-IUSE="emacs games gnome kde gtk kvm latex mailfetch pdf kindle scanner virtualbox X"
-
+IUSE="downloaders emacs games gnome kde gtk kvm latex mailfetch pdf kindle scanner transcode virtualbox X"
 DEPEND=""
 
 RDEPEND="emacs? ( dev-util/my-emacs-meta )
@@ -76,15 +75,18 @@ net-im/telegram-desktop-bin
 # net-p2p/eiskaltdcpp fails to build due to absence of qtquick1
 
 # Plowshare is stalled, some modules do not work, openssl-1.1 is unsupported
-RDEPEND+="net-misc/plowshare
+RDEPEND+="downloaders? ( net-misc/plowshare
 net-misc/plowshare-module-mega
 net-misc/plowshare-modules-legacy
+)
 "
 
 # net-p2p/retroshare
-RDEPEND+="net-misc/youtube-dl
+RDEPEND+="downloaders? ( net-misc/youtube-dl
 dev-python/beautifulsoup4
 net-misc/megacmd
+net-misc/gallery-dl
+)
 "
 
 # E-Mail
@@ -99,15 +101,10 @@ app-text/tree
 net-misc/minidlna
 media-video/simplescreenrecorder
 media-gfx/gimp
+media-gfx/krita
 media-gfx/rawtherapee
 "
 
-RDEPEND+="gtk? (
-	x11-themes/light-themes
-	x11-themes/murrine-themes
-	x11-themes/gtk-engines-murrine
-	)
-"
 # Virtualization
 RDEPEND+="virtualbox? ( app-emulation/virtualbox
 		app-emulation/virtualbox-additions
@@ -120,9 +117,6 @@ RDEPEND+="virtualbox? ( app-emulation/virtualbox
 	)
 "
 # kvm ? app-emulation/libguestfs
-# Camera
-RDEPEND+="sys-fs/exfat-utils
-"
 # Network tools
 RDEPEND+="net-analyzer/wireshark
 "
@@ -135,4 +129,5 @@ RDEPEND+="media-sound/audacity
 	net-misc/anydesk
 	media-video/libva-utils
 	x11-misc/vdpauinfo
+	transcode? ( media-video/handbrake )
 "
