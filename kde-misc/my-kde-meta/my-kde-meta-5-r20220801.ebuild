@@ -78,6 +78,7 @@ RDEPEND+="media-gfx/digikam:${SLOT}
 
 RDEPEND+="kde-apps/kate:${SLOT}
 kde-apps/yakuake:${SLOT}
+kde-misc/krusader:${SLOT}
 || ( net-p2p/qbit net-p2p/qbittorrent )
 mldonkey? ( net-p2p/kmldonkey )
 bluetooth? ( kde-plasma/bluedevil:${SLOT} )
