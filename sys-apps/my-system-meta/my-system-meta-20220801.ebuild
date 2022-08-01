@@ -37,6 +37,7 @@ RDEPEND="app-admin/needrestart
 		)
 	sys-fs/filesystems-tools-meta
 	sys-block/gparted
+	sys-block/partclone
 	sys-fs/extundelete
 	sys-fs/inotify-tools
 	sys-fs/libeatmydata
@@ -80,6 +81,8 @@ net-misc/ntp
 net-vpn/openvpn
 net-misc/whois
 net-misc/wol
+net-wireless/wireless-tools
+net-wireless/iw
 || ( >=sys-apps/util-linux-2.31 net-wireless/rfkill )
 net-analyzer/dhcpdump
 net-analyzer/iftop
