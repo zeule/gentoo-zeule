@@ -5,8 +5,11 @@ DESCRIPTION="My set of packages for supporting my hardware"
 LICENSE="metapackage"
 
 KEYWORDS="~x86 ~amd64"
-IUSE="android cups efi fingerprint kindle machines_clevo_p17sm machines_minisforum_hx90 printer_devices_epson_wf_3520 pulseaudio nvme scanner v4l video_cards_intel video_cards_radeon"
-REQUIRED_USE="?? ( machines_clevo_p17sm machines_minisforum_hx90 ) machines_minisforum_hx90? ( efi nvme ) printer_devices_epson_wf_3520? ( cups )"
+IUSE="android cups efi fingerprint kindle
+	machines_clevo_p17sm machines_minisforum_hx90
+	printer_devices_brother_mfc_l8690 printer_devices_epson_wf_3520
+	pulseaudio nvme scanner v4l video_cards_intel video_cards_radeon"
+REQUIRED_USE="?? ( machines_clevo_p17sm machines_minisforum_hx90 ) machines_minisforum_hx90? ( efi nvme ) printer_devices_epson_wf_3520? ( cups ) printer_devices_brother_mfc_l8690? ( cups )"
 
 DEPEND=""
 RDEPEND=""
@@ -33,15 +36,16 @@ RDEPEND+="machines_clevo_p17sm? ( app-laptop/clevo-xsm-wmi-module
 	)
 "
 
-# printer Epson MF 3520
-RDEPEND+="cups? ( printer_devices_epson_wf_3520? ( net-print/epson-inkjet-printer-escpr ) )
+RDEPEND+="cups? ( printer_devices_epson_wf_3520? ( net-print/epson-inkjet-printer-escpr )
+		printer_devices_brother_mfc_l8690? ( net-print/brother-mfcl8690cdw-bin[-scanner] )
+	)
 	net-print/hplip
 "
 
-# Scaner Epson MF 3520
 RDEPEND+="scanner? ( media-gfx/sane-airscan
 	printer_devices_epson_wf_3520? ( media-gfx/iscan
 		media-gfx/iscan-plugin-network-nt )
+	printer_devices_brother_mfc_l8690? ( media-gfx/brscan4 )
 )
 "
 
