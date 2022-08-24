@@ -20,8 +20,9 @@ RDEPEND="emacs? ( dev-util/my-emacs-meta )
 	net-misc/teamviewer
 "
 
-RDEPEND+="scanner? ( media-gfx/xsane
-	kde? ( kde-misc/skanlite ) )
+RDEPEND+="scanner? (
+	kde? ( kde-misc/skanlite media-gfx/skanpage ) 
+)
 "
 
 # Office
