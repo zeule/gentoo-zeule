@@ -1,11 +1,11 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=8
 
 PYTHON_COMPAT=( python2_7 )
-#inherit python-any-r1 cmake-utils virtualx multibuild git-r3
-inherit cmake-utils git-r3
+#inherit python-any-r1 cmake virtualx multibuild git-r3
+inherit cmake git-r3
 
 DESCRIPTION="Telegram binding for Qt"
 HOMEPAGE="https://github.com/Kaffeine/telegram-qt"
@@ -21,9 +21,6 @@ RDEPEND="
 		dev-qt/qtdbus:5
 		dev-qt/qtnetwork:5
 "
-DEPEND="${RDEPEND}
-	>=dev-util/cmake-2.8.12
-"
 
 DOCS=( LICENSE.LGPL README.md )
 
@@ -34,5 +31,5 @@ src_configure() {
 		-DENABLE_EXAMPLES=OFF
 		-DDESIRED_QT_VERSION=5
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }
