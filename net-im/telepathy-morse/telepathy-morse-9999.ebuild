@@ -1,9 +1,9 @@
-# Copyright 1999-2019 Gentoo Foundation
+# Copyright 1999-2022 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=8
 
-inherit cmake-utils git-r3
+inherit cmake git-r3
 
 DESCRIPTION="Telegram connection manager for Telepathy."
 HOMEPAGE="https://projects.kde.org/projects/playground/network/telepathy/telepathy-morse"
@@ -18,9 +18,6 @@ RDEPEND="
 	=net-libs/telegram-qt-9999
 	=net-libs/telepathy-qt-9999
 "
-DEPEND="${RDEPEND}
-	>=dev-util/cmake-2.8.12
-"
 
 DOCS=( README.md )
 
@@ -31,5 +28,5 @@ src_configure() {
 		-DENABLE_EXAMPLES=OFF
 		-DDESIRED_QT_VERSION=5
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }
