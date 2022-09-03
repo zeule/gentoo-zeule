@@ -3,7 +3,7 @@ SLOT=0
 
 DESCRIPTION="Free Heroes of Might and Magic II (fheroes2) is a recreation of HoMM2 game engine."
 HOMEPAGE="https://ihhub.github.io/fheroes2/"
-LICENSE="GPL2"
+LICENSE="GPL-2"
 KEYWORDS="~amd64"
 IUSE="image tools"
 
