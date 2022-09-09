@@ -21,7 +21,7 @@ RDEPEND="emacs? ( dev-util/my-emacs-meta )
 "
 
 RDEPEND+="scanner? (
-	kde? ( kde-misc/skanlite media-gfx/skanpage ) 
+	kde? ( kde-misc/skanlite media-gfx/skanpage )
 )
 "
 
@@ -53,7 +53,6 @@ RDEPEND+="|| ( www-client/firefox-kde-opensuse www-client/firefox www-client/fir
 	www-plugins/chrome-binary-plugins
 	|| ( www-client/google-chrome-unstable www-client/google-chrome-beta www-client/google-chrome )
 	www-plugins/chrome-binary-plugins
-	net-misc/grive
 "
 
 # Internet
