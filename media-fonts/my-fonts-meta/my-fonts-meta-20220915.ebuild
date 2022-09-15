@@ -41,7 +41,9 @@ RDEPEND+="truetype? ( media-fonts/libertine
 		media-fonts/noto
 		media-fonts/hack
 		media-fonts/tex-gyre
-		media-fonts/source-pro
+		media-fonts/source-code-pro
+		media-fonts/source-sans
+		media-fonts/source-serif
 		media-fonts/croscorefonts
 		media-fonts/crosextrafonts-carlito
 		media-fonts/alegreya-sans

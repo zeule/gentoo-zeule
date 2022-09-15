@@ -12,7 +12,10 @@ LICENSE="MIT"
 inherit git-r3 font
 EGIT_REPO_URI="https://github.com/gabrielelana/awesome-terminal-fonts.git"
 
-RDEPEND="media-fonts/source-pro"
+RDEPEND="media-fonts/source-code-pro
+media-fonts/source-sans
+media-fonts/source-serif
+"
 
 FONT_SUFFIX="ttf"
 FONT_CONF=(config/10-symbols.conf)
