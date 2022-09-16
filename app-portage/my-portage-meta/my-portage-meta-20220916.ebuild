@@ -21,7 +21,10 @@ RDEPEND="sys-apps/portage[gentoo-dev]
 	app-portage/smart-live-rebuild
 	app-portage/my-update-tools
 	app-portage/find_cruft
-	lto? ( sys-config/ltoize )
+	lto? (
+		sys-config/ltoize
+		app-portage/lto-rebuild
+	)
 	app-portage/portage-lostfiles
 	app-portage/portconf
 	app-portage/showbuild

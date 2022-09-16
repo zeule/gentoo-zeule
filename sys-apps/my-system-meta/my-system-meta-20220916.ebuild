@@ -103,7 +103,7 @@ net-fs/nfs-utils
 sys-apps/ethtool
 sys-apps/less
 sys-apps/memtest86+
-app-portage/lto-rebuild
+sys-auth/nss-mdns
 "
 
 RDEPEND+="usb? ( sys-apps/usbutils )
