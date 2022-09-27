@@ -110,7 +110,6 @@ RDEPEND+="virtualbox? ( app-emulation/virtualbox
 		app-emulation/virtualbox-extpack-oracle )
 	kvm? ( app-emulation/libvirt[qemu]
 		app-emulation/virt-manager
-		sys-firmware/edk2-ovmf
 		app-emulation/virtio-win
 		app-crypt/swtpm
 	)
