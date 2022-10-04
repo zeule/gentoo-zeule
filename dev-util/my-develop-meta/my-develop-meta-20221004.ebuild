@@ -8,7 +8,7 @@ DESCRIPTION="My set of development packages"
 LICENSE="metapackage"
 
 KEYWORDS="~x86 ~amd64"
-IUSE="android clang cxx dbus emacs git java javascript kate mono plasma php python qml qt5 uml zsh-completion"
+IUSE="android clang cxx dbus doc emacs git java javascript kate mono plasma php python qml qt5 uml zsh-completion"
 REQUIRED_USE="kate? ( clang ) plasma? ( !kate !php )"
 
 DEPEND=""
@@ -30,6 +30,9 @@ uml? ( kde-apps/umbrello )
 kde-apps/lokalize
 kde-misc/kdiff3
 kde-misc/kregexpeditor
+"
+
+RDEPEND+="doc? ( sys-apps/man-pages-posix )
 "
 
 RDEPEND+="git? (
