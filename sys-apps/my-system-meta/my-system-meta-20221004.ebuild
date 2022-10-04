@@ -19,7 +19,7 @@ RDEPEND="app-admin/needrestart
 	app-admin/makepasswd
 	app-misc/fdupes
 	app-misc/rdfind
-	sys-fs/ncdu
+	sys-fs/ncdu-bin
 	btrfs? ( sys-fs/duperemove )
 	app-editors/nano
 	bash-completion? ( app-shells/bash-completion
