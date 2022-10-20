@@ -48,7 +48,6 @@ RDEPEND="${RDEPEND}
 cxx? ( dev-util/cppcheck )
 dev-util/kdevelop:5
 dev-util/kdevelop-valgrind:5
-dev-util/kdevelop-python:5
 dev-util/kdevelop-upload:5
 dev-util/valgrind
 dev-libs/dmalloc
