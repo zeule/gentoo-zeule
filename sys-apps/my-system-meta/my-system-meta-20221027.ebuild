@@ -80,7 +80,7 @@ net-misc/iperf
 net-misc/ntp
 net-vpn/openvpn
 net-misc/whois
-net-misc/wol
+net-misc/wakeonlan
 net-wireless/wireless-tools
 net-wireless/iw
 || ( >=sys-apps/util-linux-2.31 net-wireless/rfkill )
