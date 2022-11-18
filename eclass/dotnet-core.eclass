@@ -98,7 +98,7 @@ _DOTNET_CORE_ECLASS=1
 # @DESCRIPTION:
 # All supported .NET implementations, most preferred last.
 _DOTNET_ALL_IMPLS=(
-	dotnetcore{5..6}_0
+	dotnetcore{5..7}_0
 )
 readonly _DOTNET_ALL_IMPLS
 
@@ -160,7 +160,7 @@ _dotnet_set_impls() {
 			# please keep them in sync with _DOTNET_ALL_IMPLS
 			# and _DOTNET_HISTORICAL_IMPLS
 			case ${i} in
-				dotnetcore[56]_0)
+				dotnetcore[567]_0)
 					;;
 				*)
 					if has "${i}" "${_DOTNET_ALL_IMPLS[@]}" \
