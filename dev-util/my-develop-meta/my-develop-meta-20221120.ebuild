@@ -57,7 +57,7 @@ clang? ( dev-util/lldb
 	dev-util/include-what-you-use
 
 )
-cxx? ( qml? ( dev-qt/qt-creator ) )
+cxx? ( qml? ( dev-qt/qt-creator dev-util/gammaray ) )
 "
 
 #"
