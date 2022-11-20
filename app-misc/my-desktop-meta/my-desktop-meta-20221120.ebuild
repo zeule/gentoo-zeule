@@ -5,7 +5,7 @@ DESCRIPTION="My set of desktop packages"
 LICENSE="metapackage"
 
 KEYWORDS="~x86 ~amd64"
-IUSE="downloaders emacs games gnome kde gtk kvm latex mailfetch pdf kindle scanner transcode virtualbox X"
+IUSE="downloaders emacs games gnome kde gtk kvm latex mailfetch pdf kindle scanner transcode virtualbox X wayland"
 DEPEND=""
 
 RDEPEND="emacs? ( dev-util/my-emacs-meta )
@@ -119,7 +119,12 @@ RDEPEND+="virtualbox? ( app-emulation/virtualbox
 RDEPEND+="net-analyzer/wireshark
 "
 
-RDEPEND+="X? ( x11-misc/xsel )
+RDEPEND+="X? (
+		x11-misc/xsel
+)
+	wayland? (
+		app-misc/wayland-utils
+)
 "
 
 # misc
