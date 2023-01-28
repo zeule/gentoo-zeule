@@ -81,7 +81,7 @@ net-misc/plowshare-modules-legacy
 "
 
 # net-p2p/retroshare
-RDEPEND+="downloaders? ( net-misc/youtube-dl
+RDEPEND+="downloaders? ( net-misc/yt-dlp
 dev-python/beautifulsoup4
 net-misc/megacmd
 net-misc/gallery-dl
