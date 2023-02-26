@@ -45,7 +45,6 @@ RDEPEND+="git? (
 "
 
 RDEPEND="${RDEPEND}
-cxx? ( dev-util/cppcheck )
 dev-util/kdevelop:5
 dev-util/kdevelop-valgrind:5
 dev-util/kdevelop-upload:5
