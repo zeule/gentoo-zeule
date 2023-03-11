@@ -14,16 +14,12 @@ LICENSE="GPL-2"
 
 SLOT="0"
 
-IUSE="test"
-
-
 REQUIRED_USE="${PYTHON_REQUIRED_USE}
 "
 
 DEPEND="
 	>=dev-util/meson-0.42.0
 	dev-python/flake8
-	test? ( dev-libs/appstream )
 "
 
 RDEPEND="
@@ -39,7 +35,7 @@ src_prepare() {
 
 src_configure() {
   local emesonargs=(
-    -Dtests=$(usex test true false)
+#    -Dtests=$(usex test true false)
   )
   meson_src_configure
 }
