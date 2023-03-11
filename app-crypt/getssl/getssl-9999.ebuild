@@ -17,7 +17,7 @@ IUSE="+godaddy"
 RDEPEND="
 	net-dns/bind-tools
 	sys-apps/grep
-	virtual/awk
+	app-alternatives/awk
 	sys-apps/sed
 	net-misc/openssh
 	sys-apps/coreutils
