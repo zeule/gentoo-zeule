@@ -61,7 +61,6 @@ net-im/choqok
 net-irc/konversation
 net-im/signal-desktop-bin
 net-im/zoom
-x11-plugins/purple-hangouts
 x11-plugins/purple-signal
 net-im/telegram-desktop-bin
 "
