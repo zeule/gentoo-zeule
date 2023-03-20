@@ -82,10 +82,6 @@ RDEPEND+="v4l? ( media-tv/v4l-utils )
 RDEPEND+="pulseaudio? ( media-video/pipewire )
 "
 
-# Workarounds
-RDEPEND+="sys-power/acpi_call
-"
-
 # Kindle
 RDEPEND+="kindle? ( app-text/kindlegen )
 "
