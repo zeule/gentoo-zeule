@@ -17,3 +17,7 @@ SLOT="0"
 DOCS=(changes.txt)
 
 S="$WORKDIR/${MY_P}"
+
+src_compile() {
+	emake NOWERROR=TRUE
+}
