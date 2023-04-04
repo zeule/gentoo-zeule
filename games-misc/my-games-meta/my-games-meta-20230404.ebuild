@@ -5,7 +5,7 @@ DESCRIPTION="My set of games packages"
 LICENSE="metapackage"
 
 KEYWORDS="~x86 ~amd64"
-IUSE="flash kde qsp steam qt4"
+IUSE="gog flash kde qsp steam qt4"
 
 DEPEND=""
 
@@ -26,8 +26,9 @@ kde-apps/kigo
 kde-apps/klines
 kde-apps/kreversi
 kde-apps/palapeli
-games-strategy/fheroes2
-games-strategy/homm2-gold-data
+gog? ( games-strategy/fheroes2
+	games-strategy/homm2-gold-data
+)
 "
 
 RDEPEND+="virtual/wine[staging]
