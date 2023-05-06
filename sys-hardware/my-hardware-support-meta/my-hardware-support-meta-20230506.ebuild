@@ -5,7 +5,7 @@ DESCRIPTION="My set of packages for supporting my hardware"
 LICENSE="metapackage"
 
 KEYWORDS="~x86 ~amd64"
-IUSE="android cups efi fingerprint kindle
+IUSE="android cups efi fingerprint kindle logitech
 	machines_clevo_p17sm machines_minisforum_hx90
 	printer_devices_brother_mfc_l8690 printer_devices_epson_wf_3520
 	pulseaudio nvme scanner v4l video_cards_intel video_cards_radeon"
@@ -50,8 +50,10 @@ RDEPEND+="scanner? ( media-gfx/sane-airscan
 "
 
 # Logitech mouse/keyboard
-RDEPEND+="dev-libs/libratbag
-app-misc/piper
+RDEPEND+="logitech? ( dev-libs/libratbag
+	app-misc/piper
+	app-misc/solaar
+)
 "
 
 # Android SDK for phone
