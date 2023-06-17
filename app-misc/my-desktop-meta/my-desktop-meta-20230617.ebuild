@@ -5,7 +5,7 @@ DESCRIPTION="My set of desktop packages"
 LICENSE="metapackage"
 
 KEYWORDS="~x86 ~amd64"
-IUSE="downloaders emacs games gnome kde gtk kvm latex mailfetch pdf kindle scanner transcode virtualbox X wayland"
+IUSE="downloaders emacs games gnome kde gtk latex mailfetch pdf kindle scanner transcode X wayland"
 DEPEND=""
 
 RDEPEND="emacs? ( dev-util/my-emacs-meta )
@@ -18,6 +18,7 @@ RDEPEND="emacs? ( dev-util/my-emacs-meta )
 	media-fonts/my-fonts-meta
 	media-misc/my-multimedia-meta[kde=]
 	net-misc/teamviewer
+	app-emulation/my-virtualization-meta
 "
 
 RDEPEND+="scanner? (
@@ -103,17 +104,6 @@ media-gfx/krita
 media-gfx/rawtherapee
 "
 
-# Virtualization
-RDEPEND+="virtualbox? ( app-emulation/virtualbox
-		app-emulation/virtualbox-additions
-		app-emulation/virtualbox-extpack-oracle )
-	kvm? ( app-emulation/libvirt[qemu]
-		app-emulation/virt-manager
-		app-emulation/virtio-win
-		app-crypt/swtpm
-	)
-"
-# kvm ? app-emulation/libguestfs
 # Network tools
 RDEPEND+="net-analyzer/wireshark
 "
