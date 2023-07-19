@@ -47,7 +47,6 @@ RDEPEND+="git? (
 RDEPEND="${RDEPEND}
 dev-util/kdevelop:5
 dev-util/kdevelop-valgrind:5
-dev-util/kdevelop-upload:5
 dev-util/valgrind
 dev-libs/dmalloc
 dev-cpp/catch
