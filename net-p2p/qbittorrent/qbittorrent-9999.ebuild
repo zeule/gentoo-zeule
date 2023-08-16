@@ -24,22 +24,17 @@ REQUIRED_USE="dbus? ( X )"
 
 RDEPEND="
 	>=dev-libs/boost-1.62.0-r1:=
-	dev-qt/qtcore:5
-	dev-qt/qtnetwork:5[ssl]
-	>=dev-qt/qtsingleapplication-2.6.1_p20130904-r1[qt5(+),X?]
-	dev-qt/qtxml:5
+	dev-qt/qtbase:6[dbus?,network,ssl,xml]
 	>=net-libs/libtorrent-rasterbar-1.2.11:0=
 	sys-libs/zlib
-	dbus? ( dev-qt/qtdbus:5 )
-	jackett? ( || ( net-p2p/jackett net-p2p/jackett-bin ) )
+	jackett? ( www-apps/jackett )
 	X? (
 		dev-libs/geoip
-		dev-qt/qtgui:5
-		dev-qt/qtsvg:5
-		dev-qt/qtwidgets:5
+		dev-qt/qtbase:6[gui,widgets]
+		dev-qt/qtsvg:6
 	)"
 DEPEND="${RDEPEND}
-	dev-qt/linguist-tools:5
+	dev-qt/qttools:6[linguist]
 	virtual/pkgconfig"
 
 DOCS=( AUTHORS Changelog CONTRIBUTING.md README.md )
@@ -47,7 +42,6 @@ DOCS=( AUTHORS Changelog CONTRIBUTING.md README.md )
 
 src_configure() {
 	local mycmakeargs=(
-		-DSYSTEM_QTSINGLEAPPLICATION=ON
 		-DDBUS=$(usex dbus)
 		-DGUI=$(usex X)
 		-DWEBUI=$(usex webui)
