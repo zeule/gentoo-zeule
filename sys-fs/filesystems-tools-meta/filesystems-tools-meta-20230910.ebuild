@@ -10,7 +10,7 @@ KEYWORDS="~amd64"
 IUSE="btrfs exfat fat f2fs xfs zfs"
 
 RDEPEND="btrfs? ( sys-fs/btrfs-progs )
-	exfat? ( sys-fs/exfat-utils )
+	exfat? ( sys-fs/exfatprogs )
 	fat? ( sys-fs/dosfstools )
 	f2fs? ( sys-fs/f2fs-tools )
 	xfs? ( sys-fs/xfsprogs )
