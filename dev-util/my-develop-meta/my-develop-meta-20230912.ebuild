@@ -86,15 +86,17 @@ qt5? (	dev-qt/assistant
 )
 sys-apps/the_silver_searcher
 android? ( dev-util/android-studio )
-	python? (
-		dev-python/pycodestyle
-		dev-python/autopep8
-		dev-python/python-lsp-server
-	)
-	javascript? ( app-editors/vscode
-		net-libs/nodejs
-		zsh-completion? ( media-fonts/meslo-nerd )
-	)
+python? (
+	dev-python/pycodestyle
+	dev-python/autopep8
+	dev-python/python-lsp-server
+	app-editors/vscode
+	zsh-completion? ( media-fonts/meslo-nerd )
+)
+javascript? ( app-editors/vscode
+	net-libs/nodejs
+	zsh-completion? ( media-fonts/meslo-nerd )
+)
 "
 
 # java
