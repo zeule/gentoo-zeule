@@ -9,7 +9,7 @@ HOMEPAGE="https://github.com/zeule/gentoo-zeule"
 LICENSE="metapackage"
 
 KEYWORDS="~amd64"
-IUSE="bash-completion btrfs networkmanager powerline systemd usb vim zsh-completion"
+IUSE="bash-completion btrfs networkmanager powerline systemd systemd-units usb vim zsh-completion"
 
 DEPEND=""
 
@@ -33,7 +33,7 @@ RDEPEND="app-admin/needrestart
 	sys-apps/mlocate
 	sys-apps/udevil
 	systemd? ( sys-apps/systemd[sysv-utils]
-		sys-apps/my-systemd-units
+		systemd-units? ( sys-apps/my-systemd-units )
 		)
 	sys-fs/filesystems-tools-meta
 	sys-block/gparted
