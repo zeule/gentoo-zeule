@@ -5,7 +5,7 @@ DESCRIPTION="My set of desktop packages"
 LICENSE="metapackage"
 
 KEYWORDS="~x86 ~amd64"
-IUSE="downloaders emacs games gnome kde gtk latex mailfetch pdf kindle scanner transcode X wayland"
+IUSE="downloaders emacs games gnome kde gtk latex mailfetch outlook pdf kindle scanner transcode X wayland"
 DEPEND=""
 
 RDEPEND="emacs? ( dev-util/my-emacs-meta )
@@ -30,6 +30,10 @@ RDEPEND+="scanner? (
 RDEPEND+="app-office/libreoffice
 app-officeext/languagetool
 "
+
+RDEPEND+="outlook? ( net-im/teams-for-linux
+	kde-apps/kdepim-meta
+)
 
 # Banking
 #RDEPEND+="app-crypt/ccid
