@@ -34,6 +34,7 @@ app-officeext/languagetool
 RDEPEND+="outlook? ( net-im/teams-for-linux
 	kde-apps/kdepim-meta
 )
+"
 
 # Banking
 #RDEPEND+="app-crypt/ccid
