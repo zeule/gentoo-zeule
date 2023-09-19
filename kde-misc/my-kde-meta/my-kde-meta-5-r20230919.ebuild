@@ -5,7 +5,7 @@ DESCRIPTION="My set of KDE packages"
 LICENSE="metapackage"
 
 KEYWORDS="~x86 ~amd64"
-IUSE="+android bluetooth gtk semantic-desktop mldonkey +networkmanager pim +pulseaudio +scanner +telepathy +torrent +qt5"
+IUSE="+android bluetooth gtk semantic-desktop mldonkey +networkmanager pim +pulseaudio +scanner +telepathy +torrent +qt5 wayland"
 
 DEPEND=""
 
@@ -13,6 +13,7 @@ RDEPEND="kde-plasma/plasma-meta:${SLOT}[bluetooth=,browser-integration,desktop-p
 	kde-apps/kdecore-meta:${SLOT}
 	kde-apps/kdegraphics-meta:${SLOT}[scanner=]
 	kde-apps/kdeutils-meta[7zip,-floppy,lrz,rar]
+	wayland? ( dev-libs/weston[fullscreen,wayland-compositor] )
 "
 #RDEPEND+="kde-apps/kde-l10n:${SLOT}
 #"
