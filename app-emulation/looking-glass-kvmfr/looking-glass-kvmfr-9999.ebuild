@@ -25,6 +25,7 @@ src_compile() {
 	local modlist=(
 		kvmfr
 	)
+	local modargs=( KVER="${KV_FULL}" )
 
 	linux-mod-r1_src_compile
 }
@@ -35,4 +36,6 @@ src_install() {
 	doins ${FILESDIR}/kvmfr.conf
 	insinto "$(get_udevdir)"/rules.d
 	doins ${FILESDIR}/99-kvmfr.rules
+	insinto /etc
+	doins ${FILESDIR}/looking-glass-client.ini
 }
