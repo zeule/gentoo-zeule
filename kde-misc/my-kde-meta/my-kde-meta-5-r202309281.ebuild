@@ -5,7 +5,7 @@ DESCRIPTION="My set of KDE packages"
 LICENSE="metapackage"
 
 KEYWORDS="~x86 ~amd64"
-IUSE="+android bluetooth gtk semantic-desktop mldonkey +networkmanager pim photoarchive +pulseaudio +scanner +telepathy +torrent +qt5 wayland"
+IUSE="+android bluetooth gtk semantic-desktop mldonkey +networkmanager pim photoarchive +pulseaudio +scanner +telepathy +torrent +qt5 wayland zeroconf"
 
 DEPEND=""
 
@@ -28,6 +28,7 @@ RDEPEND+="kde-apps/dolphin-plugins-git:${SLOT}
 # kde-apps/kget:${SLOT}
 RDEPEND+="kde-apps/krdc:${SLOT}
 kde-apps/kdenetwork-filesharing:${SLOT}
+zeroconf? ( net-misc/kio-zeroconf )
 "
 
 
