@@ -5,7 +5,7 @@ DESCRIPTION="My set of KDE packages"
 LICENSE="metapackage"
 
 KEYWORDS="~x86 ~amd64"
-IUSE="+android bluetooth gtk semantic-desktop mldonkey +networkmanager pim +pulseaudio +scanner +telepathy +torrent +qt5 wayland"
+IUSE="+android bluetooth gtk semantic-desktop mldonkey +networkmanager pim photoarchive +pulseaudio +scanner +telepathy +torrent +qt5 wayland"
 
 DEPEND=""
 
@@ -61,7 +61,7 @@ RDEPEND+="kde-apps/dragon:${SLOT}
 kde-apps/ffmpegthumbs:${SLOT}
 "
 
-RDEPEND+="media-gfx/digikam:${SLOT}
+RDEPEND+="photoarchive? ( media-gfx/digikam:${SLOT} )
 "
 
 # these too
