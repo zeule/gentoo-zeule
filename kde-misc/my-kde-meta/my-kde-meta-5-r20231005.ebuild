@@ -116,6 +116,7 @@ gtk? (
 	x11-themes/oxygen-gtk:3
 	kde-plasma/breeze-gtk:${SLOT}
 	kde-plasma/kde-gtk-config:${SLOT}
+	sys-apps/xdg-desktop-portal-gtk
 	x11-misc/gtk3-nocsd
 )
 x11-misc/xclip
