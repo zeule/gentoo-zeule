@@ -3,8 +3,6 @@
 
 EAPI=8
 
-inherit eutils
-
 DESCRIPTION="A Material Design-like flat theme for GTK3, GTK2 and GNOME Shell"
 HOMEPAGE="https://github.com/nana-4/materia-theme"
 

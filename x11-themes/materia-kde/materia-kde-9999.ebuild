@@ -1,4 +1,4 @@
-EAPI=7
+EAPI=8
 SLOT=0
 KEYWORDS="~amd64"
 HOMEPAGE="https://github.com/PapirusDevelopmentTeam/materia-kde"
