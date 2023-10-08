@@ -46,6 +46,7 @@ RDEPEND+="truetype? (
 		media-fonts/source-sans
 		media-fonts/source-serif
 		media-fonts/croscorefonts
+		media-fonts/crosextrafonts-caladea
 		media-fonts/crosextrafonts-carlito
 		media-fonts/alegreya-sans
 		media-fonts/alegreya-serif
