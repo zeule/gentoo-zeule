@@ -6,10 +6,14 @@ LICENSE="metapackage"
 
 KEYWORDS="~x86 ~amd64"
 IUSE="android cups efi fingerprint kindle logitech
-	machines_clevo_p17sm machines_minisforum_hx90 machines_dell_3650
+	machines_clevo_p17sm machines_minisforum_hx90 machines_dell_3650 machines_office_pc
 	printer_devices_brother_mfc_l8690 printer_devices_epson_wf_3520
 	pulseaudio nvme scanner v4l video_cards_intel video_cards_radeon"
-REQUIRED_USE="?? ( machines_clevo_p17sm machines_minisforum_hx90 ) machines_minisforum_hx90? ( efi nvme ) printer_devices_epson_wf_3520? ( cups ) printer_devices_brother_mfc_l8690? ( cups )"
+REQUIRED_USE="?? ( machines_clevo_p17sm machines_minisforum_hx90 machines_dell_3650 machines_office_pc )
+	 machines_minisforum_hx90? ( efi nvme )
+	machines_office_pc? ( efi nvme )
+	printer_devices_epson_wf_3520? ( cups )
+	printer_devices_brother_mfc_l8690? ( cups )"
 
 DEPEND=""
 RDEPEND=""
