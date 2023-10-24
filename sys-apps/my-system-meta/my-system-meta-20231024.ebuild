@@ -70,7 +70,6 @@ RDEPEND="app-admin/needrestart
 RDEPEND+="net-misc/dhcpcd
 net-misc/netkit-telnetd
 networkmanager? ( net-vpn/networkmanager-openvpn
-	net-vpn/networkmanager-pptp
 	net-vpn/networkmanager-vpnc
 	net-vpn/networkmanager-libreswan
 	net-vpn/networkmanager-openconnect
