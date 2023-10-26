@@ -5,7 +5,7 @@ SLOT="0"
 DESCRIPTION="My set of LaTeX related packages"
 LICENSE="metapackage"
 
-IUSE="emacs html kde pdf"
+IUSE="emacs html lsp kde pdf"
 
 RDEPEND="app-text/texlive[dvipdfm(+),extra,graphics,humanities,luatex,pstricks,publishers,science]
 kde? (
@@ -25,7 +25,7 @@ html? (
 	dev-tex/hevea
 )
 media-gfx/asymptote
-dev-tex/texlab
+lsp? ( dev-tex/texlab )
 "
 
 #pdf? ( app-text/pdftk )
