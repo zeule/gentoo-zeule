@@ -5,7 +5,7 @@ EAPI=8
 
 PYTHON_COMPAT=(python3_{9,10,11})
 
-inherit python-single-r1 autotools eutils git-r3 plocale
+inherit python-single-r1 autotools git-r3 plocale
 
 DESCRIPTION="An implementation of the MPRIS 2 interface as a client for MPD"
 HOMEPAGE="https://github.com/eonpatapon/mpDris2"
