@@ -5,7 +5,7 @@ DESCRIPTION="My set of KDE packages"
 LICENSE="metapackage"
 
 KEYWORDS="~x86 ~amd64"
-IUSE="+android bluetooth gtk semantic-desktop mldonkey +networkmanager pim photoarchive +pulseaudio +scanner +telepathy +torrent +qt5 wayland zeroconf"
+IUSE="+android bluetooth gtk semantic-desktop +networkmanager pim photoarchive +pulseaudio +scanner +telepathy +torrent +qt5 wayland zeroconf"
 
 DEPEND=""
 
@@ -82,7 +82,6 @@ RDEPEND+="kde-apps/kate:${SLOT}
 kde-apps/yakuake:${SLOT}
 kde-misc/krusader:${SLOT}
 torrent? ( || ( net-p2p/qbit net-p2p/qbittorrent ) )
-mldonkey? ( net-p2p/kmldonkey )
 bluetooth? ( kde-plasma/bluedevil:${SLOT} )
 sci-astronomy/kstars:${SLOT}
 kde-apps/filelight:${SLOT}
@@ -126,7 +125,6 @@ x11-themes/materia-theme
 
 RDEPEND+="kde-apps/kwalletmanager:${SLOT}
 kde-apps/signon-kwallet-extension
-kde-plasma/plasma-applet-thermal-monitor
 net-libs/telepathy-accounts-signon
 kde-misc/kio-gdrive
 torrent? ( net-p2p/ktorrent:${SLOT} )
