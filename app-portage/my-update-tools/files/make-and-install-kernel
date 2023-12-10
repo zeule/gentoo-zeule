@@ -11,13 +11,13 @@ einfo "Compiling kernel... ($MAKEOPTS)"
 make $MAKEOPTS > /dev/null
 
 einfo "Installing kernel..."
-make install modules_install
+make modules_install install
 
 einfo "Rebuilding out-of-tree kernel modules..."
 emerge -1v @module-rebuild
 
-einfo "Creating initramfs..."
-dracut -Hf --kver $K_VER
+# einfo "Creating initramfs..."
+# dracut -Hf --kver $K_VER
 
 einfo "Removing old kernels..."
 rm /boot/*.old
