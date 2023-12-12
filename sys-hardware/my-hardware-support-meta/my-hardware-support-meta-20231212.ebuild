@@ -77,7 +77,7 @@ sys-power/thermald
 "
 
 # Webcam tune
-RDEPEND+="v4l? ( media-tv/v4l-utils )
+RDEPEND+="v4l? ( media-libs/libv4l[utils] )
 "
 
 # Fingerprint
