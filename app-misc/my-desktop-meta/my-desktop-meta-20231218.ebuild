@@ -5,7 +5,7 @@ DESCRIPTION="My set of desktop packages"
 LICENSE="metapackage"
 
 KEYWORDS="~x86 ~amd64"
-IUSE="downloaders emacs games gnome kde gtk latex mailfetch outlook pdf kindle scanner transcode X wayland"
+IUSE="cups downloaders emacs games gnome kde gtk latex mailfetch outlook pdf kindle scanner transcode X wayland"
 DEPEND=""
 
 RDEPEND="emacs? ( dev-util/my-emacs-meta )
@@ -21,8 +21,11 @@ RDEPEND="emacs? ( dev-util/my-emacs-meta )
 	app-emulation/my-virtualization-meta
 "
 
-RDEPEND+="scanner? (
-	kde? ( kde-misc/skanlite media-gfx/skanpage )
+RDEPEND+="cups? (
+		net-print/cups-meta[browsed,foomatic,pdf,poppler,postscript,zeroconf]
+	)
+	scanner? (
+		kde? ( kde-misc/skanlite media-gfx/skanpage )
 )
 "
 
