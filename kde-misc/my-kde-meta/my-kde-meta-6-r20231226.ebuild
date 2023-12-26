@@ -36,7 +36,7 @@ RDEPEND+="kde-apps/dolphin-plugins-git:${SLOT}
 
 #part of kdenetwork
 # kde-apps/kget:${SLOT}
-RDEPEND+="kde-apps/krdc:${SLOT}
+RDEPEND+="kde-apps/krdc[qt6]
 kde-apps/kdenetwork-filesharing:${SLOT}
 zeroconf? ( net-misc/kio-zeroconf:${SLOT} )
 "
@@ -90,20 +90,19 @@ RDEPEND+="photoarchive? ( media-gfx/digikam:${SLOT} )
 
 RDEPEND+="kde-apps/kate:${SLOT}
 kde-apps/yakuake:${SLOT}
-kde-misc/krusader:${SLOT}
+kde-misc/krusader
 torrent? ( || ( net-p2p/qbit net-p2p/qbittorrent ) )
 bluetooth? ( kde-plasma/bluedevil:${SLOT} )
-sci-astronomy/kstars:${SLOT}
+sci-astronomy/kstars
 kde-apps/filelight:${SLOT}
 kde-plasma/kdeplasma-addons:${SLOT}
 sys-block/partitionmanager:${SLOT}
 media-gfx/graphicsmagick
 kde-apps/kmag:${SLOT}
-kde-misc/openofficeorg-thumbnail:${SLOT}
 || ( media-video/smplayer media-video/smplayer2 )
 || ( kde-plasma/kde-cli-tools:${SLOT}[kdesu] kde-misc/kdesudo:${SLOT} )
 networkmanager? ( kde-plasma/plasma-nm:${SLOT} )
-kde-misc/krename:${SLOT}
+kde-misc/krename
 media-gfx/icoutils
 "
 #
