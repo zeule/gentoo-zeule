@@ -18,7 +18,7 @@ RDEPEND+="plasma? ( kde-plasma/plasma-meta kde-apps/kdecore-meta
 	)
 "
 
-RDEPEND+="dev-util/cmake[gui]
+RDEPEND+="dev-build/cmake[gui]
 dev-util/ninja
 "
 
