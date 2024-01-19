@@ -19,7 +19,7 @@ RDEPEND+="plasma? ( kde-plasma/plasma-meta kde-apps/kdecore-meta
 "
 
 RDEPEND+="dev-build/cmake[gui]
-dev-util/ninja
+dev-build/ninja
 "
 
 # part of kdesdk
@@ -71,7 +71,7 @@ mono? ( dev-lang/mono
 "
 
 RDEPEND="${RDEPEND}
-app-doc/doxygen
+app-text/doxygen
 qt5? (	dev-qt/assistant
 	dev-qt/designer
 	dev-qt/linguist
