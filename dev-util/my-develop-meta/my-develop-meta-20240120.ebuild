@@ -47,7 +47,7 @@ RDEPEND+="git? (
 RDEPEND="${RDEPEND}
 dev-util/kdevelop:5
 dev-cpp/catch
-clang? ( dev-util/lldb
+clang? ( dev-debug/lldb
 	dev-util/clazy
 	dev-util/include-what-you-use
 
