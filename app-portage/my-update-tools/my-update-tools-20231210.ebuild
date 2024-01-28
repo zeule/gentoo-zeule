@@ -11,7 +11,7 @@ KEYWORDS="~amd64"
 SLOT="0"
 
 RDEPEND="app-portage/smart-live-rebuild
-	sys-kernel/installkernel[dracut,module-rebuild]
+	sys-kernel/installkernel-gentoo[dracut]
 	sys-apps/gentoo-functions
 "
 
