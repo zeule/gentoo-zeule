@@ -21,12 +21,14 @@ HOMEPAGE="https://github.com/romkatv/powerlevel10k"
 
 LICENSE="MIT GPL-3"
 SLOT="0"
-IUSE="nerd-fonts"
+IUSE="nerd-fonts oh-my-zsh"
 RESTRICT="mirror"
 
 RDEPEND="
 	app-shells/zsh
-	nerd-fonts? ( media-fonts/meslo-nerd )"
+	nerd-fonts? ( media-fonts/meslo-nerd )
+	oh-my-zsh? ( app-shells/oh-my-zsh )
+"
 
 DOCS=(
 	README.md
@@ -75,7 +77,8 @@ src_install() {
 	einstalldocs
 
 	# define install directory
-	insinto "/usr/share/zsh/themes/${PN}"
+	local install_dir="/usr/share/zsh/$(usex oh-my-zsh site-contrib/oh-my-zsh/themes themes)/${PN}"
+	insinto "${install_dir}"
 
 	# clean up unneccesary files before install
 	rm -rf "gitstatus/obj"
@@ -107,11 +110,12 @@ src_install() {
 	doins "prompt_powerlevel10k_setup"
 	doins "prompt_powerlevel9k_setup"
 
-	exeinto "/usr/share/zsh/themes/${PN}/gitstatus/usrbin"
+	exeinto "${install_dir}/gitstatus/usrbin"
 	doexe "gitstatus/usrbin/gitstatusd"
 }
 
 pkg_postinst() {
 	elog "To enable, add the following to your .zshrc:"
-	elog "'source /usr/share/zsh/themes/powerlevel10k/powerlevel10k.zsh-theme'"
+	use oh-my-zsh && elog "ZSH_THEME=\"powerlevel10k/powerlevel10k\""
+	use !oh-my-zsh && elog "'source /usr/share/zsh/themes/powerlevel10k/powerlevel10k.zsh-theme'"
 }
