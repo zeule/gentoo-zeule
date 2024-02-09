@@ -18,7 +18,7 @@ REQUIRED_USE="${PYTHON_REQUIRED_USE}
 "
 
 DEPEND="
-	>=dev-util/meson-0.42.0
+	>=dev-build/meson-0.51.0
 	dev-python/flake8
 "
 
