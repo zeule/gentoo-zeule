@@ -10,17 +10,7 @@ IUSE="+android bluetooth gtk semantic-desktop +networkmanager pim photoarchive +
 DEPEND=""
 
 RDEPEND="kde-plasma/plasma-meta:${SLOT}[bluetooth=,browser-integration,discover,display-manager,gtk=,networkmanager=,pulseaudio=,sddm,wallpapers]
-	kde-apps/dolphin:${SLOT}
-        kde-apps/kdialog:${SLOT}
-        kde-apps/keditbookmarks:${SLOT}
-        kde-apps/kfind:${SLOT}
-        kde-apps/konsole:${SLOT}
-        kde-apps/kwrite:${SLOT}
-        kde-apps/khelpcenter:${SLOT}
-        www-client/falkon
-        kde-frameworks/purpose:${SLOT}
-        kde-apps/ffmpegthumbs:${SLOT}
-        kde-apps/thumbnailers:${SLOT}
+	>=kde-apps/kdecore-meta-24.02.0[share,thumbnail,webengine]
 	kde-apps/kdegraphics-meta[scanner=]
 	kde-apps/kdeutils-meta[7zip,lrz,rar]
 	wayland? ( dev-libs/weston[fullscreen,wayland-compositor] )
