@@ -22,7 +22,7 @@ RDEPEND="kde-plasma/plasma-meta:${SLOT}[bluetooth=,browser-integration,discover,
         kde-apps/ffmpegthumbs:${SLOT}
         kde-apps/thumbnailers:${SLOT}
 	kde-apps/kdegraphics-meta[scanner=]
-	kde-apps/kdeutils-meta[7zip,-floppy,lrz,rar]
+	kde-apps/kdeutils-meta[7zip,lrz,rar]
 	wayland? ( dev-libs/weston[fullscreen,wayland-compositor] )
 "
 #RDEPEND+="kde-apps/kde-l10n:${SLOT}
