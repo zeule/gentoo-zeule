@@ -19,6 +19,7 @@ RDEPEND="emacs? ( dev-util/my-emacs-meta )
 	media-misc/my-multimedia-meta[kde=]
 	net-misc/teamviewer
 	app-emulation/my-virtualization-meta
+	net-misc/freerdp
 "
 
 RDEPEND+="cups? (
