@@ -8,7 +8,7 @@ DESCRIPTION="My set of development packages"
 LICENSE="metapackage"
 
 KEYWORDS="~x86 ~amd64"
-IUSE="android clang cxx dbus doc emacs git java javascript kate mono plasma php python qml qt5 uml zsh-completion"
+IUSE="android clang cxx dbus doc emacs +fonts git java javascript kate mono plasma php python qml qt5 qt6 uml zsh-completion"
 REQUIRED_USE="kate? ( clang ) plasma? ( !kate !php )"
 
 DEPEND=""
@@ -20,6 +20,7 @@ RDEPEND+="plasma? ( kde-plasma/plasma-meta kde-apps/kdecore-meta
 
 RDEPEND+="dev-build/cmake[gui]
 dev-build/ninja
+dev-util/perf
 "
 
 # part of kdesdk
@@ -52,7 +53,8 @@ clang? ( dev-debug/lldb
 	dev-util/include-what-you-use
 
 )
-cxx? ( qml? ( dev-qt/qt-creator dev-util/gammaray ) )
+cxx? ( dev-cpp/benchmark
+	qml? ( dev-qt/qt-creator dev-util/gammaray ) )
 "
 
 #"
@@ -81,6 +83,8 @@ qt5? (	dev-qt/assistant
 	dev-qt/qtdatavis3d
 	dbus? ( dev-qt/qdbusviewer )
 )
+qt6? (	dev-qt/qttools[assistant,designer,linguist,qdbus,qml=,widgets,pixeltool,qtdiag,qtplugininfo]
+)
 sys-apps/the_silver_searcher
 android? ( dev-util/android-studio )
 python? (
@@ -93,6 +97,7 @@ python? (
 javascript? ( app-editors/vscode
 	net-libs/nodejs
 	zsh-completion? ( media-fonts/meslo-nerd )
+	app-misc/jq
 )
 "
 
@@ -108,3 +113,5 @@ RDEPEND+="emacs? ( dev-util/my-emacs-meta )
 # asus-ec-sensors
 RDEPEND+="sys-apps/acpica
 "
+
+RDEPEND+="fonts? ( media-fonts/jetbrainsmono-nerdfont )"
