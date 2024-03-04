@@ -26,8 +26,6 @@ RDEPEND="sys-apps/portage[gentoo-dev]
 		app-portage/lto-rebuild
 	)
 	app-portage/portage-lostfiles
-	app-portage/portconf
-	app-portage/showbuild
 	app-portage/metagen
 	app-portage/mgorny-dev-scripts
 	dev-util/pkgdev
