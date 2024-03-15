@@ -72,7 +72,6 @@ net-irc/konversation
 net-im/signal-desktop-bin
 net-im/zoom
 x11-plugins/purple-signal
-net-im/telegram-desktop-bin
 "
 
 # net-im/empathy requires python 3.6
