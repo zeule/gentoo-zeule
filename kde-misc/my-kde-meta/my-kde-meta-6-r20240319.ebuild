@@ -34,7 +34,7 @@ zeroconf? ( net-misc/kio-zeroconf:${SLOT} )
 #part of kdepim
 RDEPEND+="kde-apps/kidentitymanagement:${SLOT}
 pim? ( kde-apps/akonadi-calendar:${SLOT}
-	kde-apps/kdepim-meta:${SLOT}
+	>=kde-apps/kdepim-meta-24.02.0
 	virtual/mysql
 	)
 "
