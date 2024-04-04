@@ -3,9 +3,9 @@
 
 EAPI=8
 
-LLVM_MAX_SLOT=17
+LLVM_COMPAT=( {17..18} )
 PYTHON_COMPAT=( python3_{10..12} )
-inherit cmake git-r3 llvm python-any-r1
+inherit cmake git-r3 llvm-r1 python-any-r1
 
 DESCRIPTION="Compiler plugin which allows clang to understand Qt semantics"
 HOMEPAGE="https://apps.kde.org/clazy"
@@ -17,7 +17,7 @@ KEYWORDS="~amd64 ~arm64 ~x86"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
-RDEPEND="<sys-devel/clang-$((${LLVM_MAX_SLOT} + 1)):="
+RDEPEND="$(llvm_gen_dep 'sys-devel/clang:${LLVM_SLOT}=')"
 DEPEND="${RDEPEND}"
 BDEPEND="test? ( ${PYTHON_DEPS} )"
 
@@ -27,14 +27,10 @@ PATCHES=(
 #	"${FILESDIR}"/${PN}-1.11-jobs-for-tests.patch
 )
 
-llvm_check_deps() {
-	has_version "sys-devel/clang:${LLVM_SLOT}" && has_version "sys-devel/llvm:${LLVM_SLOT}"
-}
-
 pkg_setup() {
 	use test && python-any-r1_pkg_setup
 
-	llvm_pkg_setup
+	llvm-r1_pkg_setup
 }
 
 src_prepare() {
