@@ -82,8 +82,11 @@ qt5? (	dev-qt/assistant
 	dev-qt/qtcharts
 	dev-qt/qtdatavis3d
 	dbus? ( dev-qt/qdbusviewer )
+	doc? ( dev-qt/qt-docs:5[qch] )
 )
-qt6? (	dev-qt/qttools[assistant,designer,linguist,qdbus,qml=,widgets,pixeltool,qtdiag,qtplugininfo]
+qt6? (
+	dev-qt/qttools[assistant,designer,linguist,qdbus,qml=,widgets,pixeltool,qtdiag,qtplugininfo]
+	doc? ( dev-qt/qt-docs:6[qch] )
 )
 sys-apps/the_silver_searcher
 android? ( dev-util/android-studio )
