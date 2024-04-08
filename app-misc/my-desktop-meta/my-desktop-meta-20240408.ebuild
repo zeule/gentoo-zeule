@@ -1,4 +1,4 @@
-EAPI="5"
+EAPI="8"
 SLOT="0"
 
 DESCRIPTION="My set of desktop packages"
@@ -20,6 +20,7 @@ RDEPEND="emacs? ( dev-util/my-emacs-meta )
 	net-misc/teamviewer
 	app-emulation/my-virtualization-meta
 	net-misc/freerdp
+	X? ( x11-apps/xlsclients )
 "
 
 RDEPEND+="cups? (
