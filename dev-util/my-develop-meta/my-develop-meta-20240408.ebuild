@@ -1,14 +1,14 @@
 # Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="7"
+EAPI="8"
 SLOT="0"
 
 DESCRIPTION="My set of development packages"
 LICENSE="metapackage"
 
 KEYWORDS="~x86 ~amd64"
-IUSE="android clang cxx dbus doc emacs +fonts git java javascript kate mono plasma php python qml qt5 qt6 uml zsh-completion"
+IUSE="android clang cxx dbus doc emacs +fonts git java javascript kate mono plasma php python qml qt5 qt6 vim uml zsh-completion"
 REQUIRED_USE="kate? ( clang ) plasma? ( !kate !php )"
 
 DEPEND=""
@@ -21,6 +21,7 @@ RDEPEND+="plasma? ( kde-plasma/plasma-meta kde-apps/kdecore-meta
 RDEPEND+="dev-build/cmake[gui]
 dev-build/ninja
 dev-util/perf
+vim? ( app-editors/neovim-qt[qt5=,qt6=] )
 "
 
 # part of kdesdk
