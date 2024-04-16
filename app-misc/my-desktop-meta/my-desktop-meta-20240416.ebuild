@@ -5,7 +5,7 @@ DESCRIPTION="My set of desktop packages"
 LICENSE="metapackage"
 
 KEYWORDS="~x86 ~amd64"
-IUSE="cups downloaders emacs games gnome kde gtk latex mailfetch outlook pdf kindle scanner transcode X wayland"
+IUSE="cups downloaders emacs games gnome kde gtk latex mailfetch outlook pdf kindle scanner sound-edit transcode X wayland"
 DEPEND=""
 
 RDEPEND="emacs? ( dev-util/my-emacs-meta )
@@ -126,7 +126,7 @@ RDEPEND+="X? (
 "
 
 # misc
-RDEPEND+="media-sound/audacity
+RDEPEND+="sound-edit? ( media-sound/audacity )
 	net-misc/anydesk
 	media-video/libva-utils
 	x11-misc/vdpauinfo
