@@ -96,11 +96,11 @@ python? (
 	dev-python/autopep8
 	dev-python/python-lsp-server
 	app-editors/vscode
-	zsh-completion? ( media-fonts/meslo-nerd )
+	zsh-completion? ( media-fonts/nerdfonts[meslo] )
 )
 javascript? ( app-editors/vscode
 	net-libs/nodejs
-	zsh-completion? ( media-fonts/meslo-nerd )
+	zsh-completion? ( media-fonts/nerdfonts[meslo] )
 	app-misc/jq
 )
 "

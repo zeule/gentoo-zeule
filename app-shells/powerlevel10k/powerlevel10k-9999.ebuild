@@ -26,7 +26,7 @@ RESTRICT="mirror"
 
 RDEPEND="
 	app-shells/zsh
-	nerd-fonts? ( media-fonts/meslo-nerd )
+	nerd-fonts? ( media-fonts/nerdfonts[meslo] )
 	oh-my-zsh? ( app-shells/oh-my-zsh )
 "
 
