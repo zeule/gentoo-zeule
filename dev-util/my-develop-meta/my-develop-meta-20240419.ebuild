@@ -118,4 +118,4 @@ RDEPEND+="emacs? ( dev-util/my-emacs-meta )
 RDEPEND+="sys-apps/acpica
 "
 
-RDEPEND+="fonts? ( media-fonts/jetbrainsmono-nerdfont )"
+RDEPEND+="fonts? ( media-fonts/nerdfonts[jetbrainsmono] )"
