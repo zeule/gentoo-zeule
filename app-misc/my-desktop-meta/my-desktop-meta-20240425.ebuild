@@ -5,7 +5,7 @@ DESCRIPTION="My set of desktop packages"
 LICENSE="metapackage"
 
 KEYWORDS="~x86 ~amd64"
-IUSE="cups downloaders emacs games gnome kde gtk latex mailfetch outlook pdf kindle scanner sound-edit transcode X wayland"
+IUSE="+conferencing cups downloaders emacs games gnome kde gtk latex mailfetch outlook pdf kindle +rdp scanner sound-edit transcode X wayland"
 DEPEND=""
 
 RDEPEND="emacs? ( dev-util/my-emacs-meta )
@@ -17,7 +17,7 @@ RDEPEND="emacs? ( dev-util/my-emacs-meta )
 	games? ( games-misc/my-games-meta )
 	media-fonts/my-fonts-meta
 	media-misc/my-multimedia-meta[kde=]
-	net-misc/teamviewer
+	rdp? ( net-misc/teamviewer )
 	app-emulation/my-virtualization-meta
 	net-misc/freerdp
 	X? ( x11-apps/xlsclients )
@@ -71,7 +71,7 @@ RDEPEND+="net-im/skypeforlinux
 net-im/choqok
 net-irc/konversation
 net-im/signal-desktop-bin
-net-im/zoom
+conferencing? ( net-im/zoom )
 x11-plugins/purple-signal
 "
 
@@ -127,7 +127,7 @@ RDEPEND+="X? (
 
 # misc
 RDEPEND+="sound-edit? ( media-sound/audacity )
-	net-misc/anydesk
+	rdp? ( net-misc/anydesk )
 	media-video/libva-utils
 	x11-misc/vdpauinfo
 	transcode? ( media-video/handbrake )
