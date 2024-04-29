@@ -9,8 +9,7 @@ IUSE="gog flash kde qsp steam qt4"
 
 DEPEND=""
 
-RDEPEND="steam? ( games-util/steam-client-meta
-		games-util/steam-meta
+RDEPEND="steam? ( games-util/steam-launcher
 		games-util/esteam
 		)
 "
