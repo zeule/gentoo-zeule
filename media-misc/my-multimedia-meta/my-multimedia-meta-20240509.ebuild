@@ -26,7 +26,7 @@ RDEPEND="kde? (	video? ( media-video/smplayer
 	mpd? ( media-sound/cantata
 		app-misc/media-player-info
 		media-sound/mpd
-		plasma? ( media-sound/mpDris2 )
+		plasma? ( media-sound/mpd-mpris )
 		media-sound/mpc
 	)
 "
