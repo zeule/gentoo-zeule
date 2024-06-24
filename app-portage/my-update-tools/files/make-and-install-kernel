@@ -8,7 +8,7 @@ K_VER="$(pwd -P | cut -f 2- -d '-')"
 einfo "Kernel version is $K_VER"
 
 einfo "Compiling kernel... ($MAKEOPTS)"
-make $MAKEOPTS > /dev/null
+nice -n ${PORTAGE_NICENESS-0} make $MAKEOPTS > /dev/null
 
 einfo "Installing kernel..."
 make modules_install install
