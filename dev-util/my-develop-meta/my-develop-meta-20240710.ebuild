@@ -55,7 +55,11 @@ clang? ( dev-debug/lldb
 
 )
 cxx? ( dev-cpp/benchmark
-	qml? ( dev-qt/qt-creator dev-util/gammaray ) )
+	qml? ( dev-qt/qt-creator
+		dev-qt/qt-creator-spell-checker
+		dev-util/gammaray
+	)
+)
 "
 
 #"
