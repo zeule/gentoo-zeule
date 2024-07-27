@@ -9,7 +9,7 @@ inherit git-r3 cmake
 
 #EGIT_REPO_URI="https://github.com/CJCombrink/SpellChecker-Plugin.git"
 EGIT_REPO_URI="https://github.com/zeule/qtc-SpellChecker-Plugin.git"
-EGIT_BRANCH="feature/check-identifiers"
+EGIT_BRANCH="integration"
 
 DESCRIPTION="SpellChecker Plugin for Qt Creator"
 HOMEPAGE="https://github.com/CJCombrink/SpellChecker-Plugin"
