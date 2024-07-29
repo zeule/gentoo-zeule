@@ -89,7 +89,6 @@ net-analyzer/iptraf-ng
 net-analyzer/net-snmp
 net-analyzer/nethogs
 net-analyzer/nettop
-net-analyzer/nmapsi
 net-analyzer/speedtest-cli
 net-analyzer/tcpdump
 net-analyzer/traceroute
