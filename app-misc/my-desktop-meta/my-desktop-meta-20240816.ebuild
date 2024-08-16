@@ -13,6 +13,7 @@ RDEPEND="emacs? ( dev-util/my-emacs-meta )
 	kde? ( kde-misc/my-kde-meta )
 	gtk? ( dev-libs/libdbusmenu )
 	dev-util/my-develop-meta
+	dev-util/my-projects-deps-meta
 	latex? ( app-text/my-tex-meta[kde=] )
 	games? ( games-misc/my-games-meta )
 	media-fonts/my-fonts-meta
