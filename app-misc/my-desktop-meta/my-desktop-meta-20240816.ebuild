@@ -90,9 +90,9 @@ net-misc/plowshare-modules-legacy
 "
 
 # net-p2p/retroshare
+# net-misc/megacmd compilation fails
 RDEPEND+="downloaders? ( net-misc/yt-dlp
 dev-python/beautifulsoup4
-net-misc/megacmd
 net-misc/gallery-dl
 )
 "
