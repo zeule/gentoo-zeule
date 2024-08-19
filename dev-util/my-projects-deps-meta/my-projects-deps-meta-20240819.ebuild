@@ -8,7 +8,7 @@ DESCRIPTION="Meta package to install dependencies for the project I work on"
 LICENSE="metapackage"
 
 KEYWORDS="~amd64"
-IUSE="+asus-ec-sensors +biola"
+IUSE="asus-ec-sensors biola"
 
 DEPEND=""
 
