@@ -10,7 +10,8 @@ IUSE="+android bluetooth gtk semantic-desktop +networkmanager pim photoarchive +
 DEPEND=""
 
 RDEPEND="kde-plasma/plasma-meta:${SLOT}[bluetooth=,browser-integration,discover,display-manager,gtk=,networkmanager=,pulseaudio=,sddm,wallpapers]
-	>=kde-apps/kdecore-meta-24.02.0[share,thumbnail,webengine]
+	>=kde-apps/kdecore-meta-24.02.0[share,webengine]
+	kde-apps/thumbnailers:${SLOT}[pdf,video]
 	kde-apps/kdegraphics-meta[scanner=]
 	kde-apps/kdeutils-meta[7zip,lrz,rar]
 	wayland? ( x11-misc/sddm-wayland-config )
@@ -58,7 +59,6 @@ pim? ( kde-apps/akonadi-calendar:${SLOT}
 
 #part of kdemultimedia
 RDEPEND+="kde-apps/dragon:${SLOT}
-kde-apps/ffmpegthumbs:${SLOT}
 "
 
 RDEPEND+="photoarchive? ( media-gfx/digikam:${SLOT} )
@@ -76,10 +76,10 @@ RDEPEND+="photoarchive? ( media-gfx/digikam:${SLOT} )
 # app-dicts/dikt
 # kde-misc/akonadi-exchange
 # kde-base/akonadiconsole
+# kde-misc/krusader no KF6 version yet
 
 RDEPEND+="kde-apps/kate:${SLOT}
 kde-apps/yakuake:${SLOT}
-kde-misc/krusader
 torrent? ( || ( net-p2p/qbit net-p2p/qbittorrent ) )
 bluetooth? ( kde-plasma/bluedevil:${SLOT} )
 sci-astronomy/kstars
