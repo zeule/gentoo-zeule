@@ -103,7 +103,7 @@ python? (
 	zsh-completion? ( media-fonts/nerdfonts[meslo] )
 )
 javascript? ( app-editors/vscode
-	net-libs/nodejs
+	net-libs/nodejs[npm]
 	zsh-completion? ( media-fonts/nerdfonts[meslo] )
 	app-misc/jq
 )
