@@ -18,3 +18,5 @@ LICENSE="LGPL-3"
 RDEPEND=">=dev-qt/qt-creator-14[plugin-dev]
 	app-text/hunspell"
 BDEPEND="$RDEPEND"
+
+PATCHES=("$FILESDIR/qtc-spellchecker-id.patch")
