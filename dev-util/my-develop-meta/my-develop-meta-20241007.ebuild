@@ -21,7 +21,7 @@ RDEPEND+="plasma? ( kde-plasma/plasma-meta kde-apps/kdecore-meta
 RDEPEND+="dev-build/cmake[gui]
 dev-build/ninja
 dev-util/perf
-vim? ( app-editors/neovim-qt[qt5=,qt6=] )
+vim? ( app-editors/neovim-qt )
 "
 
 # part of kdesdk
