@@ -7,7 +7,7 @@ EAPI=8
 inherit git-r3 cmake
 
 MY_P=ktikz_${PV}
-DESCRIPTION="A QT4-based editor for the TikZ language"
+DESCRIPTION="A Qt5-based editor for the TikZ language"
 HOMEPAGE="https://github.com/evsh/ktikz"
 EGIT_REPO_URI="https://github.com/zeule/ktikz.git"
 EGIT_REPO_URI="https://github.com/fhackenberger/ktikz.git"
@@ -25,15 +25,15 @@ CDEPEND="app-text/poppler:=[qt5]
 	dev-qt/qtwidgets:5
 	dev-qt/qtxml:5
 	dev-qt/qtprintsupport:5
-	kde-frameworks/kxmlgui
-	kde-frameworks/ktexteditor
-	kde-frameworks/kparts
-	kde-frameworks/kiconthemes
+	kde-frameworks/kxmlgui:5
+	kde-frameworks/ktexteditor:5
+	kde-frameworks/kparts:5
+	kde-frameworks/kiconthemes:5
 	"
 DEPEND="${CDEPEND}
 	dev-qt/linguist-tools:5
 	kde-frameworks/extra-cmake-modules
-	kde-frameworks/kdoctools
+	kde-frameworks/kdoctools:5
 	"
 
 RDEPEND="${CDEPEND}"
