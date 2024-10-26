@@ -3,7 +3,7 @@
 
 EAPI=8
 
-MY_PV="06_28_23"
+MY_PV="09_27_24"
 
 DESCRIPTION="Open-source OS-independent implementation of the ACPI specification"
 HOMEPAGE="https://acpica.org/"
