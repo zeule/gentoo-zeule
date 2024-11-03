@@ -5,13 +5,11 @@ DESCRIPTION="My set of packages for supporting my hardware"
 LICENSE="metapackage"
 
 KEYWORDS="~x86 ~amd64"
-IUSE="android cups efi fingerprint kindle logitech
-	machines_clevo_p17sm machines_minisforum_hx90 machines_dell_3650 machines_office_pc
+IUSE="android cups fingerprint kindle logitech
+	machines_minisforum_hx90  machines_office_pc machines_asus_x870e_proart
 	printer_devices_brother_mfc_l8690 printer_devices_epson_wf_3520 printer_devices_epson_et_5170
-	pulseaudio nvme scanner v4l video_cards_intel video_cards_radeon"
-REQUIRED_USE="?? ( machines_clevo_p17sm machines_minisforum_hx90 machines_dell_3650 machines_office_pc )
-	machines_minisforum_hx90? ( efi nvme )
-	machines_office_pc? ( efi nvme )
+	pulseaudio scanner v4l video_cards_intel video_cards_radeon"
+REQUIRED_USE="?? ( machines_minisforum_hx90 machines_office_pc machines_asus_x870e_proart )
 	printer_devices_epson_wf_3520? ( cups )
 	printer_devices_epson_et_5170? ( cups )
 	printer_devices_brother_mfc_l8690? ( cups )"
@@ -20,25 +18,20 @@ DEPEND=""
 RDEPEND=""
 
 #boot
-RDEPEND+="efi? ( sys-boot/refind
-		sys-boot/efibootmgr )
-	!efi? ( sys-boot/grub
-		sys-boot/os-prober )
+RDEPEND+=" sys-boot/refind
+	sys-boot/efibootmgr
 "
 
 # Firmware
 RDEPEND+="sys-kernel/linux-firmware
-	machines_dell_3650? ( sys-firmware/intel-microcode  )
 "
 
 RDEPEND+="cups? ( net-print/foomatic-db-ppds )
-	nvme? ( sys-apps/nvme-cli )
+	sys-apps/nvme-cli
 	sys-apps/usb_modeswitch
 	x11-misc/read-edid
 "
-#Keyboard backlit for Clevo
-#app-laptop/tuxedo-keyboard
-RDEPEND+="machines_clevo_p17sm? ( app-laptop/clevo-xsm-wmi-module
+RDEPEND+="machines_asus_x870e_proart? ( app-misc/openrgb
 	)
 "
 
