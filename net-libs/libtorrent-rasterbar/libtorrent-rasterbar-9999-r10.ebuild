@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{10..12} )
+PYTHON_COMPAT=( python3_{11..13} )
 
 inherit cmake git-r3 python-single-r1
 
@@ -49,7 +49,7 @@ pkg_setup() {
 
 src_configure() {
 	local mycmakeargs=(
-		-DCMAKE_CXX_STANDARD=17
+		-DCMAKE_CXX_STANDARD=20
 		-DBUILD_SHARED_LIBS=ON
 		-Dbuild_examples=$(usex examples)
 		-Ddht=$(usex dht)
