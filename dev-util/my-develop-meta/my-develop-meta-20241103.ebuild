@@ -34,7 +34,10 @@ kde-misc/kdiff3
 kde-misc/kregexpeditor
 "
 
-RDEPEND+="doc? ( sys-apps/man-pages-posix )
+RDEPEND+="doc? ( sys-apps/man-pages-posix
+		cxx? ( app-doc/cppreference-doc )
+)
+
 "
 
 RDEPEND+="git? (
