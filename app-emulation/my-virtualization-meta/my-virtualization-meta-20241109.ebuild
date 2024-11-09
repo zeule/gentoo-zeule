@@ -12,7 +12,7 @@ DEPEND=""
 RDEPEND+="virtualbox? ( app-emulation/virtualbox
 		app-emulation/virtualbox-additions
 		app-emulation/virtualbox-extpack-oracle )
-	kvm? ( app-emulation/libvirt[qemu,virtiofsd]
+	kvm? ( app-emulation/libvirt[qemu]
 		app-emulation/qemu[io-uring,spice,usbredir,virgl]
 		app-emulation/virt-manager
 		app-emulation/virtio-win
