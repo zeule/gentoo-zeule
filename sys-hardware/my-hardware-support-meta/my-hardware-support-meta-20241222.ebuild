@@ -57,7 +57,7 @@ RDEPEND+="logitech? ( dev-libs/libratbag
 "
 
 # Android SDK for phone
-RDEPEND+="android? ( dev-util/android-sdk-update-manager
+RDEPEND+="android? ( dev-util/android-sdk-cmdline-tools
 			app-mobilephone/heimdall )
 "
 
