@@ -45,10 +45,11 @@ RDEPEND+="kde? ( kde-apps/kpat )
 #Hardware
 #RDEPEND+="sys-apps/sc-controller
 #"
-RDEPEND+="qsp? ( dev-games/qqsp )
+RDEPEND+="qsp? ( dev-games/qqsp
+	dev-games/qsp
+)
 "
 
 # misc
-RDEPEND+="dev-games/qsp
-flash? ( media-gfx/flash-player-projector )
+RDEPEND+="flash? ( media-gfx/flash-player-projector )
 "
