@@ -3,7 +3,7 @@
 
 EAPI=8
 
-LLVM_COMPAT=( {17..18} )
+LLVM_COMPAT=( {17..19} )
 PYTHON_COMPAT=( python3_{10..12} )
 inherit cmake git-r3 llvm-r1 python-any-r1
 
@@ -17,7 +17,7 @@ KEYWORDS="~amd64 ~arm64 ~x86"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
-RDEPEND="$(llvm_gen_dep 'sys-devel/clang:${LLVM_SLOT}=')"
+RDEPEND="$(llvm_gen_dep 'llvm-core/clang:${LLVM_SLOT}=')"
 DEPEND="${RDEPEND}"
 BDEPEND="test? ( ${PYTHON_DEPS} )"
 
