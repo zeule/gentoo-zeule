@@ -50,7 +50,6 @@ RDEPEND+="outlook? ( net-im/teams-for-linux
 
 # E-library
 RDEPEND+="kindle? ( app-text/calibre )
-app-text/fbreader
 "
 
 # Archive files support
