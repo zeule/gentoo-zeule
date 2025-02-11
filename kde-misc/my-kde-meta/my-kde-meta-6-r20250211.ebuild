@@ -82,7 +82,6 @@ RDEPEND+="kde-apps/kate:${SLOT}
 kde-apps/yakuake:${SLOT}
 torrent? ( || ( net-p2p/qbit net-p2p/qbittorrent ) )
 bluetooth? ( kde-plasma/bluedevil:${SLOT} )
-sci-astronomy/kstars
 kde-apps/filelight:${SLOT}
 kde-plasma/kdeplasma-addons:${SLOT}
 sys-block/partitionmanager:${SLOT}
