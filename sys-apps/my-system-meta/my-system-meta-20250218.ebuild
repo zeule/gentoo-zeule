@@ -47,6 +47,7 @@ RDEPEND="app-admin/needrestart
 	sys-libs/gpm
 	sys-power/cpupower
 	sys-power/powertop
+	sys-process/btop
 	sys-process/htop
 	sys-process/iotop-c
 	sys-process/lsof
