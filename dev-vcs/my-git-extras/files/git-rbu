@@ -1,0 +1,7 @@
+#!/bin/sh
+
+_upstream=$(git config --get 'branches.upstream' || echo "upstream")
+_upstreamMaster=$(git config --get 'branches.upstreamMaster' || echo "master")
+git lfs fetch $_upstream
+git fetch $_upstream
+git rebase $1 $_upstream/$_upstreamMaster

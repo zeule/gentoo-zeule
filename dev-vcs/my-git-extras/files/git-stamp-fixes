@@ -1,0 +1,9 @@
+#!/bin/sh
+
+_no_commit="Usage: git stamp-fixes commit"
+git stamp "$(git log --pretty=fixes -1 ${1?$_no_commit})"
+
+
+
+
+

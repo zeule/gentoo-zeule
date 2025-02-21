@@ -42,6 +42,7 @@ RDEPEND+="doc? ( sys-apps/man-pages-posix
 
 RDEPEND+="git? (
 	dev-vcs/git-extras
+	dev-vcs/my-git-extras
 	dev-vcs/git-lfs
 	dev-util/diffstat
 	dev-util/git-autofixup
