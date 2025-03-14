@@ -41,7 +41,5 @@ RDEPEND+="wine? ( virtual/wine[staging]
 #RDEPEND+="games-util/sc-controller
 #"
 
-RDEPEND+="qsp? ( dev-games/qqsp
-	dev-games/qsp
-)
+RDEPEND+="qsp? ( games-qsp/qqsp )
 "
