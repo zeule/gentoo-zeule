@@ -105,7 +105,6 @@ RDEPEND+="mailfetch? (	net-mail/dovecot
 RDEPEND+="app-text/dos2unix
 app-text/tree
 net-misc/minidlna
-media-video/simplescreenrecorder
 media-gfx/gimp
 media-gfx/krita
 media-gfx/rawtherapee
