@@ -51,6 +51,9 @@ RDEPEND+="truetype? (
 		media-fonts/alegreya-sans
 		media-fonts/alegreya-serif
 		media-fonts/quivira
+		media-fonts/roboto
+		media-fonts/roboto-serif
+		media-fonts/robotomono
 		media-fonts/robotoslab
 		media-fonts/noto-emoji
 	)
