@@ -109,6 +109,7 @@ RDEPEND+="gtk? (
 	sys-apps/xdg-desktop-portal-gtk
 	x11-misc/gtk3-nocsd
 )
+kde-misc/darkly
 x11-misc/xclip
 "
 #x11-themes/materia-kde
