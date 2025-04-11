@@ -3,7 +3,7 @@
 
 EAPI=8
 
-LLVM_COMPAT=( {17..19} )
+LLVM_COMPAT=( {17..20} )
 PYTHON_COMPAT=( python3_{10..12} )
 inherit cmake git-r3 llvm-r1 python-any-r1
 
