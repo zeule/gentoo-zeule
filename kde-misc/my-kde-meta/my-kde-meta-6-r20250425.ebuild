@@ -13,6 +13,7 @@ RDEPEND="kde-plasma/plasma-meta:${SLOT}[bluetooth=,browser-integration,discover,
 	>=kde-apps/kdecore-meta-24.02.0[share,webengine]
 	kde-apps/thumbnailers:${SLOT}[pdf,video]
 	kde-apps/kdegraphics-meta[scanner=]
+	kde-apps/kdenetwork-meta
 	kde-apps/kdeutils-meta[7zip,lrz,rar]
 	wayland? ( x11-misc/sddm-wayland-config )
 "
@@ -23,13 +24,6 @@ RDEPEND+="kde-apps/dolphin-plugins-git:${SLOT}
 	kde-apps/kdialog:${SLOT}
 	kde-apps/kfind:${SLOT}
 	kde-apps/keditbookmarks:${SLOT}
-"
-
-#part of kdenetwork
-# kde-apps/kget:${SLOT}
-# kde-apps/krdc[qt6]
-RDEPEND+="kde-apps/kdenetwork-filesharing:${SLOT}
-zeroconf? ( net-misc/kio-zeroconf:${SLOT} )
 "
 
 #part of kdepim
