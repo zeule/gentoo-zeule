@@ -32,7 +32,7 @@ gog? ( games-strategy/fheroes2
 )
 "
 
-RDEPEND+="wine? ( virtual/wine[staging]
+RDEPEND+="wine? ( app-emulation/wine-staging
 	app-emulation/winetricks
 )
 "
