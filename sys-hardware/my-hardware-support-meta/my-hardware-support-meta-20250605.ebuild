@@ -39,7 +39,6 @@ RDEPEND+="cups? ( printer_devices_epson_wf_3520? ( net-print/epson-inkjet-printe
 		printer_devices_epson_et_5170? ( net-print/epson-inkjet-printer-escpr:2 )
 		printer_devices_brother_mfc_l8690? ( net-print/brother-mfcl8690cdw-bin[-scanner] )
 	)
-	net-print/hplip
 "
 
 RDEPEND+="scanner? ( media-gfx/sane-airscan
