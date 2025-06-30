@@ -81,7 +81,7 @@ kde-plasma/kdeplasma-addons:${SLOT}
 sys-block/partitionmanager:${SLOT}
 media-gfx/graphicsmagick
 kde-apps/kmag:${SLOT}
-|| ( media-video/smplayer media-video/smplayer2 )
+media-video/haruna
 || ( kde-plasma/kde-cli-tools:${SLOT}[kdesu] kde-misc/kdesudo:${SLOT} )
 networkmanager? ( kde-plasma/plasma-nm:${SLOT} )
 kde-misc/krename
