@@ -9,10 +9,7 @@ IUSE="bash-completion encode kde mpd plasma pulseaudio python subtitles v4l vide
 
 DEPEND=""
 
-RDEPEND="kde? (	video? ( media-video/smplayer
-		)
-		media-sound/kid3
-	)
+RDEPEND="kde? (	media-sound/kid3 )
 	media-video/mediainfo
 	media-video/mkvtoolnix
 	media-video/mpv
