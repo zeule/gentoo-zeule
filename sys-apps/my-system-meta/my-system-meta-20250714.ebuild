@@ -31,7 +31,6 @@ RDEPEND="app-admin/needrestart
 	sys-apps/hdparm
 	sys-apps/i2c-tools
 	sys-apps/mlocate
-	sys-apps/udevil
 	systemd? ( sys-apps/systemd[sysv-utils]
 		systemd-units? ( sys-apps/my-systemd-units )
 		)
