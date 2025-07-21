@@ -9,7 +9,8 @@ IUSE="action gog kde qsp steam wine"
 
 DEPEND=""
 
-RDEPEND="steam? ( games-util/steam-launcher
+RDEPEND="net-voip/mumble
+	steam? ( games-util/steam-launcher
 		games-util/esteam
 		)
 "
