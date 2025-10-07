@@ -9,7 +9,7 @@ IUSE="emacs html lsp kde pdf"
 
 RDEPEND="app-text/texlive[dvipdfm(+),extra,graphics,humanities,luatex,pstricks,publishers,science]
 kde? (
-	media-gfx/ktikz
+	app-text/ktikz
 	kde-misc/klatexformula
 	app-text/kbibtex
 	app-editors/kile
