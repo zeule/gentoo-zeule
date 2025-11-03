@@ -15,6 +15,5 @@ RDEPEND+="glk? ( games-engines/git )
 	twee? ( || ( dev-games/tweego dev-games/tweego-bin )
 		dev-games/tweexx
 	)
-	dev-libs/cef-bin
 	dotnet? ( dev-dotnet/clangsharp )
 "
