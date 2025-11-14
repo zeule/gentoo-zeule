@@ -21,6 +21,7 @@ RDEPEND+="plasma? ( kde-plasma/plasma-meta kde-apps/kdecore-meta
 RDEPEND+="dev-build/cmake[gui]
 dev-build/ninja
 dev-util/perf
+dev-util/cloc
 vim? ( app-editors/neovim-qt )
 "
 
@@ -46,7 +47,6 @@ RDEPEND+="git? (
 	dev-vcs/git-lfs
 	dev-util/diffstat
 	dev-util/git-autofixup
-	dev-util/git-bug
 	)
 "
 
@@ -74,14 +74,8 @@ cxx? ( dev-cpp/benchmark
 
 RDEPEND="${RDEPEND}
 dev-util/gprof2dot
-"
-
-RDEPEND="${RDEPEND}
 mono? ( dev-lang/mono
 )
-"
-
-RDEPEND="${RDEPEND}
 app-text/doxygen
 qt5? (	dev-qt/assistant
 	dev-qt/designer
