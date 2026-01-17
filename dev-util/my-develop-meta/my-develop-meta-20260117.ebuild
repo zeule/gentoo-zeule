@@ -91,6 +91,7 @@ qt6? (
 	doc? ( dev-qt/qt-docs:6[qch] )
 )
 sys-apps/the_silver_searcher
+app-editors/okteta
 android? ( dev-util/android-studio )
 python? (
 	dev-python/pycodestyle
