@@ -13,6 +13,7 @@ RDEPEND="net-voip/mumble
 	steam? ( games-util/steam-launcher
 		games-util/esteam
 		)
+	games-util/lutris
 "
 
 RDEPEND+="action? ( games-action/chromium-bsu
