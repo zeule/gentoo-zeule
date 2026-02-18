@@ -9,13 +9,13 @@ IUSE="+android bluetooth gtk semantic-desktop +networkmanager pim photoarchive +
 
 DEPEND=""
 
-RDEPEND="kde-plasma/plasma-meta:${SLOT}[bluetooth=,browser-integration,discover,display-manager,gtk=,networkmanager=,pulseaudio=,sddm,wallpapers]
+RDEPEND="kde-plasma/plasma-meta:${SLOT}[bluetooth=,browser-integration,discover,gtk=,networkmanager=,pulseaudio=,sddm,wallpapers]
+	kde-plasma/plasma-login-manager
 	>=kde-apps/kdecore-meta-24.02.0[share,webengine]
 	kde-apps/thumbnailers:${SLOT}[pdf,video]
 	kde-apps/kdegraphics-meta[scanner=]
 	kde-apps/kdenetwork-meta
 	kde-apps/kdeutils-meta[7zip,lrz,rar]
-	wayland? ( x11-misc/sddm-wayland-config )
 "
 #RDEPEND+="kde-apps/kde-l10n:${SLOT}
 #"
