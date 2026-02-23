@@ -5,11 +5,11 @@ DESCRIPTION="My set of KDE packages"
 LICENSE="metapackage"
 
 KEYWORDS="~x86 ~amd64"
-IUSE="+android bluetooth gtk semantic-desktop +networkmanager pim photoarchive +pulseaudio +scanner +torrent +qt5 wayland zeroconf"
+IUSE="+android bluetooth gtk semantic-desktop +networkmanager pim photoarchive +pulseaudio +scanner +torrent qt5 wayland zeroconf"
 
 DEPEND=""
 
-RDEPEND="kde-plasma/plasma-meta:${SLOT}[bluetooth=,browser-integration,discover,gtk=,networkmanager=,pulseaudio=,sddm,wallpapers]
+RDEPEND="kde-plasma/plasma-meta:${SLOT}[bluetooth=,browser-integration,discover,gtk=,networkmanager=,pulseaudio=,wallpapers]
 	kde-plasma/plasma-login-manager
 	>=kde-apps/kdecore-meta-24.02.0[share,webengine]
 	kde-apps/thumbnailers:${SLOT}[pdf,video]
@@ -64,13 +64,11 @@ RDEPEND+="photoarchive? ( media-gfx/digikam:${SLOT} )
 # net-misc/knemo
 # net-misc/smb4k
 # kde-misc/krename
-# kde-apps/jovie
 # kde-apps/kmouth
 # kde-misc/kio-locate
 # app-dicts/dikt
 # kde-misc/akonadi-exchange
 # kde-base/akonadiconsole
-# kde-misc/krusader no KF6 version yet
 
 RDEPEND+="kde-apps/kate:${SLOT}
 kde-apps/yakuake:${SLOT}
@@ -85,6 +83,7 @@ media-video/haruna
 || ( kde-plasma/kde-cli-tools:${SLOT}[kdesu] kde-misc/kdesudo:${SLOT} )
 networkmanager? ( kde-plasma/plasma-nm:${SLOT} )
 kde-misc/krename
+kde-misc/krusader
 media-gfx/icoutils
 "
 #
