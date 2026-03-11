@@ -103,6 +103,7 @@ RDEPEND+="gtk? (
 	x11-misc/gtk3-nocsd
 )
 kde-misc/darkly
+gui-apps/klassy
 x11-misc/xclip
 "
 #x11-themes/materia-kde
