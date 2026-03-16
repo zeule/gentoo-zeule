@@ -36,6 +36,7 @@ gog? ( games-strategy/fheroes2
 
 RDEPEND+="wine? ( app-emulation/wine-staging
 	app-emulation/winetricks
+	app-emulation/dxvk
 )
 "
 
