@@ -56,6 +56,7 @@ dev-cpp/catch
 clang? ( llvm-core/lldb
 	dev-util/clazy
 	dev-util/include-what-you-use
+	dev-cpp/gtest
 
 )
 cxx? ( dev-cpp/benchmark
