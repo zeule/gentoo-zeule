@@ -44,7 +44,7 @@ RDEPEND+="cups? ( printer_devices_epson_wf_3520? ( net-print/epson-inkjet-printe
 RDEPEND+="scanner? ( media-gfx/sane-airscan
 	printer_devices_epson_wf_3520? ( media-gfx/iscan
 		media-gfx/iscan-plugin-network-nt )
-	printer_devices_brother_mfc_l8690? ( media-gfx/brscan4 )
+	printer_devices_brother_mfc_l8690? ( media-gfx/brscan5 )
 )
 "
 
