@@ -1,5 +1,10 @@
 #! /bin/sh
 #emerge --ask --update --newuse --deep --verbose --keep-going $@  @world
-emerge --ask --update --newuse --deep --with-bdeps=y --verbose --keep-going --autounmask-keep-masks $@ @world
+if ! command -v systemd-inhibit >/dev/null 2>&1
+then
+	systemd-inhibit --why="System update" --what=idle:sleep emerge --ask --update --newuse --deep --with-bdeps=y --verbose --keep-going --autounmask-keep-masks $@ @world
+else
+	emerge --ask --update --newuse --deep --with-bdeps=y --verbose --keep-going --autounmask-keep-masks $@ @world
+fi
 
 sync
