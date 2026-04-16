@@ -3,8 +3,8 @@
 
 EAPI=8
 
-LLVM_COMPAT=( {17..20} )
-PYTHON_COMPAT=( python3_{10..12} )
+LLVM_COMPAT=( {20..22} )
+PYTHON_COMPAT=( python3_{12..14} )
 inherit cmake git-r3 llvm-r1 python-any-r1
 
 DESCRIPTION="Compiler plugin which allows clang to understand Qt semantics"
