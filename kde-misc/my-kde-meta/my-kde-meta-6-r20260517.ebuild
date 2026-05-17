@@ -113,5 +113,4 @@ x11-misc/xclip
 # kde-misc/kio-gdrive  no :6 version
 RDEPEND+="kde-apps/kwalletmanager:${SLOT}
 torrent? ( net-p2p/ktorrent:${SLOT} )
-x11-apps/ocs-url
 "
