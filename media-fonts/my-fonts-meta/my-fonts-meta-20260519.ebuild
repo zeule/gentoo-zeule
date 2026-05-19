@@ -7,9 +7,7 @@ SLOT="0"
 DESCRIPTION="My set of font packages"
 LICENSE="metapackage"
 KEYWORDS="~amd64 ~x86"
-IUSE="plasma truetype"
-
-REQUIRED_USE="plasma? ( truetype )"
+IUSE="truetype"
 
 DEPEND=""
 
@@ -60,7 +58,3 @@ RDEPEND+="truetype? (
 	media-fonts/signika
 "
 #media-fonts/googlewebfonts ?
-
-# KDE
-RDEPEND+="plasma? ( media-fonts/oxygen-fonts )
-"
