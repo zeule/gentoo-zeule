@@ -70,7 +70,6 @@ RDEPEND+="|| ( www-client/firefox-kde-opensuse www-client/firefox www-client/fir
 RDEPEND+="net-irc/konversation
 net-im/signal-desktop-bin
 conferencing? ( net-im/zoom )
-x11-plugins/purple-signal
 "
 
 # net-im/empathy requires python 3.6
