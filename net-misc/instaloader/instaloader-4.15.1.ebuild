@@ -8,7 +8,7 @@ DESCRIPTION="Download pictures (or videos) along with their captions and other m
 SRC_URI="https://github.com/${PN}/${PN}/archive/refs/tags/v${PV}.tar.gz -> ${PN}-${PV}.tar.gz"
 RESTRICT="mirror"
 
-PYTHON_COMPAT=( python3_{9..13} )
+PYTHON_COMPAT=( python3_{9..14} )
 DISTUTILS_SINGLE_IMPL=1
 DISTUTILS_USE_PEP517=setuptools
 
@@ -16,6 +16,6 @@ inherit distutils-r1
 
 RDEPEND="$(python_gen_cond_dep '
 		dev-python/requests[${PYTHON_USEDEP}]
-		dev-python/browser-cookie3[${PYTHON_USEDEP}]
+		dev-python/browsercookie[${PYTHON_USEDEP}]
 	')
 "

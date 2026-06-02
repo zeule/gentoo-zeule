@@ -1,0 +1,25 @@
+EAPI=8
+
+DIGEST_SOURCES="yes"
+PYTHON_COMPAT=( python{3_11,3_12,3_13,3_14} )
+DISTUTILS_USE_PEP517=standalone
+
+inherit python-r1 pypi
+
+DESCRIPTION="Loads cookies from your browser into a cookiejar object so can download with urllib and other libraries the same content you see in the web browser."
+
+HOMEPAGE="https://github.com/richardpenman/browsercookie"
+LICENSE="LGPL-3"
+SRC_URI="https://files.pythonhosted.org/packages/source/${PN::1}/${PN}/${PN}-${PV}.tar.gz"
+SOURCEFILE="${REALNAME}-${REALVERSION}.tar.gz"
+RESTRICT="test"
+
+SLOT="0"
+KEYWORDS="~amd64 ~x86"
+
+IUSE=""
+DEPENDENCIES="dev-python/cryptography[${PYTHON_USEDEP}]
+	dev-python/keyring[${PYTHON_USEDEP}]
+	dev-python/lz4[${PYTHON_USEDEP}]"
+BDEPEND="${DEPENDENCIES}"
+RDEPEND="${DEPENDENCIES}"
