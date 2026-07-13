@@ -8,8 +8,8 @@ DESCRIPTION="My set of development packages"
 LICENSE="metapackage"
 
 KEYWORDS="~x86 ~amd64"
-IUSE="android clang cxx dbus doc emacs +fonts git java javascript kate mono plasma php python qml qt5 qt6 vim uml zsh-completion"
-REQUIRED_USE="kate? ( clang ) plasma? ( !kate !php )"
+IUSE="android clang cxx dbus doc emacs +fonts git github java javascript kate mono plasma php python qml qt5 qt6 vim uml zsh-completion"
+REQUIRED_USE="github? ( git )  kate? ( clang ) plasma? ( !kate !php )"
 
 DEPEND=""
 
@@ -47,6 +47,7 @@ RDEPEND+="git? (
 	dev-vcs/git-lfs
 	dev-util/diffstat
 	dev-util/git-autofixup
+	github? ( dev-util/github-cli )
 	)
 "
 
@@ -65,12 +66,6 @@ cxx? ( dev-cpp/benchmark
 	)
 )
 "
-
-#"
-#dev-util/eclipse-sdk
-#x11-libs/qt-demo
-#dev-util/kdevelop-extra-plugins
-#dev-util/kdevelop-plugins
 
 RDEPEND="${RDEPEND}
 dev-util/gprof2dot
