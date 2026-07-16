@@ -55,7 +55,7 @@ RDEPEND+="kindle? ( app-text/calibre )
 # Archive files support
 RDEPEND+="app-arch/lz4
 app-arch/lzop
-app-arch/p7zip
+app-arch/7zip
 app-arch/unrar
 "
 
