@@ -14,7 +14,6 @@ DEPEND=""
 
 RDEPEND+="asus-ec-sensors? ( sys-apps/acpica )
 	biola? (
-		dev-cpp/xsd
 		dev-db/dbeaver-bin
 	)
 "
