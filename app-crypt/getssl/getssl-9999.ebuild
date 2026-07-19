@@ -15,14 +15,14 @@ SLOT="0"
 IUSE="+godaddy"
 
 RDEPEND="
-	net-dns/bind-tools
-	sys-apps/grep
 	app-alternatives/awk
-	sys-apps/sed
+	dev-libs/openssl
+	net-dns/bind
+	net-misc/curl
 	net-misc/openssh
 	sys-apps/coreutils
-	net-misc/curl
-	dev-libs/openssl
+	sys-apps/grep
+	sys-apps/sed
 	godaddy? ( app-shells/json-sh )
 "
 DEPEND=""
