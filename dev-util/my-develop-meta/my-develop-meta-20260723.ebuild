@@ -8,7 +8,7 @@ DESCRIPTION="My set of development packages"
 LICENSE="metapackage"
 
 KEYWORDS="~x86 ~amd64"
-IUSE="android clang cxx dbus doc emacs +fonts git github java javascript kate mono plasma php python qml qt5 qt6 vim uml zsh-completion"
+IUSE="android ai clang cxx dbus doc emacs +fonts git github java javascript kate mono plasma php python qml qt5 qt6 vim uml zsh-completion"
 REQUIRED_USE="github? ( git )  kate? ( clang ) plasma? ( !kate !php )"
 
 DEPEND=""
@@ -101,6 +101,10 @@ javascript? ( app-editors/vscode
 	zsh-completion? ( media-fonts/nerdfonts[meslo] )
 	app-misc/jq
 )
+"
+
+# AI
+RDEPEND+="ai? ( dev-util/claude-code )
 "
 
 # java
