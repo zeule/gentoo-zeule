@@ -104,7 +104,10 @@ javascript? ( app-editors/vscode
 "
 
 # AI
-RDEPEND+="ai? ( dev-util/claude-code )
+RDEPEND+="ai? (
+	dev-util/claude-code
+	dev-util/qwen-code
+)
 "
 
 # java
