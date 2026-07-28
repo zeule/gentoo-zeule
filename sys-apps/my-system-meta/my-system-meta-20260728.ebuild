@@ -17,7 +17,6 @@ RDEPEND="app-admin/needrestart
 	app-admin/eclean-kernel
 	app-admin/logrotate
 	app-admin/makepasswd
-	app-misc/fdupes
 	app-misc/rdfind
 	sys-fs/ncdu-bin
 	btrfs? ( sys-fs/duperemove )
@@ -52,11 +51,11 @@ RDEPEND="app-admin/needrestart
 	sys-process/lsof
 	sys-process/time
 	sys-kernel/kernel
+	app-shells/starship
 	powerline? (
 		media-fonts/powerline-symbols
 		media-fonts/awesome-terminal-fonts
 		vim? ( app-vim/airline )
-		zsh-completion? ( app-shells/powerlevel10k )
 	)
 	zsh-completion? ( app-shells/gentoo-zsh-completions
 			app-shells/oh-my-zsh
