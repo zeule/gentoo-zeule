@@ -23,7 +23,6 @@ html? (
 	dev-tex/tth
 	dev-tex/hevea
 )
-media-gfx/asymptote
 lsp? ( dev-tex/texlab )
 "
 
