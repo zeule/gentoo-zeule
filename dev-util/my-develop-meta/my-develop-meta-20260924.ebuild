@@ -61,9 +61,7 @@ clang? ( llvm-core/lldb
 
 )
 cxx? ( dev-cpp/benchmark
-	qml? ( dev-qt/qt-creator
-		dev-qt/qt-creator-spell-checker
-	)
+	qml? ( dev-qt/qt-creator )
 )
 "
 
