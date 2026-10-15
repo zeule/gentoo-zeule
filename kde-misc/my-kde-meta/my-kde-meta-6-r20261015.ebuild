@@ -80,7 +80,7 @@ sys-block/partitionmanager:${SLOT}
 media-gfx/graphicsmagick
 kde-apps/kmag:${SLOT}
 media-video/haruna
-|| ( kde-plasma/kde-cli-tools:${SLOT}[kdesu] kde-misc/kdesudo:${SLOT} )
+|| ( kde-plasma/kde-cli-tools:${SLOT}[kdesu(+)] kde-misc/kdesudo:${SLOT} )
 networkmanager? ( kde-plasma/plasma-nm:${SLOT} )
 kde-misc/krename
 kde-misc/krusader
