@@ -72,7 +72,7 @@ networkmanager? ( net-vpn/networkmanager-openvpn
 	)
 net-misc/bridge-utils
 net-misc/iperf
-net-misc/ntp
+net-misc/chrony
 net-vpn/openvpn
 net-misc/whois
 net-misc/wakeonlan
